@@ -1,5 +1,5 @@
 # Voice Hangouts
-
+![.github/workflows/azure.yml](https://github.com/Mitchell-Remotely/voice-hangouts/workflows/.github/workflows/azure.yml/badge.svg)
 Voice hangouts with your friends
 
 ## Prerequisites
