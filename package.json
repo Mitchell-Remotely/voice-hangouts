@@ -21,7 +21,7 @@
     "url": "ssh://github.com/rickychien/voice-hangouts.git"
   },
   "dependencies": {
-    "css-loader": "^3.0.0",
+    "css-loader": "^3.6.0",
     "font-awesome": "^4.7.0",
     "js-yaml": "^3.13.1",
     "koa": "^2.4.1",
@@ -63,7 +63,7 @@
     "koa-webpack-middleware": "^1.0.7",
     "nodemon": "^1.18.9",
     "uglifyjs-webpack-plugin": "^1.0.0-rc.0",
-    "webpack": "^3.10.0",
+    "webpack": "^3.12.0",
     "webpack-cdn-plugin": "^3.0.0"
   }
 }
