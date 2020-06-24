@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './LandingPage.css'
 
-const DOMAIN_URL = 'voice-hangouts.herokuapp.com/'
+const DOMAIN_URL = 'remotely-voice-test.azurewebsites.net/'
 
 function LandingPage () {
   function joinRoom ({ currentTarget }) {
