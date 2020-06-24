@@ -9,7 +9,7 @@
     "npm": "^5.6.0"
   },
   "scripts": {
-    "build": "npm run clean && NODE_ENV=production $(npm bin)/webpack --progress --colors --config ./webpack.config.js",
+    "build": "npm run clean && NODE_ENV=production npm webpack --progress --colors --config ./webpack.config.js",
     "clean": "find ./public -not -path '*/\\.*' -type f -maxdepth 1 -delete",
     "lint": "$(npm bin)/eslint --fix '+(client|server)/**/*.+(js|jsx)' './*.js'",
     "start": "nodemon server/index.js",
