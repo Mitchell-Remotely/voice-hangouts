@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9ff610b38556ee6ac284"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9b716745a86dd1d4943b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -3886,7 +3886,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 const ROOM_NAME = window.location.pathname.replace('/', '') || '';
-const HOST = location.href.replace(/^http/, 'ws');
+const HOST = 'wss://remotely-voice-server.azurewebsites.net/';
 const store = Object(__WEBPACK_IMPORTED_MODULE_6__store__["a" /* default */])();
 const actions = Object(__WEBPACK_IMPORTED_MODULE_2_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_5__actions__["a" /* default */], store.dispatch);
 const connector = new __WEBPACK_IMPORTED_MODULE_7__connector__["a" /* default */](HOST, actions, store);
@@ -35216,7 +35216,7 @@ function log(...message) {
 
 
 
-const DOMAIN_URL = 'voice-hangouts.herokuapp.com/';
+const DOMAIN_URL = 'remotely-voice-test.azurewebsites.net/';
 
 function LandingPage() {
   function joinRoom({ currentTarget }) {
