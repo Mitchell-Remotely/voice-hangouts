@@ -7,7 +7,7 @@ const websockify = require('koa-websocket')
 const SignalingService = require('./signaling-service')
 const config = require('../webpack.config.js')
 
-const isDev = process.env.NODE_ENV !== 'production'
+const isDev = false;
 const app = websockify(new Koa())
 const router = new Router()
 const wsRouter = new Router()

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './LandingPage.css'
 
-const DOMAIN_URL = 'remotelyvoicechat.azurewebsites.net/'
+const DOMAIN_URL = 'remotely-voice-server.australiaeast.cloudapp.azure.com/'
 
 function LandingPage () {
   function joinRoom ({ currentTarget }) {
