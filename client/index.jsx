@@ -13,7 +13,7 @@ import './index.css'
 window.AudioContext = window.AudioContext || window.webkitAudioContext
 
 const ROOM_NAME = window.location.pathname.replace('/', '') || ''
-const HOST = 'wss://remotely-voice-server.australiaeast.cloudapp.azure.com:443'
+const HOST = 'ws://remotely-voice-server.australiaeast.cloudapp.azure.com'
 const store = configureStore()
 const actions = bindActionCreators(Actions, store.dispatch)
 const connector = new Connector(HOST, actions, store)
