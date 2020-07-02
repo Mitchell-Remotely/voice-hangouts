@@ -13,7 +13,7 @@ import './index.css'
 window.AudioContext = window.AudioContext || window.webkitAudioContext
 
 const ROOM_NAME = window.location.pathname.replace('/', '') || ''
-const HOST = location.href.replace('/^http/', 'ws')
+const HOST = location.href.replace('http', 'ws')
 const store = configureStore()
 const actions = bindActionCreators(Actions, store.dispatch)
 const connector = new Connector(HOST, actions, store)
