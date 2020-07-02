@@ -35,7 +35,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      title: 'Voice Hangouts',
+      title: 'Remotely Voice Rooms',
       template: './client/index.template.html'
     }),
     !isDev && new WebpackCdnPlugin({
