@@ -1,3 +1,3 @@
 window.onmessage = (event) => {
-    event.source.window.postMessage('GOT_YOU_IFRAME', '*')
-}
+    event.source.window.postMessage('GOT_YOU_IFRAME', '*');
+};
