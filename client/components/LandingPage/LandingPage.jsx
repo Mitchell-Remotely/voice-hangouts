@@ -16,8 +16,8 @@ function LandingPage () {
 
   return (
     <div className={styles.landingPage}>
-      <h1>Voice Hangouts</h1>
-      <p key='subtitle'>Truly lightweight audio-only WebRTC chat</p>
+      <h1>Remotely rooms</h1>
+      <p key='subtitle'>Immersive meetings</p>
       <div key='form' className={styles.startChatForm}>
         <span className={styles.createRoomInput}>
           <span className={styles.domain}>{DOMAIN_URL}</span>

@@ -2,7 +2,10 @@ body,
 input {
   font: inherit;
 }
-
+body {
+ padding:0;
+ margin:0;
+}
 p {
   color: #4d5659;
 }
