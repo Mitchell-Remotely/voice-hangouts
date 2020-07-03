@@ -4,7 +4,11 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="text/javascript" src="/iframeinterop.js"></script>
+    <div id="root"></div>  
+    <script type="text/javascript">
+      window.onmessage = (event) => {
+          event.source.window.postMessage('GOT_YOU_IFRAME', '*');
+      };
+    </script>
   </body>
 </html>

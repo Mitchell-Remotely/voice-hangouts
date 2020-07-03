@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9b716745a86dd1d4943b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d954c8eb8d8210f91ce5"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1685,10 +1685,11 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_room__1IqIi {\r\n  width: 85%;\r\n  height: 100%;\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userList__334Ma {\r\n  width: 200px;\r\n  margin: 0 10px;\r\n  border-radius: 2px;\r\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListRow__1D63Q {\r\n  text-align: start;\r\n  margin: 6px 15px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListName__16gdr {\r\n  vertical-align: middle;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0 {\r\n  margin: 0 10px 0 7px;;\r\n  border-radius: 2px;\r\n  border: none;\r\n  background-color: #e7e8e9;\r\n  background-size: 22px;\r\n  cursor: pointer;\r\n  width: 30px;\r\n  height: 30px;\r\n  line-height: 30px;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n  font-size: 1.2rem;\r\n  color: #557588;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0:hover {\r\n  background-color: #d9dedf;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0[disabled] {\r\n  opacity: 0.5;\r\n  cursor: default;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0[disabled]:hover {\r\n  background-color: #e7e8e9;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_mic__1-QOV {\r\n  background-image: url(/assets/images/mic.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_micOff__3eKea {\r\n  background-image: url(/assets/images/mic_off.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_volumeUp__VR7uu {\r\n  background-image: url(/assets/images/volume_up.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_volumeOff__2zozk {\r\n  background-image: url(/assets/images/volume_off.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_chatRoom__2st3T {\r\n  border-radius: 2px;\r\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);\r\n  height: 100%;\r\n  display: flex;\r\n  flex: 1;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messages__2u6XI {\r\n  width: 100%;\r\n  flex: 1;\r\n  text-align: start;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageBox__2nn2_ {\r\n  display: flex;\r\n  width: 100%;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageBox__2nn2_[disabled] {\r\n  opacity: 0.5;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageRow__1rMgE {\r\n  line-height: 22px;\r\n  margin: 6px;\r\n  display: flex;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageUser__nID_l {\r\n  color: #2756b1;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageContent__15LYq {\r\n  margin: 0 8px;\r\n  flex: 1;\r\n  word-break: break-all;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_timestamp__3-SgK {\r\n  cursor: pointer;\r\n  color: grey;\r\n  font-size: 0.7rem;\r\n  text-align: end;\r\n  white-space: nowrap;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_timestamp__3-SgK:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userNameBox__2GNtY {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  cursor: pointer;\r\n  color: white;\r\n  background-color: #00b0e9;\r\n  border: none;\r\n  font: inherit;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userName__2V4O6 {\r\n  width: 100px;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n  margin: 0 5px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userName__2V4O6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_editUserName___JUK- {\r\n  width: 80%;\r\n  color: white;\r\n  background: inherit;\r\n  border: none;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageInput__KZPKD {\r\n  border: 1px #00b0e9 solid;\r\n  padding: 10px;\r\n  flex: 1;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_sendButton__2XfBt {\r\n  width: 40px;\r\n  background-image: url(/assets/images/send.svg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-color: #00b0e9;\r\n  border: none;\r\n  border-bottom-right-radius: 2px;\r\n  text-align: center;\r\n  cursor: pointer;\r\n}\r\n", ""]);
+exports.push([module.i, ".F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_room__1IqIi {\r\n  width: 100%;\r\n  height: 100%;\r\n  margin: 0;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_iframe__1jvww{\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userList__334Ma {\r\n  position: absolute;\r\n  left:0;\r\n  width: 200px;\r\n  height:100%;\r\n  margin: 0 10px;\r\n  background-color: rgba(255, 255, 255, 0.5);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListRow__1D63Q {\r\n  text-align: start;\r\n  margin: 6px 15px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListName__16gdr {\r\n  vertical-align: middle;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0 {\r\n  margin: 0 10px 0 7px;;\r\n  border-radius: 2px;\r\n  border: none;\r\n  background-color: #e7e8e9;\r\n  background-size: 22px;\r\n  cursor: pointer;\r\n  width: 30px;\r\n  height: 30px;\r\n  line-height: 30px;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n  font-size: 1.2rem;\r\n  color: #557588;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0:hover {\r\n  background-color: #d9dedf;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0[disabled] {\r\n  opacity: 0.5;\r\n  cursor: default;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0[disabled]:hover {\r\n  background-color: #e7e8e9;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_mic__1-QOV {\r\n  background-image: url(/assets/images/mic.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_micOff__3eKea {\r\n  background-image: url(/assets/images/mic_off.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_volumeUp__VR7uu {\r\n  background-image: url(/assets/images/volume_up.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_volumeOff__2zozk {\r\n  background-image: url(/assets/images/volume_off.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_chatRoom__2st3T {\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: inset 0px 8px 16px 3px rgba(0,0,0,0.75);\r\n  -moz-box-shadow: inset 0px 8px 16px 3px rgba(0,0,0,0.75);\r\n  box-shadow: inset 0px 8px 16px 3px rgba(0,0,0,0.75);\r\n  background: white;\r\n  height: 10%;\r\n  position: absolute;\r\n  bottom:0;\r\n  right:0;\r\n  display: flex;\r\n  flex: 1;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messages__2u6XI {\r\n  width: 100%;\r\n  flex: 1;\r\n  text-align: start;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageBox__2nn2_ {\r\n  display: flex;\r\n  width: 100%;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageBox__2nn2_[disabled] {\r\n  opacity: 0.5;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageRow__1rMgE {\r\n  line-height: 22px;\r\n  margin: 6px;\r\n  display: flex;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageUser__nID_l {\r\n  color: #2756b1;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageContent__15LYq {\r\n  margin: 0 8px;\r\n  flex: 1;\r\n  word-break: break-all;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_timestamp__3-SgK {\r\n  cursor: pointer;\r\n  color: grey;\r\n  font-size: 0.7rem;\r\n  text-align: end;\r\n  white-space: nowrap;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_timestamp__3-SgK:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userNameBox__2GNtY {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  cursor: pointer;\r\n  color: white;\r\n  background-color: #00b0e9;\r\n  border: none;\r\n  font: inherit;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userName__2V4O6 {\r\n  width: 100px;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n  margin: 0 5px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userName__2V4O6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_editUserName___JUK- {\r\n  width: 80%;\r\n  color: white;\r\n  background: inherit;\r\n  border: none;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageInput__KZPKD {\r\n  border: 1px #00b0e9 solid;\r\n  padding: 10px;\r\n  flex: 1;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_sendButton__2XfBt {\r\n  width: 40px;\r\n  background-image: url(/assets/images/send.svg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-color: #00b0e9;\r\n  border: none;\r\n  border-bottom-right-radius: 2px;\r\n  text-align: center;\r\n  cursor: pointer;\r\n}\r\n", ""]);
 // Exports
 exports.locals = {
 	"room": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_room__1IqIi",
+	"iframe": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_iframe__1jvww",
 	"userList": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userList__334Ma",
 	"userListRow": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListRow__1D63Q",
 	"userListName": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListName__16gdr",
@@ -1721,7 +1722,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body,\r\ninput {\r\n  font: inherit;\r\n}\r\n\r\np {\r\n  color: #4d5659;\r\n}\r\n\r\n* {\r\n  font-family: Arial;\r\n  box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n  outline: none;\r\n}\r\n", ""]);
+exports.push([module.i, "body,\r\ninput {\r\n  font: inherit;\r\n}\r\nbody {\r\n padding:0;\r\n margin:0;\r\n}\r\np {\r\n  color: #4d5659;\r\n}\r\n\r\n* {\r\n  font-family: Arial;\r\n  box-sizing: border-box;\r\n}\r\n\r\n*:focus {\r\n  outline: none;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -3886,7 +3887,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 const ROOM_NAME = window.location.pathname.replace('/', '') || '';
-const HOST = 'wss://remotely-voice-server.azurewebsites.net/';
+const HOST = location.href.replace('http', 'ws');
 const store = Object(__WEBPACK_IMPORTED_MODULE_6__store__["a" /* default */])();
 const actions = Object(__WEBPACK_IMPORTED_MODULE_2_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_5__actions__["a" /* default */], store.dispatch);
 const connector = new __WEBPACK_IMPORTED_MODULE_7__connector__["a" /* default */](HOST, actions, store);
@@ -35216,7 +35217,7 @@ function log(...message) {
 
 
 
-const DOMAIN_URL = 'remotely-voice-test.azurewebsites.net/';
+const DOMAIN_URL = 'remotely-voice-server.australiaeast.cloudapp.azure.com/';
 
 function LandingPage() {
   function joinRoom({ currentTarget }) {
@@ -35235,12 +35236,12 @@ function LandingPage() {
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'h1',
       null,
-      'Voice Hangouts'
+      'Remotely rooms'
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'p',
       { key: 'subtitle' },
-      'Truly lightweight audio-only WebRTC chat'
+      'Immersive meetings'
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
@@ -35505,13 +35506,14 @@ function Room({
   return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     'div',
     { className: __WEBPACK_IMPORTED_MODULE_5__Room_css___default.a.room },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('iframe', { src: 'https://sgremotelywebserver.blob.core.windows.net/remotelywebtest/index.html', className: __WEBPACK_IMPORTED_MODULE_5__Room_css___default.a.iframe }),
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
       'div',
       { className: __WEBPACK_IMPORTED_MODULE_5__Room_css___default.a.userList },
       __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         'h3',
         null,
-        'Voice Hangouts'
+        'Participants'
       ),
       users.map(({ uid, userName, stream, mute }) => __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         'div',

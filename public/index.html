@@ -1,10 +1,14 @@
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <title>Voice Hangouts</title>
+    <title>Remotely Voice Rooms</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="text/javascript" src="/bundle.js"></script>
-  </body>
+    <div id="root"></div>  
+    <script type="text/javascript">
+      window.onmessage = (event) => {
+          event.source.window.postMessage('GOT_YOU_IFRAME', '*');
+      };
+    </script>
+  <script type="text/javascript" src="/bundle.js"></script></body>
 </html>
