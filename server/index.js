@@ -2,32 +2,13 @@ const Koa = require('koa')
 const convert = require('koa-convert')
 const Router = require('koa-router')
 const send = require('koa-send')
-const greenlock = require('greenlock-koa');
 const websockify = require('koa-websocket')
 
 const SignalingService = require('./signaling-service')
 const config = require('../webpack.config.js')
 const isDev = false;
 
-const le = greenlock.create({
-    version: 'draft-11' // Let's Encrypt v2
-    // You MUST change this to 'https://acme-v02.api.letsencrypt.org/directory' in production
-  , server: isDev ? 'https://acme-staging-v02.api.letsencrypt.org/directory' : 'https://acme-v02.api.letsencrypt.org/directory'
-  
-  , email: 'admin@remotelyhq.com'
-  , agreeTos: true
-  , approveDomains: [ 'remotely-voice-server.australiaeast.cloudapp.azure.com' ]
-  
-    // Join the community to get notified of important updates
-    // and help make greenlock better
-  , communityMember: true
-  
-  , configDir: require('os').homedir() + '/acme/etc'
-  
-  //, debug: true
-});
-
-const app = websockify(new Koa(), wsOptions, le.httpsOptions)
+const app = websockify(new Koa())
 const router = new Router()
 const wsRouter = new Router()
 const PORT = process.env.PORT || 3000
