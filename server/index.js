@@ -11,7 +11,7 @@ const isDev = false;
 const app = websockify(new Koa())
 const router = new Router()
 const wsRouter = new Router()
-const PORT = process.env.PORT || 443
+const PORT = process.env.PORT || 3000
 
 router.get('*', (ctx, next) => {
   const url = ctx.path
