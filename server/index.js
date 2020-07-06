@@ -2,7 +2,7 @@ const Koa = require('koa')
 const convert = require('koa-convert')
 const Router = require('koa-router')
 const send = require('koa-send')
-const greenlock = require('greenlock-express');
+const greenlock = require('greenlock-koa');
 const websockify = require('koa-websocket')
 
 const SignalingService = require('./signaling-service')
