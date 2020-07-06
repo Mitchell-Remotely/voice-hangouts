@@ -11,7 +11,7 @@ const isDev = false;
 const app = websockify(new Koa())
 const router = new Router()
 const wsRouter = new Router()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 443
 
 router.get('*', (ctx, next) => {
   const url = ctx.path
@@ -63,4 +63,4 @@ if (isDev) {
     .use(convert(hotMiddleware(compiler)))
 }
 
-app.listen(PORT)
+app.listen(PORT, isDev?'localhost': '0.0.0.0');
