@@ -24,6 +24,7 @@
     "css-loader": "^3.6.0",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
+    "greenlock-express": "^4.0.3",
     "greenlock-koa": "^2.1.4",
     "js-yaml": "^3.13.1",
     "koa": "^2.4.1",
