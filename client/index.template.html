@@ -7,10 +7,10 @@
     <div id="root"></div>  
     <script type="text/javascript">
       window.onmessage = (event) => {
-        console.log("Got event ", event);
         if(event.origin !== "https://sgremotelywebserver.blob.core.windows.net/remotelywebtest/index.html"){
-          console.log("Wrong origin. Something naughty is going on here");
+          return;
         }
+        console.log("Got event ", event);
         if(!!event.data){
           console.log("data: ", event.data);
         }
