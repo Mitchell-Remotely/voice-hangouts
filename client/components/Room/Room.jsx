@@ -22,7 +22,7 @@ function Room ({
 
       ;(async () => {
         connector.connect()
-        setUser({ stream: await connector.getUserMedia(), roomName: window.location.pathname })
+        setUser({ stream: await connector.getUserMedia(), roomName: window.location.pathname.split('/')[0] })
         connector.joinRoom()
         window.addEventListener('beforeunload', onLeaveRoom)
       })()
