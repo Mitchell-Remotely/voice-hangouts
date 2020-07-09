@@ -49,6 +49,7 @@ class SignalingService {
 
   onMessage (ws, message) {
     const { type, payload } = JSON.parse(message)
+    console.log("Getting message ",ws , message);
     this[`onClient${type[0].toUpperCase() + type.slice(1)}`](ws, payload)
   }
 
