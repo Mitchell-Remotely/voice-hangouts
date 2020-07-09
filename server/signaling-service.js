@@ -30,6 +30,7 @@ class SignalingService {
 
   broadcastToRoomPeers (type, ws, payload, includeSelf) {
     this.wsClients.forEach((wsClient) => {
+      console.log("Room ", wsClient.roomName , ws.roomName);
       if (wsClient.roomName === ws.roomName && (includeSelf || wsClient.uid !== ws.uid)) {
         this.send(wsClient, {
           type,
@@ -49,7 +50,6 @@ class SignalingService {
 
   onMessage (ws, message) {
     const { type, payload } = JSON.parse(message)
-    console.log("Getting message ",ws , message);
     this[`onClient${type[0].toUpperCase() + type.slice(1)}`](ws, payload)
   }
 
