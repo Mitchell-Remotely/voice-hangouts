@@ -82,10 +82,10 @@ function Room ({
   const users = [user, ...Array.from(clients.values())].filter(
     client => client.uid
   )
-
+  //https://sgremotelywebserver.blob.core.windows.net/remotelywebtest/index.html
   return (
     <div className={styles.room}>
-      <iframe id="room" src="https://sgremotelywebserver.blob.core.windows.net/remotelywebtest/index.html" className={styles.iframe}></iframe>
+      <iframe id="room" src="https://remotelygame.australiaeast.cloudapp.azure.com" className={styles.iframe}></iframe>
       <div className={styles.userList}>
         <h3>Participants</h3>
         {users.map(({ uid, userName, stream, mute }) => (
