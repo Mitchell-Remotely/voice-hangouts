@@ -6,9 +6,31 @@
   <body>
     <div id="root"></div>  
     <script type="text/javascript">
-      window.onmessage = (event) => {
-          event.source.window.postMessage('GOT_YOU_IFRAME', '*');
-      };
+      document.addEventListener("DOMContentLoaded", function(){
+        // Assign handler to message event
+        if ( window.addEventListener ) {
+            window.addEventListener('message', handleMessage, false);
+        } else if ( window.attachEvent ) { // ie8
+            window.attachEvent('onmessage', handleMessage);
+        }
+        function handleMessage (event) {
+          if(event.origin !== "https://sgremotelywebserver.blob.core.windows.net/remotelywebtest/index.html"){
+            return;
+          }
+          console.log("Got event ", event);
+          if(!!event.data){
+            console.log("data: ", event.data);
+          }
+        };
+        function sendToIframe(method, data){
+          if(!!window.gameframe){
+            window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
+          }
+          console.log("Method data json" , method, data, JSON.stringify({'method':method,'parameters':data}));
+          window.gameframe.postmessage(JSON.stringify({'method':method,'parameters':data}),'*');
+        }
+        window.sendtoiframe = sendToIframe;
+      });
     </script>
   <script type="text/javascript" src="/bundle.js"></script></body>
 </html>
