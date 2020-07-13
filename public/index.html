@@ -14,7 +14,7 @@
             window.attachEvent('onmessage', handleMessage);
         }
         function handleMessage (event) {
-          if(event.origin !== "https://sgremotelywebserver.blob.core.windows.net/remotelywebtest/index.html"){
+          if(event.origin !== "https://remotelygame.australiaeast.cloudapp.azure.com"){
             return;
           }
           console.log("Got event ", event);
@@ -23,7 +23,7 @@
           }
         };
         function sendToIframe(method, data){
-          if(!!window.gameframe){
+          if(!window.gameframe){
             window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
           }
           console.log("Method data json" , method, data, JSON.stringify({'method':method,'parameters':data}));
