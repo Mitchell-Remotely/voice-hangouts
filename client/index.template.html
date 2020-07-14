@@ -17,7 +17,6 @@
           if(event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com"){
             return;
           }
-          window.gameframe = event.source;
           console.log("Got event ", event);
           if(!!event.data){
             console.log("data: ", event.data);
