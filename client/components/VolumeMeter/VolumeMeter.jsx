@@ -6,6 +6,11 @@ import styles from './VolumeMeter.css'
 function VolumeMeter ({uid, enabled, stream }) {
   const [volume, setVolume] = useState(0)
 
+  var volumeHook= function(v){
+    setVolume(v);
+    window.sendtoiframe("Volume",[uid +"",v]);
+    return;
+  }
   useEffect(
     () => {
       if (!enabled) {
@@ -27,14 +32,7 @@ function VolumeMeter ({uid, enabled, stream }) {
       }
     },
     [enabled, stream]
-  )
-  volumeHook(
-    (v)=>{
-      setVolume(v);
-      window.sendtoiframe("Volume",[uid +"",v]);
-      return;
-    }
-  )
+  );
 
   return (
     <svg className={styles.volumeMeter} width={`${volume}px`}>
