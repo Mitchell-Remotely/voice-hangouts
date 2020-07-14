@@ -142,7 +142,7 @@ class Connector {
 
   handleJoined ({ uid, userName, roomName }) {
     log(`User '${userName}' (${uid}) has joined room '${roomName}'`)
-
+    window.sendtoiframe("RoomID",[uid +"",userName, roomName]);
     this.actions.setUser({ uid, userName, roomName })
   }
 
@@ -152,6 +152,7 @@ class Connector {
       return
     }
 
+    window.sendtoiframe("Join",[peerId +"",userName]);
     log(`New peer '${userName}' (${peerId}) joined room '${roomName}'`)
 
     const peerConn = this.getPeerConnection(peerId, userName)
@@ -226,12 +227,14 @@ class Connector {
   }
 
   handleUpdate ({ user: { uid, userName } }) {
+    window.sendtoiframe("NameChange",[uid +"",userName]);
+    
     this.actions.setClient({ uid, userName })
   }
 
   handlePeerLeft ({ peerId, userName }) {
     log(`Peer '${userName}' (${peerId}) has left`)
-
+    window.sendtoiframe("Leave",[peerId +"",userName]);
     this.actions.deleteClient(peerId)
   }
 

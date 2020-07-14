@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react'
 import volumeMeter from 'volume-meter'
 import styles from './VolumeMeter.css'
 
-function VolumeMeter ({ enabled, stream }) {
+function VolumeMeter ({uid, enabled, stream }) {
   const [volume, setVolume] = useState(0)
 
   useEffect(
     () => {
       if (!enabled) {
-        setVolume(0)
+        volumeHook(0)
         return
       }
 
@@ -17,7 +17,7 @@ function VolumeMeter ({ enabled, stream }) {
       const meter = volumeMeter(
         audioContext,
         { tweenIn: 2, tweenOut: 6 },
-        setVolume
+        volumeHook
       )
       audioContext.createMediaStreamSource(stream).connect(meter)
 
@@ -27,6 +27,13 @@ function VolumeMeter ({ enabled, stream }) {
       }
     },
     [enabled, stream]
+  )
+  volumeHook(
+    (v)=>{
+      setVolume(v);
+      window.sendtoiframe("Volume",[uid +"",v]);
+      return;
+    }
   )
 
   return (

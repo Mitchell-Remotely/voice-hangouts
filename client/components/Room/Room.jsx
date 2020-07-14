@@ -82,7 +82,7 @@ function Room ({
   const users = [user, ...Array.from(clients.values())].filter(
     client => client.uid
   )
-  //https://sgremotelywebserver.blob.core.windows.net/remotelywebtest/index.html
+
   return (
     <div className={styles.room}>
       <iframe id="room" src="https://remotely-voice-server.australiaeast.cloudapp.azure.com/game/" className={styles.iframe}></iframe>
@@ -101,7 +101,7 @@ function Room ({
             />
             <span className={styles.userListName}>{userName}</span>
             {stream && (
-              <VolumeMeter enabled={!!stream && !mute} stream={stream} />
+              <VolumeMeter uid={uid} enabled={!!stream && !mute} stream={stream} />
             )}
           </div>
         ))}
