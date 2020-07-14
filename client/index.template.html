@@ -14,7 +14,7 @@
             window.attachEvent('onmessage', handleMessage);
         }
         function handleMessage (event) {
-          if(event.origin !== "https://remotelygame.australiaeast.cloudapp.azure.com"){
+          if(event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com"){
             return;
           }
           window.gameframe = event.source;
