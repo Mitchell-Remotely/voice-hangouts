@@ -85,7 +85,7 @@ function Room ({
   //https://sgremotelywebserver.blob.core.windows.net/remotelywebtest/index.html
   return (
     <div className={styles.room}>
-      <iframe id="room" src="./game/index.html" className={styles.iframe}></iframe>
+      <iframe id="room" src="../html/game/index.html/" className={styles.iframe}></iframe>
       <div className={styles.userList}>
         <h3>Participants</h3>
         {users.map(({ uid, userName, stream, mute }) => (
