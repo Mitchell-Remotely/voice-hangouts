@@ -27,7 +27,7 @@
             window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
           }
           console.log("Method data json" , method, data, JSON.stringify({'method':method,'parameters':data}));
-          window.gameframe.postmessage(JSON.stringify({'method':method,'parameters':data}),'*');
+          window.gameframe.postMessage(JSON.stringify({'method':method,'parameters':data}),'*');
         }
         window.sendtoiframe = sendToIframe;
       });
