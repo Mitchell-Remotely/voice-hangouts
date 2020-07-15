@@ -18,11 +18,12 @@
 .createRoomInput {
   border: 1px #00b0e9 solid;
   padding: 10px;
+  width:500px;
   border-radius: 3px;
 }
 
 .roomNameInput {
-  width: 100px;
+  width:500px;
   border: none;
   color: #00b0e9;
 }

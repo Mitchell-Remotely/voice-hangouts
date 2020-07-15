@@ -1,11 +1,15 @@
-import React from 'react'
+import  React, {useState}  from 'react'
 import styles from './LandingPage.css'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopy } from '@fortawesome/fontawesome-free-regular'
 
 const DOMAIN_URL = 'remotely-voice-server.australiaeast.cloudapp.azure.com/'
 
 function LandingPage () {
-  function joinRoom ({ currentTarget }) {
-    window.location.pathname = currentTarget.value || 'Ballroom'
+  const [disabled, setDisabled] = useState(false);
+  function joinRoom () {
+    window.location.pathname = inputVal;
   }
 
   function onRoomNameKeyPress (evt) {
@@ -13,29 +17,50 @@ function LandingPage () {
       joinRoom(evt)
     }
   }
+  function createGuid(){  
+    function S4() {  
+       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);  
+    }  
+    return (S4() + S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();  
+  }  
 
+  let inputVal = createGuid();
+  let copied = false;
   return (
     <div className={styles.landingPage}>
       <h1>Remotely rooms</h1>
       <p key='subtitle'>Immersive meetings</p>
       <div key='form' className={styles.startChatForm}>
-        <span className={styles.createRoomInput}>
-          <span className={styles.domain}>{DOMAIN_URL}</span>
-          <input
-            autoFocus
-            className={styles.roomNameInput}
-            placeholder='room'
-            onKeyPress={onRoomNameKeyPress}
-          />
-        </span>
-        <input
+        <div>
+          <span className={styles.createRoomInput}>
+            <input
+              className={styles.roomNameInput}
+              defaultValue = {DOMAIN_URL + inputVal}
+              onKeyPress={onRoomNameKeyPress}
+              disabled={disabled}
+            />      
+          </span> 
+        <button
           className={styles.startChatButton}
-          type='submit'
-          value='Go'
-          onClick={joinRoom}
-        />
-      </div>
+          >
+          <CopyToClipboard text={DOMAIN_URL + inputVal}
+            onCopy={() => copied = true}>
+            <FontAwesomeIcon icon={faCopy} />
+          </CopyToClipboard>
+        </button> 
+        </div>
     </div>
+    <div>
+      <button
+        className={styles.startChatButton}
+        onClick={joinRoom}
+      >
+        Go to room
+      </button>
+      <br/>
+      {copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+    </div>
+  </div>
   )
 }
 
