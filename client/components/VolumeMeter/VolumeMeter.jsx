@@ -5,10 +5,13 @@ import styles from './VolumeMeter.css'
 
 function VolumeMeter ({uid, enabled, stream }) {
   const [volume, setVolume] = useState(0)
-
+  var lastVolume = 0;
   var volumeHook= function(v){
     setVolume(v);
-    window.sendtoiframe("Volume",[uid +"",v]);
+    if(lastVolume != v){
+      window.sendtoiframe("Volume",[uid +"",v]);
+      lastVolume = v;
+    }
     return;
   }
   useEffect(
