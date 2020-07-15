@@ -14,7 +14,7 @@
             window.attachEvent('onmessage', handleMessage);
         }
         function handleMessage (event) {
-          if(event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com" || event.source.includes("react-devtools")){
+          if(event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com"){
             return;
           }
           console.log("Got event ", event);
