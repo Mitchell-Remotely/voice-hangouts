@@ -8,9 +8,10 @@ function VolumeMeter ({uid, enabled, stream }) {
   var lastVolume = 0;
   var volumeHook= function(v){
     setVolume(v);
-    if(lastVolume != v){
+    var rounded =Math.round(v * 100) / 100;
+    if(lastVolume != rounded){
       window.sendtoiframe("Volume",[uid +"",v]);
-      lastVolume = v;
+      lastVolume = rounded;
     }
     return;
   }
