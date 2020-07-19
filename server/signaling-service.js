@@ -41,11 +41,10 @@ class SignalingService {
             timestamp: new Date(),
             ...payload
           }
-        })
+        });
+        console.info(`[Broadcast] '${ws.uid}' broadcasted '${type}' to all peers in room '${ws.roomName}'.`)
       }
     })
-
-    console.info(`[Broadcast] '${ws.uid}' broadcasted '${type}' to all peers in room '${ws.roomName}'.`)
   }
 
   onMessage (ws, message) {
