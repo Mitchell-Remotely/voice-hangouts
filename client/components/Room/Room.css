@@ -110,6 +110,7 @@
 
 .messageBox {
   display: flex;
+  flex-direction: column-reverse;
   width: 100%;
 }
 
