@@ -106,11 +106,12 @@
   overflow-y: auto;
   overflow-x: none;
   text-align: start;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .messageBox {
   display: flex;
-  flex-direction: column-reverse;
   width: 100%;
 }
 
