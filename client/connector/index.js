@@ -199,6 +199,8 @@ class Connector {
 
     await peerConn.setLocalDescription(answer)
 
+    window.sendtoiframe("Join",[peerId +"",userName]);
+    
     this.send({
       type: 'answer',
       payload: {
