@@ -123,6 +123,8 @@
   line-height: 22px;
   margin: 6px;
   display: flex;
+  overflow-wrap: break-word;
+  white-space:wrap;
 }
 
 .messageUser {
