@@ -23,13 +23,13 @@
   left:0;
   width: 200px;
   height:100%;
-  margin: 0 10px;
+  margin: 0;
   background-color: transparent;
 }
 
 .userListRow {
   text-align: start;
-  margin: 1px 15px;
+  margin:0;
 }
 
 .userListName {
