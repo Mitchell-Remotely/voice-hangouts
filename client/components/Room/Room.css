@@ -103,7 +103,7 @@
 .messages {
   width: 100%;
   flex: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: none;
   text-align: start;
 }
