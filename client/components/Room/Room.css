@@ -91,7 +91,6 @@
   background: transparent;
   height: 20%;
   border:none;
-  overflow: auto;
   position: absolute;
   bottom:0;
   right:0;
@@ -104,6 +103,8 @@
 .messages {
   width: 100%;
   flex: 1;
+  overflow-y: scroll;
+  overflow-x: none;
   text-align: start;
 }
 
