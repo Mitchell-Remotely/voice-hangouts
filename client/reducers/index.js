@@ -48,13 +48,13 @@ export default function (state = initialState, { type, payload }) {
       return {
         ...state,
         messages: [
-          ...state.messages,
           {
             mid,
             uid,
             message,
             timestamp
-          }
+          },
+          ...state.messages
         ]
       }
     }
