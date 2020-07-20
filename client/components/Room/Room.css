@@ -88,7 +88,8 @@
   border:none;
   outline:none;
   background: transparent;
-  height: 10%;
+  height: 20%;
+  overflow: auto;
   position: absolute;
   bottom:0;
   right:0;
