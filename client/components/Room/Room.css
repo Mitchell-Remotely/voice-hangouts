@@ -115,7 +115,7 @@
 
 .messageRow {
   line-height: 22px;
-  margin: 6px;
+  margin: 0 6px;
   display: flex;
 }
 
