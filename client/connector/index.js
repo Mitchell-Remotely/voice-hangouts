@@ -152,9 +152,8 @@ class Connector {
       return
     }
 
-    console.log("order", order);
     window.sendtoiframe("Join",[peerId +"", order,userName]);
-    log(`New peer '${userName}' (${peerId}) joined room '${roomName}'`)
+    log(`New peer '${userName}' (${peerId}, ${order}) joined room '${roomName}'`)
 
     const peerConn = this.getPeerConnection(peerId, userName)
 
