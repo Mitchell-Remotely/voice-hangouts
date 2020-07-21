@@ -142,7 +142,7 @@ class Connector {
 
   handleJoined ({ uid, userName, roomName }) {
     log(`User '${userName}' (${uid}) has joined room '${roomName}'`)
-    window.sendtoiframe("RoomID",[uid +"",userName, roomName]);
+    window.sendtoiframe("RoomID",[roomName, uid +"",userName]);
     this.actions.setUser({ uid, userName, roomName })
   }
 
@@ -200,7 +200,7 @@ class Connector {
     await peerConn.setLocalDescription(answer)
 
     window.sendtoiframe("Join",[peerId +"",userName]);
-    
+
     this.send({
       type: 'answer',
       payload: {
