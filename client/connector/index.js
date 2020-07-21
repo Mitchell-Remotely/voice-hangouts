@@ -200,7 +200,7 @@ class Connector {
 
     await peerConn.setLocalDescription(answer);
     console.log("order", order);
-    window.sendtoiframe("Join",[peerId +"",userName]);
+    window.sendtoiframe("Join",[peerId +"",order,userName]);
 
     this.send({
       type: 'answer',
