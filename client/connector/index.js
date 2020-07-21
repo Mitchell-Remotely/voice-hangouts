@@ -140,19 +140,20 @@ class Connector {
     return this.stream
   }
 
-  handleJoined ({ uid, userName, roomName }) {
-    log(`User '${userName}' (${uid}) has joined room '${roomName}'`)
-    window.sendtoiframe("RoomID",[roomName, uid +"",userName]);
+  handleJoined ({ uid,order, userName, roomName }) {
+    log(`User '${userName}' (${uid},${order}) has joined room '${roomName}'`)
+    window.sendtoiframe("RoomID",[roomName, uid +"", order,userName]);
     this.actions.setUser({ uid, userName, roomName })
   }
 
-  async handlePeerJoined ({ peerId, userName, roomName }) {
+  async handlePeerJoined ({ peerId,order, userName, roomName }) {
     // If peer connection has established, we skip the negotiation process
     if (this.getClient(peerId)) {
       return
     }
 
-    window.sendtoiframe("Join",[peerId +"",userName]);
+    console.log("order", order);
+    window.sendtoiframe("Join",[peerId +"", order,userName]);
     log(`New peer '${userName}' (${peerId}) joined room '${roomName}'`)
 
     const peerConn = this.getPeerConnection(peerId, userName)
@@ -181,7 +182,7 @@ class Connector {
     log(`Sent local stream to remote user '${userName}' (${peerId})`)
   }
 
-  async handleOffer ({ peerId, userName, offer }) {
+  async handleOffer ({ peerId,order, userName, offer }) {
     log(`Received offer from '${userName}' (${peerId})`)
 
     const peerConn = this.getPeerConnection(peerId, userName)
@@ -197,8 +198,8 @@ class Connector {
 
     const answer = await peerConn.createAnswer()
 
-    await peerConn.setLocalDescription(answer)
-
+    await peerConn.setLocalDescription(answer);
+    console.log("order", order);
     window.sendtoiframe("Join",[peerId +"",userName]);
 
     this.send({
@@ -212,19 +213,19 @@ class Connector {
     log(`Sent answer to '${userName}' (${peerId})`)
   }
 
-  async handleAnswer ({ peerId, userName, answer }) {
+  async handleAnswer ({ peerId,order, userName, answer }) {
     log(`Received answer from '${userName}' (${peerId})`)
 
     await this.getClient(peerId).peerConn.setRemoteDescription(new RTCSessionDescription(answer))
   }
 
-  async handleCandidate ({ peerId, userName, candidate }) {
+  async handleCandidate ({ peerId,order, userName, candidate }) {
     log(`Received ICE candidate from '${userName}' (${peerId})`)
 
     await this.getClient(peerId).peerConn.addIceCandidate(new RTCIceCandidate(candidate))
   }
 
-  handleMessage ({ peerId, message, timestamp }) {
+  handleMessage ({ peerId,order, message, timestamp }) {
     this.actions.addMessage(peerId, message, timestamp)
   }
 

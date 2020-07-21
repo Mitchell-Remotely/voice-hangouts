@@ -1,4 +1,5 @@
 const uuidv4 = require('uuid/v4')
+var order = 0;
 
 class SignalingService {
   constructor (wsClients) {
@@ -18,6 +19,7 @@ class SignalingService {
           type,
           payload: {
             peerId: ws.uid,
+            order: ws.order,
             userName: ws.userName,
             [type]: payload[type]
           }
@@ -30,19 +32,20 @@ class SignalingService {
 
   broadcastToRoomPeers (type, ws, payload, includeSelf) {
     this.wsClients.forEach((wsClient) => {
-      console.log("Room ", wsClient.roomName , ws.roomName, includeSelf, wsClient.uid, ws.uid, payload, type);
+      console.log("Room ", wsClient.roomName, wsClient.order , ws.roomName, includeSelf, wsClient.uid, ws.uid, payload, type);
       if (wsClient.roomName === ws.roomName && (includeSelf || wsClient.uid !== ws.uid)) {
         this.send(wsClient, {
           type,
           payload: {
             peerId: ws.uid,
+            order: ws.order,
             userName: ws.userName,
             roomName: ws.roomName,
             timestamp: new Date(),
             ...payload
           }
         });
-        console.info(`[Broadcast] '${ws.uid}' broadcasted '${type}' to all peers in room '${ws.roomName}'.`)
+        console.info(`[Broadcast] '${ws.uid}' '${ws.order}' broadcasted '${type}' to all peers in room '${ws.roomName}'.`)
       }
     })
   }
@@ -51,12 +54,12 @@ class SignalingService {
     const { type, payload } = JSON.parse(message)
     this[`onClient${type[0].toUpperCase() + type.slice(1)}`](ws, payload)
   }
-
   onClientJoin (ws, payload) {
     const { uid, userName, roomName } = payload
 
     // Store the client
     ws.uid = uid || uuidv4()
+    ws.order = (order++);
     ws.userName = userName
     ws.roomName = roomName
 
@@ -65,6 +68,7 @@ class SignalingService {
       type: 'joined',
       payload: {
         uid: ws.uid,
+        order: (order++),
         userName: ws.userName,
         roomName: ws.roomName
       }
