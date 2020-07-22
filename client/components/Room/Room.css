@@ -87,6 +87,7 @@
 
 .chatRoom {
   border:none;
+  max-width:400px;
   outline:none;
   background: transparent;
   height: 20%;
