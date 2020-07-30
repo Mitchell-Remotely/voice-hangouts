@@ -78,6 +78,9 @@ function Room ({
       url
     )
   }
+  function endMeeting(){
+    window.location.pathname = "/post-meeting";
+  }
 
   const users = [user, ...Array.from(clients.values())].filter(
     client => client.uid
@@ -159,6 +162,11 @@ function Room ({
         .map(([id, peer]) => (
           <audio key={id} autoPlay src={peer.streamUrl} />
         ))}
+      <button className={styles.endButton}
+            value='End Meeting'
+            onClick={endMeeting}>
+              End meeting
+      </button>
     </div>
   )
 }

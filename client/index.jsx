@@ -8,6 +8,7 @@ import configureStore from './store'
 import Connector from './connector'
 import LandingPage from './components/LandingPage'
 import Room from './components/Room'
+import MeetingEnd from './components/MeetingEnd'
 import './index.css'
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext
@@ -22,9 +23,9 @@ render(
   <Provider store={store}>
     {!ROOM_NAME ? (
       <LandingPage connector={connector} />
-    ) : (
+    ) : ( ROOM_NAME == "post-meeting" ? (<MeetingEnd connector={connector}/>):(
       <Room connector={connector} />
-    )}
+    ))}
   </Provider>,
   document.getElementById('root')
 )
