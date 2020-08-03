@@ -4,7 +4,7 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy } from '@fortawesome/fontawesome-free-regular'
 
-const DOMAIN_URL = window.location.hostname
+const DOMAIN_URL = window.location.hostname +"/"
 
 function LandingPage () {
   const [disabled, setDisabled] = useState(false);
