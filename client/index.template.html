@@ -14,7 +14,9 @@
             window.attachEvent('onmessage', handleMessage);
         }
         function handleMessage (event) {
-          if(event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react"))){
+          if((event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react"))) ||
+          (event.origin !== "https://dev-remotely-server.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react")))
+          ){
             return;
           }
           console.log("Got event ", event);
