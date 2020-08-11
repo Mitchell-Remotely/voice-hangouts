@@ -1,3 +1,4 @@
+sudo certbot certonly --cert-name remotely-meeting-rooms.australiaeast.cloudapp.azure.com -d remotely-meeting-rooms.australiaeast.cloudapp.azure.com
 sudo certbot renew --post-hook "apachectl graceful"
 sudo cd '/home/AzureUser/voice-hangouts/'
 sudo git reset --hard origin/master
