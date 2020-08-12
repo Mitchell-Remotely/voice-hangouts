@@ -1,4 +1,3 @@
-sudo certbot renew --post-hook "apachectl graceful"
 sudo cd '/home/AzureUser/voice-hangouts/'
 sudo git reset --hard origin/master
 sudo git pull
