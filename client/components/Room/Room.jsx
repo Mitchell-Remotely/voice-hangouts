@@ -88,7 +88,7 @@ function Room ({
 
   return (
     <div className={styles.room}>
-      <iframe id="room" src="https://remotely-meeting-rooms.azurefd.net/game/index.html" className={styles.iframe}></iframe>
+      <iframe id="room" src="https://remotely-meeting-rooms.azurefd.net/index.html" className={styles.iframe}></iframe>
       <div className={styles.userList}>
         {users.map(({ uid, userName, stream, mute }) => (
           <div key={uid} className={styles.userListRow}>
