@@ -28,7 +28,6 @@ async function GetConnector(){
     },
     headers:{'content-type':'application/json'}
   });
-  console.log("Response " , response);
   connector = new Connector(response.data.replace('http', 'ws'), actions, store);
   render(
     <Provider store={store}>
