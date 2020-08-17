@@ -40,14 +40,14 @@ function LandingPage () {
               disabled={disabled}
             />      
           </span> 
-        <button
-          className={styles.startChatButton}
-          >
           <CopyToClipboard text={DOMAIN_URL + inputVal}
             onCopy={() => copied = true}>
-            <FontAwesomeIcon icon={faCopy} />
+            <button
+              className={styles.startChatButton}
+              >
+                <FontAwesomeIcon icon={faCopy} />
+            </button> 
           </CopyToClipboard>
-        </button> 
         </div>
     </div>
     <div>
