@@ -96,6 +96,9 @@ class SignalingService {
   onClientUpdate (ws, payload) {
     this.broadcastToRoomPeers('update', ws, payload, false)
   }
+  onClientPacket (ws, payload) {
+    this.broadcastToRoomPeers('packet', ws, payload, false)
+  }
 
   onClientLeave (ws) {
     this.broadcastToRoomPeers('peer left', ws, {}, false)

@@ -14,6 +14,7 @@ function Room ({
   toggleUserAudio,
   user
 }) {
+  window.connector = connector;
   useEffect(
     () => {
       function onLeaveRoom () {
