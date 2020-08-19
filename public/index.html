@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
@@ -6,6 +7,7 @@
   <body>
     <div id="root"></div>  
     <script type="text/javascript">
+      var messageQueue = [];
       document.addEventListener("DOMContentLoaded", function(){
         // Assign handler to message event
         if ( window.addEventListener ) {
@@ -14,11 +16,25 @@
             window.attachEvent('onmessage', handleMessage);
         }
         function handleMessage (event) {
-          if(event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react"))){
+          if((event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react"))) ||
+          (event.origin !== "https://dev-remotely-server.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react"))) ||
+          (event.origin !== "https://remotely-meeting-rooms.azurefd.net" || (!!event.data && !!event.data.source && event.data.source.includes("react"))) ||
+          (event.origin !== "https://remotely-meeting.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react")))
+          ){
             return;
           }
-          if(!!event.data){
-            console.log("data: ", event.data);
+          console.log("Got event ", event);
+          if(!!event && !!event.length > 0){
+            if(event[0] == "packet"){
+              if(window.connector){
+                while (messageQueue.length > 0) {
+                  window.connector.sendPacket(messageQueue.pop());
+                }
+                window.connector.sendPacket(event[1]);
+              }else{
+                messageQueue.push(event[1])
+              }
+            }
           }
         };
         function sendToIframe(method, data){

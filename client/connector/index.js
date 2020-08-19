@@ -61,6 +61,10 @@ class Connector {
           this.handleMessage(payload)
           break
         }
+        case 'packet':{
+          this.handlePacket(payload);
+          break;
+        }
         default: {
           break
         }
@@ -224,6 +228,10 @@ class Connector {
     await this.getClient(peerId).peerConn.addIceCandidate(new RTCIceCandidate(candidate))
   }
 
+  async handlePacket ({ peerId,order, data }) {
+    log(`Received Packet candidate from '${userName}' (${peerId})`)
+    window.sendtoiframe("packet",[peerId +"",data]);
+  }
   handleMessage ({ peerId,order, message, timestamp }) {
     this.actions.addMessage(peerId, message, timestamp)
   }
@@ -296,6 +304,12 @@ class Connector {
       payload: {
         user
       }
+    })
+  }
+  sendPacket (payload){
+    this.send({
+      type:'packet',
+      payload:payload
     })
   }
 
