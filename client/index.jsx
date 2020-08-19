@@ -17,7 +17,7 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext
 const ROOM_NAME = window.location.pathname.replace('/', '') || ''
 const store = configureStore()
 const actions = bindActionCreators(Actions, store.dispatch)
-let connector ;
+let connector = new Connector(window.location.host.replace('http','ws'));
 
 async function GetConnector(){
   if(!ROOM_NAME) return;
@@ -51,7 +51,7 @@ async function GetConnector(){
     document.getElementById('root')
   );
 }
-GetConnector();
+//GetConnector();
 
 render(
   <Provider store={store}>
