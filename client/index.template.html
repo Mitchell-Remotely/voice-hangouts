@@ -35,10 +35,12 @@
             window.gameframe.addEventListener('load', ()=>{iFrameLoaded = true;});
           }
           if(!iFrameLoaded){
+            console.log("Caching event ", method , data);
             messageQueue.push({'method':method,'data':data});
           }else{
             while(messageQueue.length > 0){
               let poped =  messageQueue.pop();
+              console.log("Popping event ", poped);
               window.gameframe.postMessage(JSON.stringify({'method':poped['method'],'parameters':poped['data']}),'*');
             }
             window.gameframe.postMessage(JSON.stringify({'method':method,'parameters':data}),'*');
