@@ -22,6 +22,8 @@
           (event.origin !== "https://remotely-meeting-rooms.azurefd.net" || (!!event.data && !!event.data.source && event.data.source.includes("react"))) ||
           (event.origin !== "https://remotely-meeting.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react")))
           ){
+            if(event.length == 2)
+              console.log("Bad message", event);
             return;
           }
           console.log("Handling message from ", event);
