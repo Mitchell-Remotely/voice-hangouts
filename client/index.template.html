@@ -32,7 +32,10 @@
         function sendToIframe(method, data){
           if(!window.gameframe){
             window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
-            window.gameframe.addEventListener('load', ()=>{iFrameLoaded = true;});
+            window.gameframe.addEventListener('load', ()=>{
+              console.log("Loaded game frame");
+              iFrameLoaded = true;
+            });
           }
           if(!iFrameLoaded){
             console.log("Caching event ", method , data);
