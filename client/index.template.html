@@ -20,12 +20,12 @@
           if((event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com" ||
           event.origin !== "https://dev-remotely-server.australiaeast.cloudapp.azure.com" || 
           event.origin !== "https://remotely-meeting-rooms.azurefd.net" || 
-          event.origin !== "https://remotely-meeting.australiaeast.cloudapp.azure.com" ) && (event.data && event.data.length != 2)
+          event.origin !== "https://remotely-meeting.australiaeast.cloudapp.azure.com" )
           ){
             return;
           }
           console.log("Handling message from ", event);
-          if(!!event && event.length > 0){
+          if(event.data && event.data.length > 0){
             if(event[0] == "packet"){
               if(window.connector){
                 while (messageQueue.length > 0) {
