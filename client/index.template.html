@@ -31,9 +31,9 @@
                 while (messageQueue.length > 0) {
                   window.connector.sendPacket(messageQueue.pop());
                 }
-                window.connector.sendPacket(event[1]);
+                window.connector.sendPacket(event.data[1]);
               }else{
-                messageQueue.push(event[1])
+                messageQueue.push(event.data[1])
               }
             }else if(event.data[0] == "loaded"){
               iFrameLoaded=true;
