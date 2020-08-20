@@ -229,7 +229,7 @@ class Connector {
   }
 
   async handlePacket ({ peerId,order, data }) {
-    log(`Received Packet candidate from '${userName}' (${peerId})`)
+    log(`Received Packet candidate from '${peerId}' (${data})`)
     window.sendtoiframe("packet",[peerId +"",data]);
   }
   handleMessage ({ peerId,order, message, timestamp }) {
