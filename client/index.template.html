@@ -24,21 +24,28 @@
           ){
             return;
           }
-          console.log("Got event ", event);
-          if(!!event.data){
-            console.log("data: ", event.data);
+          if(!!event && !!event.length > 0){
+            if(event[0] == "packet"){
+              if(window.connector){
+                while (messageQueue.length > 0) {
+                  window.connector.sendPacket(messageQueue.pop());
+                }
+                window.connector.sendPacket(event[1]);
+              }else{
+                messageQueue.push(event[1])
+              }
+            }else if(event[0] == "loaded"){
+              iFrameLoaded=true;
+              sendToIframe("","");
+            }
           }
         };
         function sendToIframe(method, data){
           if(!window.gameframe){
             window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
-            window.gameframe.addEventListener('load', ()=>{
-              console.log("Loaded game frame");
-              iFrameLoaded = true;
-            });
           }
           if(!iFrameLoaded){
-            console.log("Caching event ", method , data);
+            if(method.length == 0) return;
             messageQueue.push({'method':method,'data':data});
           }else{
             while(messageQueue.length > 0){
@@ -46,6 +53,7 @@
               console.log("Popping event ", poped);
               window.gameframe.postMessage(JSON.stringify({'method':poped['method'],'parameters':poped['data']}),'*');
             }
+            if(method.length == 0) return;
             window.gameframe.postMessage(JSON.stringify({'method':method,'parameters':data}),'*');
           }
         }
