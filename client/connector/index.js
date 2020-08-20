@@ -307,6 +307,7 @@ class Connector {
     })
   }
   sendPacket (payload){
+    const user = this.getUser();
     this.send({
       type:'packet',
       payload:{'peerId':user.uid,'data':payload}
