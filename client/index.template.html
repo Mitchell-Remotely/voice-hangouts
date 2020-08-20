@@ -8,6 +8,8 @@
     <div id="root"></div>  
     <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function(){
+        var messageQueue = [];
+        var iFrameLoaded = false;
         // Assign handler to message event
         if ( window.addEventListener ) {
             window.addEventListener('message', handleMessage, false);
@@ -30,8 +32,17 @@
         function sendToIframe(method, data){
           if(!window.gameframe){
             window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
+            window.gameframe.addEventListener('load', ()=>{iFrameLoaded = true;});
           }
-          window.gameframe.postMessage(JSON.stringify({'method':method,'parameters':data}),'*');
+          if(!iFrameLoaded){
+            messageQueue.push({'method':method,'data':data});
+          }else{
+            while(messageQueue.length > 0){
+              let poped =  messageQueue.pop();
+              window.gameframe.postMessage(JSON.stringify({'method':poped['method'],'parameters':poped['data']}),'*');
+            }
+            window.gameframe.postMessage(JSON.stringify({'method':method,'parameters':data}),'*');
+          }
         }
         window.sendtoiframe = sendToIframe;
       });
