@@ -24,7 +24,8 @@
           ){
             return;
           }
-          if(!!event && !!event.length > 0){
+          console.log("Handling message from ", event);
+          if(!!event && event.length > 0){
             if(event[0] == "packet"){
               if(window.connector){
                 while (messageQueue.length > 0) {
