@@ -41,6 +41,7 @@
           }
         };
         function sendToIframe(method, data){
+          console.log("Getting send to iframe : ",method, data);
           if(!window.gameframe){
             window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
           }
