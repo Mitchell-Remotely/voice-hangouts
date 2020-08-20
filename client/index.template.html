@@ -17,10 +17,10 @@
             window.attachEvent('onmessage', handleMessage);
         }
         function handleMessage (event) {
-          if((event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com" ||
-          event.origin !== "https://dev-remotely-server.australiaeast.cloudapp.azure.com" || 
-          event.origin !== "https://remotely-meeting-rooms.azurefd.net" || 
-          event.origin !== "https://remotely-meeting.australiaeast.cloudapp.azure.com" )
+          if(!(event.origin === "https://remotely-voice-server.australiaeast.cloudapp.azure.com" ||
+          event.origin === "https://dev-remotely-server.australiaeast.cloudapp.azure.com" || 
+          event.origin === "https://remotely-meeting-rooms.azurefd.net" || 
+          event.origin === "https://remotely-meeting.australiaeast.cloudapp.azure.com" )
           ){
             return;
           }
