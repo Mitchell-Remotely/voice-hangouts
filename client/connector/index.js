@@ -228,7 +228,7 @@ class Connector {
     await this.getClient(peerId).peerConn.addIceCandidate(new RTCIceCandidate(candidate))
   }
 
-  async handlePacket ({ peerId,order, data }) {
+  async handlePacket ({ peerId, data }) {
     log(`Received Packet candidate from '${peerId}' (${data})`)
     window.sendtoiframe("packet",[peerId +"",data]);
   }
@@ -309,7 +309,7 @@ class Connector {
   sendPacket (payload){
     this.send({
       type:'packet',
-      payload:payload
+      payload:{'peerId':user.uid,'data':payload}
     })
   }
 
