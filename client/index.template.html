@@ -24,7 +24,6 @@
           ){
             return;
           }
-          console.log("Handling message from ", event);
           if(event.data && event.data.length > 0){
             if(event.data[0] == "packet"){
               if(window.connector){
@@ -37,24 +36,20 @@
               }
             }else if(event.data[0] == "loaded"){
               iFrameLoaded=true;
-              console.log("Loaded game");
               sendToIframe("","");
             }
           }
         };
         function sendToIframe(method, data){
-          console.log("Getting send to iframe : ",method, data);
           if(!window.gameframe){
             window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
           }
           if(!iFrameLoaded){
             if(method.length == 0) return;
-            console.log("Pushing method onto message queue");
             messageQueue.push({'method':method,'data':data});
           }else{
             while(messageQueue.length > 0){
               let poped =  messageQueue.pop();
-              console.log("Popping event ", poped);
               window.gameframe.postMessage(JSON.stringify({'method':poped['method'],'parameters':poped['data']}),'*');
             }
             if(method.length == 0) return;
