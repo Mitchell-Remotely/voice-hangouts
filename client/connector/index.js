@@ -9,6 +9,8 @@ class Connector {
 
   connect () {
     this.ws = new WebSocket(this.url)
+    const u = this.getUser();
+    window.sendtoiframe("NameChange",[u.uid +"",u.userName]);
 
     this.ws.addEventListener('open', () => {
       log('Signaling server connection success')
