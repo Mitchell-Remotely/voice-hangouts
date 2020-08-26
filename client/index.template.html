@@ -49,7 +49,7 @@
             messageQueue.push({'method':method,'data':data});
           }else{
             while(messageQueue.length > 0){
-              let poped =  messageQueue.pop();
+              let poped =  messageQueue.shift();
               window.gameframe.postMessage(JSON.stringify({'method':poped['method'],'parameters':poped['data']}),'*');
             }
             if(method.length == 0) return;
