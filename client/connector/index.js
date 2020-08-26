@@ -10,7 +10,6 @@ class Connector {
   connect () {
     this.ws = new WebSocket(this.url)
     const u = this.getUser();
-    window.sendtoiframe("NameChange",[u.uid +"",u.userName]);
 
     this.ws.addEventListener('open', () => {
       log('Signaling server connection success')
@@ -149,6 +148,7 @@ class Connector {
   handleJoined ({ uid,order, userName, roomName }) {
     log(`User '${userName}' (${uid},${order}) has joined room '${roomName}'`)
     window.sendtoiframe("RoomID",[roomName, uid +"", order,userName]);
+    window.sendtoiframe("NameChange",[u.uid +"",u.userName]);
     this.actions.setUser({ uid, userName, roomName })
   }
 
