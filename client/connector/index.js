@@ -148,7 +148,7 @@ class Connector {
   handleJoined ({ uid,order, userName, roomName }) {
     log(`User '${userName}' (${uid},${order}) has joined room '${roomName}'`)
     window.sendtoiframe("RoomID",[roomName, uid +"", order,userName]);
-    window.sendtoiframe("NameChange",[u.uid +"",u.userName]);
+    window.sendtoiframe("NameChange",[uid +"",userName]);
     this.actions.setUser({ uid, userName, roomName })
   }
 
