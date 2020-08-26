@@ -299,6 +299,8 @@ class Connector {
   }
 
   sendUpdate (user) {
+    const user = this.getUser();
+    window.sendtoiframe("NameChange",[user.uid +"",userName]);
     this.send({
       type: 'update',
       payload: {
