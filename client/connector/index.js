@@ -145,21 +145,21 @@ class Connector {
     return this.stream
   }
 
-  handleJoined ({ uid,order, userName, roomName }) {
-    log(`User '${userName}' (${uid},${order}) has joined room '${roomName}'`)
-    window.sendtoiframe("RoomID",[roomName, uid +"", order,userName]);
+  handleJoined ({ uid,order, userName, roomName, roomTime }) {
+    log(`User '${userName}' (${uid},${order}) has joined room '${roomName}' ${roomTime}`)
+    window.sendtoiframe("RoomID",[roomName, roomTime, uid +"", order,userName]);
     window.sendtoiframe("NameChange",[uid +"",userName]);
     this.actions.setUser({ uid, userName, roomName })
   }
 
-  async handlePeerJoined ({ peerId,order, userName, roomName }) {
+  async handlePeerJoined ({ peerId,order, userName, roomName, roomTime }) {
     // If peer connection has established, we skip the negotiation process
     if (this.getClient(peerId)) {
       return
     }
 
     window.sendtoiframe("Join",[peerId +"", order,userName]);
-    log(`New peer '${userName}' (${peerId}, ${order}) joined room '${roomName}'`)
+    log(`New peer '${userName}' (${peerId}, ${order}) joined room '${roomName}' with room time '${roomTime}'`)
 
     const peerConn = this.getPeerConnection(peerId, userName)
 
