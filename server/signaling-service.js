@@ -71,7 +71,7 @@ class SignalingService {
     //Get room time from first person, or anyone else (who would have had to get it from the first person)
     this.wsClients.forEach((wsClient) => {
         if (wsClient.roomName === ws.roomName){
-          ws.roomTime = wsClient.roomName;
+          ws.roomTime = wsClient.roomTime;
           return;
         }
       });
