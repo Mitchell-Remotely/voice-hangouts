@@ -55,6 +55,7 @@ class SignalingService {
 
   onMessage (ws, message) {
     const { type, payload } = JSON.parse(message)
+
     this[`onClient${type[0].toUpperCase() + type.slice(1)}`](ws, payload)
   }
   onClientJoin (ws, payload) {
@@ -70,7 +71,7 @@ class SignalingService {
 
     //Get room time from first person, or anyone else (who would have had to get it from the first person)
     this.wsClients.forEach((wsClient) => {
-        if (wsClient.roomName === ws.roomName){
+        if (wsClient.roomName === ws.roomName && wsClient.uid != ws.uid){
           ws.roomTime = wsClient.roomTime;
           return;
         }
