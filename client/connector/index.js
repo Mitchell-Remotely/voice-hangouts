@@ -38,7 +38,7 @@ class Connector {
       log('Signaling server connection success')
       this.actions.setChatRoomReady(true)
       while (openQueue.length > 0) {
-        this.ws.send(messageQueue.shift());
+        this.ws.send(openQueue.shift());
       }
     })
 
