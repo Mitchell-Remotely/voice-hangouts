@@ -1,13 +1,33 @@
 import { log } from '../utils'
 
 class Connector {
-  constructor (url, actions, store) {
-    this.url = url
+  constructor (actions, store) {
     this.actions = actions
     this.store = store
   }
 
-  connect () {
+  async connect () {
+    let res = "";
+    await axios({method:'post',
+      url:"https://fa-remotely-meetings-service.azurewebsites.net/api/FindServer",
+      data:{
+        meetingRoomID: ROOM_NAME 
+      },
+      headers:{'content-type':'application/json'}
+    })
+    .then(function (response) {
+      // handle success
+      res = response;
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+      console.log("Trying again....");
+      this.connect();
+      return;
+    })
+    if(!res) return;
+    this.url = response.data.replace('http', 'ws');
     this.ws = new WebSocket(this.url)
     const u = this.getUser();
 
