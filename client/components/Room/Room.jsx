@@ -88,7 +88,11 @@ function Room ({
   )
 
   return (
-    <div className={styles.room}>
+    <div className={styles.room} style="width: 100vw;
+    height: 100vh;
+    background: url(assets/images/campfire.jpg);
+    background-size: cover;
+    background-position: center;">
       <iframe id="room" src="https://remotely-meeting-rooms.azurefd.net/index.html" className={styles.iframe}></iframe>
       <div className={styles.userList}>
         {users.map(({ uid, userName, stream, mute }) => (
