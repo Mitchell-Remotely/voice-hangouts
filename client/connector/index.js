@@ -2,17 +2,19 @@ import { log } from '../utils'
 const axios = require('axios');
 
 class Connector {
-  constructor (actions, store) {
+  constructor (roomname, actions, store) {
+    this.roomname = roomname;
     this.actions = actions
     this.store = store
   }
 
   async connect () {
+    let self= this;
     let res = "";
     await axios({method:'post',
       url:"https://fa-remotely-meetings-service.azurewebsites.net/api/FindServer",
       data:{
-        meetingRoomID: ROOM_NAME 
+        meetingRoomID: self.roomname 
       },
       headers:{'content-type':'application/json'}
     })

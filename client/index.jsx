@@ -21,7 +21,7 @@ let connector ;
 
 async function GetConnector(){
   if(!ROOM_NAME) return;
-  connector = new Connector(actions, store);
+  connector = new Connector(ROOM_NAME,actions, store);
   render(
     <Provider store={store}>
       {
