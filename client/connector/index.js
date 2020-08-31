@@ -99,7 +99,7 @@ class Connector {
   }
 
   send (data) {
-    if (this.ws.readyState === this.ws.OPEN) {
+    if (this.ws && this.ws.readyState === this.ws.OPEN) {
       this.ws.send(JSON.stringify(data))
     } else {
       this.ws.addEventListener('open', function sendData () {
