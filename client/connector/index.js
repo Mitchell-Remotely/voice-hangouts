@@ -1,6 +1,6 @@
 import { log } from '../utils'
 const axios = require('axios');
-
+const openQueue = [];
 class Connector {
   constructor (roomname, actions, store) {
     this.roomname = roomname;
@@ -37,6 +37,9 @@ class Connector {
     this.ws.addEventListener('open', () => {
       log('Signaling server connection success')
       this.actions.setChatRoomReady(true)
+      while (openQueue.length > 0) {
+        this.ws.send(messageQueue.shift());
+      }
     })
 
     this.ws.addEventListener('close', () => {
@@ -102,10 +105,7 @@ class Connector {
     if (this.ws && this.ws.readyState === this.ws.OPEN) {
       this.ws.send(JSON.stringify(data))
     } else {
-      this.ws.addEventListener('open', function sendData () {
-        this.ws.send(JSON.stringify(data))
-        this.ws.removeEventListener('open', sendData)
-      }.bind(this))
+      openQueue.push(JSON.stringify(data));
     }
   }
 

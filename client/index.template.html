@@ -17,7 +17,8 @@
     <div id="root"></div>  
     <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function(){
-        var messageQueue = [];
+        var messageQueueDown = [];
+        var messageQueueUp = [];
         var iFrameLoaded = false;
         // Assign handler to message event
         if ( window.addEventListener ) {
@@ -36,12 +37,12 @@
           if(event.data && event.data.length > 0){
             if(event.data[0] == "packet"){
               if(window.connector){
-                while (messageQueue.length > 0) {
-                  window.connector.sendPacket(messageQueue.pop());
+                while (messageQueueUp.length > 0) {
+                  window.connector.sendPacket(messageQueueUp.shift());
                 }
                 window.connector.sendPacket(event.data[1]);
               }else{
-                messageQueue.push(event.data[1])
+                messageQueueUp.push(event.data[1])
               }
             }else if(event.data[0] == "loaded"){
               iFrameLoaded=true;
@@ -55,10 +56,10 @@
           }
           if(!iFrameLoaded){
             if(method.length == 0) return;
-            messageQueue.push({'method':method,'data':data});
+            messageQueueDown.push({'method':method,'data':data});
           }else{
-            while(messageQueue.length > 0){
-              let poped =  messageQueue.shift();
+            while(messageQueueDown.length > 0){
+              let poped =  messageQueueDown.shift();
               window.gameframe.postMessage(JSON.stringify({'method':poped['method'],'parameters':poped['data']}),'*');
             }
             if(method.length == 0) return;
