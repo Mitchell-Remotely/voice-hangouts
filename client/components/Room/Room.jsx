@@ -86,13 +86,16 @@ function Room ({
   const users = [user, ...Array.from(clients.values())].filter(
     client => client.uid
   )
+  const divStyle = {
+    width: '100vw',
+    height: '100vh',
+    backgroundImage: 'url(assets/images/campfire.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  };
 
   return (
-    <div className={styles.room} style="width: 100vw;
-    height: 100vh;
-    background: url(assets/images/campfire.jpg);
-    background-size: cover;
-    background-position: center;">
+    <div className={styles.room} style={divStyle}>
       <iframe id="room" src="https://remotely-meeting-rooms.azurefd.net/index.html" className={styles.iframe}></iframe>
       <div className={styles.userList}>
         {users.map(({ uid, userName, stream, mute }) => (
