@@ -30,7 +30,7 @@ class Connector {
       return;
     })
     if(!res) return;
-    this.url = response.data.replace('http', 'ws');
+    this.url = res.data.replace('http', 'ws');
     this.ws = new WebSocket(this.url)
     const u = this.getUser();
 
