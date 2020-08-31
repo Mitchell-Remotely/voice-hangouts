@@ -1,4 +1,5 @@
 import { log } from '../utils'
+const axios = require('axios');
 
 class Connector {
   constructor (actions, store) {
