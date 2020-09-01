@@ -1,18 +1,45 @@
 import { log } from '../utils'
-
+const axios = require('axios');
+const openQueue = [];
 class Connector {
-  constructor (url, actions, store) {
-    this.url = url
+  constructor (roomname, actions, store) {
+    this.roomname = roomname;
     this.actions = actions
     this.store = store
   }
 
-  connect () {
+  async connect () {
+    let self= this;
+    let res = "";
+    await axios({method:'post',
+      url:"https://fa-remotely-meetings-service.azurewebsites.net/api/FindServer",
+      data:{
+        meetingRoomID: self.roomname 
+      },
+      headers:{'content-type':'application/json'}
+    })
+    .then(function (response) {
+      // handle success
+      res = response;
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+      console.log("Trying again....");
+      this.connect();
+      return;
+    })
+    if(!res) return;
+    this.url = res.data.replace('http', 'ws');
     this.ws = new WebSocket(this.url)
+    const u = this.getUser();
 
     this.ws.addEventListener('open', () => {
       log('Signaling server connection success')
       this.actions.setChatRoomReady(true)
+      while (openQueue.length > 0) {
+        this.ws.send(openQueue.shift());
+      }
     })
 
     this.ws.addEventListener('close', () => {
@@ -75,13 +102,10 @@ class Connector {
   }
 
   send (data) {
-    if (this.ws.readyState === this.ws.OPEN) {
+    if (this.ws && this.ws.readyState === this.ws.OPEN) {
       this.ws.send(JSON.stringify(data))
     } else {
-      this.ws.addEventListener('open', function sendData () {
-        this.ws.send(JSON.stringify(data))
-        this.ws.removeEventListener('open', sendData)
-      }.bind(this))
+      openQueue.push(JSON.stringify(data));
     }
   }
 
@@ -144,20 +168,21 @@ class Connector {
     return this.stream
   }
 
-  handleJoined ({ uid,order, userName, roomName }) {
-    log(`User '${userName}' (${uid},${order}) has joined room '${roomName}'`)
-    window.sendtoiframe("RoomID",[roomName, uid +"", order,userName]);
+  handleJoined ({ uid,order, userName, roomName, roomTime }) {
+    log(`User '${userName}' (${uid},${order}) has joined room '${roomName}' ${roomTime}`)
+    window.sendtoiframe("RoomID",[roomName, roomTime, uid +"", order,userName]);
+    window.sendtoiframe("NameChange",[uid +"",userName]);
     this.actions.setUser({ uid, userName, roomName })
   }
 
-  async handlePeerJoined ({ peerId,order, userName, roomName }) {
+  async handlePeerJoined ({ peerId,order, userName, roomName, roomTime }) {
     // If peer connection has established, we skip the negotiation process
     if (this.getClient(peerId)) {
       return
     }
 
     window.sendtoiframe("Join",[peerId +"", order,userName]);
-    log(`New peer '${userName}' (${peerId}, ${order}) joined room '${roomName}'`)
+    log(`New peer '${userName}' (${peerId}, ${order}) joined room '${roomName}' with room time '${roomTime}'`)
 
     const peerConn = this.getPeerConnection(peerId, userName)
 
@@ -228,9 +253,9 @@ class Connector {
     await this.getClient(peerId).peerConn.addIceCandidate(new RTCIceCandidate(candidate))
   }
 
-  async handlePacket ({ peerId,order, data }) {
-    log(`Received Packet candidate from '${userName}' (${peerId})`)
-    window.sendtoiframe("packet",[peerId +"",data]);
+  async handlePacket ({ peerId, data }) {
+    log(`Received Packet candidate from '${peerId}' (${data})`)
+    window.sendtoiframe("Packet",[peerId +"",data]);
   }
   handleMessage ({ peerId,order, message, timestamp }) {
     this.actions.addMessage(peerId, message, timestamp)
@@ -299,6 +324,8 @@ class Connector {
   }
 
   sendUpdate (user) {
+    const u = this.getUser();
+    window.sendtoiframe("NameChange",[u.uid +"",u.userName]);
     this.send({
       type: 'update',
       payload: {
@@ -307,9 +334,10 @@ class Connector {
     })
   }
   sendPacket (payload){
+    const user = this.getUser();
     this.send({
       type:'packet',
-      payload:payload
+      payload:{'peerId':user.uid,'data':payload}
     })
   }
 

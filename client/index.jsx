@@ -22,14 +22,7 @@ let connector = new Connector(window.location.href.replace('http', 'ws'));
 
 async function GetConnector(){
   if(!ROOM_NAME) return;
-  let response = await axios({method:'post',
-    url:"https://fa-remotely-meetings-service.azurewebsites.net/api/FindServer",
-    data:{
-      meetingRoomID: ROOM_NAME 
-    },
-    headers:{'content-type':'application/json'}
-  });
-  connector = new Connector(response.data.replace('http', 'ws'), actions, store);
+  connector = new Connector(ROOM_NAME,actions, store);
   render(
     <Provider store={store}>
       {

@@ -1,4 +1,6 @@
 const uuidv4 = require('uuid/v4')
+const moment = require('moment-timezone');
+
 var order = 0;
 
 class SignalingService {
@@ -41,27 +43,39 @@ class SignalingService {
             order: ws.order,
             userName: ws.userName,
             roomName: ws.roomName,
+            roomTime: ws.roomTime,
             timestamp: new Date(),
             ...payload
           }
         });
-        console.info(`[Broadcast] '${ws.uid}' '${ws.order}' broadcasted '${type}' to all peers in room '${ws.roomName}'.`)
+        console.info(`[Broadcast] '${ws.uid}' '${ws.order}' broadcasted '${type}' to all peers in room '${ws.roomName}'. With room time '${ws.roomTime}'`)
       }
     })
   }
 
   onMessage (ws, message) {
     const { type, payload } = JSON.parse(message)
+
     this[`onClient${type[0].toUpperCase() + type.slice(1)}`](ws, payload)
   }
   onClientJoin (ws, payload) {
     const { uid, userName, roomName } = payload
 
     // Store the client
-    ws.uid = uid || uuidv4()
+    ws.uid = uid || uuidv4();
     ws.order = (order++);
-    ws.userName = userName
-    ws.roomName = roomName
+    ws.userName = userName;
+    ws.roomName = roomName;
+    ws.roomTime = moment().tz("UTC").format();
+    console.log(`[Client Join] UID: '${ws.uid}' ORDER: '${ws.order}'  ROOMNAME: '${ws.roomName}' ROOMTIME: '${ws.roomTime}'`)
+
+    //Get room time from first person, or anyone else (who would have had to get it from the first person)
+    this.wsClients.forEach((wsClient) => {
+        if (wsClient.roomName === ws.roomName && wsClient.uid != ws.uid){
+          ws.roomTime = wsClient.roomTime;
+          return;
+        }
+      });
 
     // Send vaild uid back to client
     this.send(ws, {
@@ -70,7 +84,8 @@ class SignalingService {
         uid: ws.uid,
         order: (order++),
         userName: ws.userName,
-        roomName: ws.roomName
+        roomName: ws.roomName,
+        roomTime: ws.roomTime,
       }
     })
 
