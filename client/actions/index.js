@@ -10,6 +10,9 @@ function addMessage (uid, message, timestamp) {
 }
 
 function setClient ({ uid, userName, peerConn, stream }) {
+  if((stream ? URL.createObjectURL(stream) : undefined) === undefined){
+    console.log("ERROR: could not create stream nothing exists ", uid, userName, peerConn, stream)
+  }
   return {
     type: 'SET_CLIENT',
     payload: {

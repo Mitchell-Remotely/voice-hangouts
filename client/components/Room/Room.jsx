@@ -3,6 +3,8 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Actions from '../../actions'
 import VolumeMeter from '../VolumeMeter'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons/faEdit";
 import styles from './Room.css'
 
 function Room ({
@@ -64,6 +66,11 @@ function Room ({
       return !mute ? styles.volumeUp : styles.volumeOff
     }
   }
+  function GetName(props){
+    if(props.uid === user.uid)
+      return <span className={styles.userName}>{props.userName} &nbsp; <FontAwesomeIcon icon={faEdit} style={{fontSize: "12px"}} /></span>
+    return <span className={styles.userName}>{props.userName}</span>
+  }
 
   function getUserName (uid) {
     if (uid === user.uid) {
@@ -109,7 +116,14 @@ function Room ({
               data-uid={uid}
               data-mute={mute}
             />
-            <span className={styles.userListName}>{userName}</span>
+            <button
+              className={styles.userNameBox}
+              title='Click to edit your name'
+              onClick={onEditUserName}
+              onKeyPress={onEditUserName}
+            >
+              <GetName userName={userName} uid={uid}></GetName>
+            </button>
             {stream && (
               <VolumeMeter uid={uid} enabled={!!stream && !mute} stream={stream} />
             )}
