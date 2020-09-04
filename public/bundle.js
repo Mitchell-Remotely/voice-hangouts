@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e31432c5aec1fc81264d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ec83b82532137e1ec22f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -36429,7 +36429,7 @@ class Connector {
       let self = _this;
       let res = "";
       yield axios({ method: 'post',
-        url: Object({"NODE_ENV":"development"}).MEETING_SERVICE_URL + "/api/FindServer",
+        url: "https://fa-remotely-meetings-service.azurewebsites.net" + "/api/FindServer",
         data: {
           meetingRoomID: self.roomname
         },

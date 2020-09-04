@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackCdnPlugin = require('webpack-cdn-plugin')
+const Dotenv = require('dotenv-webpack');
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -51,7 +52,8 @@ module.exports = {
       ],
       prod: true,
       prodUrl: 'https://unpkg.com/:name@:version/umd/:name.production.min.js'
-    })
+    }),
+    new Dotenv()
   ].filter((file) => file),
   resolve: {
     extensions: ['.js', '.jsx']
