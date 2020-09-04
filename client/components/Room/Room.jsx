@@ -103,7 +103,7 @@ function Room ({
 
   return (
     <div className={styles.room} style={divStyle}>
-      <iframe id="room" src={proccess.env.GAME_ASSETS_URL+"/index.html"} className={styles.iframe}></iframe>
+      <iframe id="room" src={process.env.GAME_ASSETS_URL+"/index.html"} className={styles.iframe}></iframe>
       <div className={styles.userList}>
         {users.map(({ uid, userName, stream, mute }) => (
           <div key={uid} className={styles.userListRow}>
