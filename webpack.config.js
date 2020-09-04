@@ -25,7 +25,7 @@ module.exports = {
     isDev && new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env':dotenv.parsed
+      'process.env': dotenv.parsed
     }),
     !isDev && new UglifyJSPlugin({
       uglifyOptions: {

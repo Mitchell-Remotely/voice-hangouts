@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e537cfc282693b0861b3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d1deb2e7858810d0bcf3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1083,7 +1083,7 @@ module.exports = {
 "use strict";
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV === 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV === 'production') {
   module.exports = __webpack_require__(55);
 } else {
   module.exports = __webpack_require__(56);
@@ -1909,7 +1909,7 @@ function updateLink (link, options, obj) {
 */
 function isCrushed() {}
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
   Object(__WEBPACK_IMPORTED_MODULE_5__utils_warning__["a" /* default */])('You are currently using minified code outside of NODE_ENV === \'production\'. ' + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
@@ -2350,7 +2350,7 @@ module.exports = ReactPropTypesSecret;
  * LICENSE file in the root directory of this source tree.
  */
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
     Symbol.for &&
     Symbol.for('react.element')) ||
@@ -2443,7 +2443,7 @@ module.exports = emptyFunction;
 
 var validateFormat = function validateFormat(format) {};
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   validateFormat = function validateFormat(format) {
     if (format === undefined) {
       throw new Error('invariant requires an error message argument');
@@ -2587,7 +2587,7 @@ module.exports = exports;
 "use strict";
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV === 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV === 'production') {
   module.exports = __webpack_require__(61);
 } else {
   module.exports = __webpack_require__(62);
@@ -3057,7 +3057,7 @@ function _inheritsLoose(subClass, superClass) {
  * LICENSE file in the root directory of this source tree.
  */
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
     Symbol.for &&
     Symbol.for('react.element')) ||
@@ -3380,7 +3380,7 @@ _ref) {
     Connect.contextTypes = contextTypes;
     Connect.propTypes = contextTypes;
 
-    if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+    if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
       Connect.prototype.componentWillUpdate = function componentWillUpdate() {
         var _this2 = this;
 
@@ -3423,7 +3423,7 @@ _ref) {
 "use strict";
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV === 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV === 'production') {
   module.exports = __webpack_require__(89);
 } else {
   module.exports = __webpack_require__(90);
@@ -3496,7 +3496,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
         props = proxy(stateOrDispatch, ownProps);
       }
 
-      if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') Object(__WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__["a" /* default */])(props, displayName, methodName);
+      if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') Object(__WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__["a" /* default */])(props, displayName, methodName);
       return props;
     };
 
@@ -4975,7 +4975,7 @@ function convert(createElement, element) {
 var PRODUCTION = false;
 
 try {
-  PRODUCTION = Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV === 'production';
+  PRODUCTION = Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV === 'production';
 } catch (e) {}
 
 function log () {
@@ -5113,7 +5113,7 @@ var convertCurry = convert.bind(null, __WEBPACK_IMPORTED_MODULE_2_react___defaul
 "use strict";
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV === 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV === 'production') {
   module.exports = __webpack_require__(146);
 } else {
   module.exports = __webpack_require__(147);
@@ -5146,7 +5146,7 @@ var emptyFunction = __webpack_require__(18);
 
 var warning = emptyFunction;
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   var printWarning = function printWarning(format) {
     for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
@@ -5513,7 +5513,7 @@ exports.useLayoutEffect=function(a,b){return Z().useLayoutEffect(a,b)};exports.u
 
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== "production") {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== "production") {
   (function() {
 'use strict';
 
@@ -7430,7 +7430,7 @@ exports.version = ReactVersion;
 
 var printWarning = function() {};
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   var ReactPropTypesSecret = __webpack_require__(58);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
@@ -7461,7 +7461,7 @@ if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.
  * @private
  */
 function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     for (var typeSpecName in typeSpecs) {
       if (has(typeSpecs, typeSpecName)) {
         var error;
@@ -7515,7 +7515,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
  * @private
  */
 checkPropTypes.resetWarningCache = function() {
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     loggedTypeFailures = {};
   }
 }
@@ -7557,7 +7557,7 @@ function checkDCE() {
   ) {
     return;
   }
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     // This branch is unreachable because this function is only called
     // in production, but the condition is true only in development.
     // Therefore if the branch is still here, dead code elimination wasn't
@@ -7577,7 +7577,7 @@ function checkDCE() {
   }
 }
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV === 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
@@ -7910,7 +7910,7 @@ exports.unstable_shouldYield=function(){return!e&&(null!==d&&d.expirationTime<l|
 
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== "production") {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== "production") {
   (function() {
 'use strict';
 
@@ -8617,7 +8617,7 @@ exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
 
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== "production") {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== "production") {
   (function() {
 'use strict';
 
@@ -29854,7 +29854,7 @@ module.exports = reactDom;
 
 var printWarning = function() {};
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   var ReactPropTypesSecret = __webpack_require__(65);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
@@ -29885,7 +29885,7 @@ if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.
  * @private
  */
 function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     for (var typeSpecName in typeSpecs) {
       if (has(typeSpecs, typeSpecName)) {
         var error;
@@ -29939,7 +29939,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
  * @private
  */
 checkPropTypes.resetWarningCache = function() {
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     loggedTypeFailures = {};
   }
 }
@@ -29973,7 +29973,7 @@ module.exports = ReactPropTypesSecret;
 "use strict";
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV === 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV === 'production') {
   module.exports = __webpack_require__(67);
 } else {
   module.exports = __webpack_require__(68);
@@ -30015,7 +30015,7 @@ Object.defineProperty(exports,"__esModule",{value:!0});var b=0;exports.__interac
 
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== "production") {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== "production") {
   (function() {
 'use strict';
 
@@ -30804,7 +30804,7 @@ function combineReducers(reducers) {
   for (var i = 0; i < reducerKeys.length; i++) {
     var key = reducerKeys[i];
 
-    if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+    if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
       if (typeof reducers[key] === 'undefined') {
         Object(__WEBPACK_IMPORTED_MODULE_2__utils_warning__["a" /* default */])('No reducer provided for key "' + key + '"');
       }
@@ -30817,7 +30817,7 @@ function combineReducers(reducers) {
   var finalReducerKeys = Object.keys(finalReducers);
 
   var unexpectedKeyCache = void 0;
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     unexpectedKeyCache = {};
   }
 
@@ -30836,7 +30836,7 @@ function combineReducers(reducers) {
       throw shapeAssertionError;
     }
 
-    if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+    if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
       var warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action, unexpectedKeyCache);
       if (warningMessage) {
         Object(__WEBPACK_IMPORTED_MODULE_2__utils_warning__["a" /* default */])(warningMessage);
@@ -31037,7 +31037,7 @@ function createProvider(storeKey) {
     return Provider;
   }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     Provider.prototype.componentWillReceiveProps = function (nextProps) {
       if (this[storeKey] !== nextProps.store) {
         warnAboutReceivingStore();
@@ -31075,7 +31075,7 @@ var checkPropTypes = __webpack_require__(85);
 
 var printWarning = function() {};
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   printWarning = function(text) {
     var message = 'Warning: ' + text;
     if (typeof console !== 'undefined') {
@@ -31225,7 +31225,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   PropTypeError.prototype = Error.prototype;
 
   function createChainableTypeChecker(validate) {
-    if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+    if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
       var manualPropTypeCallCache = {};
       var manualPropTypeWarningCount = 0;
     }
@@ -31243,7 +31243,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
           );
           err.name = 'Invariant Violation';
           throw err;
-        } else if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production' && typeof console !== 'undefined') {
+        } else if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production' && typeof console !== 'undefined') {
           // Old behavior for people using React.PropTypes
           var cacheKey = componentName + ':' + propName;
           if (
@@ -31350,7 +31350,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createEnumTypeChecker(expectedValues) {
     if (!Array.isArray(expectedValues)) {
-      Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+      Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
       return emptyFunctionThatReturnsNull;
     }
 
@@ -31393,7 +31393,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createUnionTypeChecker(arrayOfTypeCheckers) {
     if (!Array.isArray(arrayOfTypeCheckers)) {
-      Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
       return emptyFunctionThatReturnsNull;
     }
 
@@ -31632,7 +31632,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 var printWarning = function() {};
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   var ReactPropTypesSecret = __webpack_require__(9);
   var loggedTypeFailures = {};
 
@@ -31662,7 +31662,7 @@ if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.
  * @private
  */
 function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     for (var typeSpecName in typeSpecs) {
       if (typeSpecs.hasOwnProperty(typeSpecName)) {
         var error;
@@ -31928,7 +31928,7 @@ exports.isSuspense=function(a){return t(a)===p};
 
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== "production") {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== "production") {
   (function() {
 'use strict';
 
@@ -32170,7 +32170,7 @@ exports.isSuspense = isSuspense;
  */
 
 var invariant = function(condition, format, a, b, c, d, e, f) {
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     if (format === undefined) {
       throw new Error('invariant requires an error message argument');
     }
@@ -32546,7 +32546,7 @@ function wrapMergePropsFunc(mergeProps) {
       } else {
         hasRunOnce = true;
         mergedProps = nextMergedProps;
-        if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') Object(__WEBPACK_IMPORTED_MODULE_1__utils_verifyPlainObject__["a" /* default */])(mergedProps, displayName, 'mergeProps');
+        if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') Object(__WEBPACK_IMPORTED_MODULE_1__utils_verifyPlainObject__["a" /* default */])(mergedProps, displayName, 'mergeProps');
       }
 
       return mergedProps;
@@ -32653,7 +32653,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
   var mapDispatchToProps = initMapDispatchToProps(dispatch, options);
   var mergeProps = initMergeProps(dispatch, options);
 
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     Object(__WEBPACK_IMPORTED_MODULE_1__verifySubselectors__["a" /* default */])(mapStateToProps, mapDispatchToProps, mergeProps, options.displayName);
   }
 
@@ -36704,7 +36704,7 @@ module.exports = {
 function configureStore(initialState) {
   const middlewares = [__WEBPACK_IMPORTED_MODULE_1_redux_thunk___default.a];
 
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     middlewares.push(__webpack_require__(115).createLogger({ collapsed: true }));
   }
 
@@ -36871,7 +36871,7 @@ class Connector {
       let self = _this;
       let res = "";
       yield axios({ method: 'post',
-        url: https://fa-meeting-service-prod.azurewebsites.net + "/api/FindServer",
+        url: 'https://fa-meeting-service-prod.azurewebsites.net' + "/api/FindServer",
         data: {
           meetingRoomID: self.roomname
         },
@@ -38770,7 +38770,7 @@ var MUTATION_APPROACH_ASYNC = 'async';
 var TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS = ['HTML', 'HEAD', 'STYLE', 'SCRIPT'];
 var PRODUCTION = function () {
   try {
-    return Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV === 'production';
+    return Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV === 'production';
   } catch (e) {
     return false;
   }
@@ -41302,7 +41302,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
  * LICENSE file in the root directory of this source tree.
  */
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   var ReactIs = __webpack_require__(50);
 
   // By explicitly using `prop-types` you are opting into new development behavior.
@@ -41356,7 +41356,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
 
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== "production") {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== "production") {
   (function() {
 'use strict';
 
@@ -41549,7 +41549,7 @@ var checkPropTypes = __webpack_require__(149);
 var has = Function.call.bind(Object.prototype.hasOwnProperty);
 var printWarning = function() {};
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   printWarning = function(text) {
     var message = 'Warning: ' + text;
     if (typeof console !== 'undefined') {
@@ -41700,7 +41700,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   PropTypeError.prototype = Error.prototype;
 
   function createChainableTypeChecker(validate) {
-    if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+    if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
       var manualPropTypeCallCache = {};
       var manualPropTypeWarningCount = 0;
     }
@@ -41718,7 +41718,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
           );
           err.name = 'Invariant Violation';
           throw err;
-        } else if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production' && typeof console !== 'undefined') {
+        } else if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production' && typeof console !== 'undefined') {
           // Old behavior for people using React.PropTypes
           var cacheKey = componentName + ':' + propName;
           if (
@@ -41837,7 +41837,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createEnumTypeChecker(expectedValues) {
     if (!Array.isArray(expectedValues)) {
-      if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+      if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
         if (arguments.length > 1) {
           printWarning(
             'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
@@ -41895,7 +41895,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createUnionTypeChecker(arrayOfTypeCheckers) {
     if (!Array.isArray(arrayOfTypeCheckers)) {
-      Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
       return emptyFunctionThatReturnsNull;
     }
 
@@ -42140,7 +42140,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 var printWarning = function() {};
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   var ReactPropTypesSecret = __webpack_require__(16);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
@@ -42171,7 +42171,7 @@ if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.
  * @private
  */
 function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     for (var typeSpecName in typeSpecs) {
       if (has(typeSpecs, typeSpecName)) {
         var error;
@@ -42225,7 +42225,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
  * @private
  */
 checkPropTypes.resetWarningCache = function() {
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     loggedTypeFailures = {};
   }
 }
@@ -42461,7 +42461,7 @@ var NAMESPACE_IDENTIFIER = '___FONT_AWESOME___';
 
 var PRODUCTION = function () {
   try {
-    return Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV === 'production';
+    return Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV === 'production';
   } catch (e) {
     return false;
   }
@@ -42928,7 +42928,7 @@ function Room({
   return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     'div',
     { className: __WEBPACK_IMPORTED_MODULE_7__Room_css___default.a.room, style: divStyle },
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('iframe', { id: 'room', src: https://prod-meeting-assets.azurefd.net + "/index.html", className: __WEBPACK_IMPORTED_MODULE_7__Room_css___default.a.iframe }),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('iframe', { id: 'room', src: 'https://prod-meeting-assets.azurefd.net' + "/index.html", className: __WEBPACK_IMPORTED_MODULE_7__Room_css___default.a.iframe }),
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
       'div',
       { className: __WEBPACK_IMPORTED_MODULE_7__Room_css___default.a.userList },
@@ -43205,7 +43205,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   PropTypeError.prototype = Error.prototype;
 
   function createChainableTypeChecker(validate) {
-    if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+    if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
       var manualPropTypeCallCache = {};
       var manualPropTypeWarningCount = 0;
     }
@@ -43222,7 +43222,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
             'Use `PropTypes.checkPropTypes()` to call them. ' +
             'Read more at http://fb.me/use-check-prop-types'
           );
-        } else if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production' && typeof console !== 'undefined') {
+        } else if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production' && typeof console !== 'undefined') {
           // Old behavior for people using React.PropTypes
           var cacheKey = componentName + ':' + propName;
           if (
@@ -43332,7 +43332,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createEnumTypeChecker(expectedValues) {
     if (!Array.isArray(expectedValues)) {
-      Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+      Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
       return emptyFunction.thatReturnsNull;
     }
 
@@ -43375,7 +43375,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createUnionTypeChecker(arrayOfTypeCheckers) {
     if (!Array.isArray(arrayOfTypeCheckers)) {
-      Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
       return emptyFunction.thatReturnsNull;
     }
 
@@ -43615,7 +43615,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 
-if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
   var invariant = __webpack_require__(19);
   var warning = __webpack_require__(51);
   var ReactPropTypesSecret = __webpack_require__(20);
@@ -43634,7 +43634,7 @@ if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.
  * @private
  */
 function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if (Object({"MEETING_SERVICE_URL":https://fa-meeting-service-prod.azurewebsites.net,"GAME_ASSETS_URL":https://prod-meeting-assets.azurefd.net}).NODE_ENV !== 'production') {
+  if (Object({"MEETING_SERVICE_URL":'https://fa-meeting-service-prod.azurewebsites.net',"GAME_ASSETS_URL":'https://prod-meeting-assets.azurefd.net'}).NODE_ENV !== 'production') {
     for (var typeSpecName in typeSpecs) {
       if (typeSpecs.hasOwnProperty(typeSpecName)) {
         var error;
