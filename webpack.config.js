@@ -1,9 +1,11 @@
 const path = require('path')
+var dotenv = require('dotenv').config({ // it puts the content to the "process.env" var. System vars are taking precedence
+    path: '.env.'+(process.env.NODE_ENV ? 'development' : 'production'),
+});
 const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackCdnPlugin = require('webpack-cdn-plugin')
-const Dotenv = require('dotenv-webpack');
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -23,9 +25,7 @@ module.exports = {
     isDev && new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(isDev ? 'development' : 'production')
-      }
+      'process.env':dotenv.parsed
     }),
     !isDev && new UglifyJSPlugin({
       uglifyOptions: {
@@ -52,8 +52,7 @@ module.exports = {
       ],
       prod: true,
       prodUrl: 'https://unpkg.com/:name@:version/umd/:name.production.min.js'
-    }),
-    new Dotenv()
+    })
   ].filter((file) => file),
   resolve: {
     extensions: ['.js', '.jsx']
