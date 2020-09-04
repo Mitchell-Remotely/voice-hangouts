@@ -37,7 +37,6 @@ function Room ({
     [connector, setUser]
   )
 
-  function meetingRoom
   function onEditUserName () {
     const userName = window.prompt('Edit your username:', user.userName)
     setUser({ userName })

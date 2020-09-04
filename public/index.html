@@ -3,12 +3,23 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <title>Remotely Voice Rooms</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164909144-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-164909144-2');
+    </script>
   </head>
-  <body>
+  <body style="margin:0;">
     <div id="root"></div>  
     <script type="text/javascript">
-      var messageQueue = [];
       document.addEventListener("DOMContentLoaded", function(){
+        var messageQueueDown = [];
+        var messageQueueUp = [];
+        var iFrameLoaded = false;
         // Assign handler to message event
         if ( window.addEventListener ) {
             window.addEventListener('message', handleMessage, false);
@@ -16,24 +27,28 @@
             window.attachEvent('onmessage', handleMessage);
         }
         function handleMessage (event) {
-          if((event.origin !== "https://remotely-voice-server.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react"))) ||
-          (event.origin !== "https://dev-remotely-server.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react"))) ||
-          (event.origin !== "https://remotely-meeting-rooms.azurefd.net" || (!!event.data && !!event.data.source && event.data.source.includes("react"))) ||
-          (event.origin !== "https://remotely-meeting.australiaeast.cloudapp.azure.com" || (!!event.data && !!event.data.source && event.data.source.includes("react")))
+          if(!(event.origin === "https://remotely-voice-server.australiaeast.cloudapp.azure.com" ||
+          event.origin === "https://dev-remotely-server.australiaeast.cloudapp.azure.com" || 
+          event.origin === "https://remotely-meeting-rooms.azurefd.net" || 
+          event.origin === "https://remotely-meeting.australiaeast.cloudapp.azure.com" || 
+          event.origin === "https://meetings.remotelyhq.com" || 
+          event.origin === "https://prod-meeting-assets.azurefd.net" )
           ){
             return;
           }
-          console.log("Got event ", event);
-          if(!!event && !!event.length > 0){
-            if(event[0] == "packet"){
+          if(event.data && event.data.length > 0){
+            if(event.data[0] == "packet"){
               if(window.connector){
-                while (messageQueue.length > 0) {
-                  window.connector.sendPacket(messageQueue.pop());
+                while (messageQueueUp.length > 0) {
+                  window.connector.sendPacket(messageQueueUp.shift());
                 }
-                window.connector.sendPacket(event[1]);
+                window.connector.sendPacket(event.data[1]);
               }else{
-                messageQueue.push(event[1])
+                messageQueueUp.push(event.data[1])
               }
+            }else if(event.data[0] == "loaded"){
+              iFrameLoaded=true;
+              sendToIframe("","");
             }
           }
         };
@@ -41,7 +56,17 @@
           if(!window.gameframe){
             window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
           }
-          window.gameframe.postMessage(JSON.stringify({'method':method,'parameters':data}),'*');
+          if(!iFrameLoaded){
+            if(method.length == 0) return;
+            messageQueueDown.push({'method':method,'data':data});
+          }else{
+            while(messageQueueDown.length > 0){
+              let poped =  messageQueueDown.shift();
+              window.gameframe.postMessage(JSON.stringify({'method':poped['method'],'parameters':poped['data']}),'*');
+            }
+            if(method.length == 0) return;
+            window.gameframe.postMessage(JSON.stringify({'method':method,'parameters':data}),'*');
+          }
         }
         window.sendtoiframe = sendToIframe;
       });
