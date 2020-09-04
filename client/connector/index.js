@@ -12,7 +12,7 @@ class Connector {
     let self= this;
     let res = "";
     await axios({method:'post',
-      url:"https://fa-remotely-meetings-service.azurewebsites.net/api/FindServer",
+      url: process.env.MEETING_SERVICE_URL + "/api/FindServer",
       data:{
         meetingRoomID: self.roomname 
       },
