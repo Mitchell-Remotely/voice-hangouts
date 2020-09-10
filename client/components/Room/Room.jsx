@@ -96,7 +96,7 @@ function Room ({
   const divStyle = {
     width: '100vw',
     height: '100vh',
-    backgroundImage: 'url(assets/images/campfire.jpg)',
+    backgroundColor: 'black',
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   };
