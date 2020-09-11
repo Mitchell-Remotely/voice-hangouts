@@ -144,7 +144,7 @@ class Connector {
       }
     })
 
-    peerConn.addEventListener('track', ({ streams }) => {
+    peerConn.addEventListener('track', async ({ streams }) => {
       log(`Received remote stream from '${userName}' (${peerId})`)
       if(streams[0] === undefined || streams === null){
         const offer = await peerConn.createOffer()

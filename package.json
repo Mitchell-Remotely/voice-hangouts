@@ -9,12 +9,12 @@
     "npm": "^5.6.0"
   },
   "scripts": {
-    "build": "npx webpack --progress --colors --config ./webpack.config.js",
+    "build": "npx webpack --progress --colors --config ./webpack.config.js  --env.NODE_ENV=development --env.development",
     "build-prod": "npx webpack --progress --colors --config ./webpack.config.js --env.NODE_ENV=production --env.production",
     "clean": "find ./public -not -path '*/\\.*' -type f -maxdepth 1 -delete",
     "lint": "$(npm bin)/eslint --fix '+(client|server)/**/*.+(js|jsx)' './*.js'",
-    "start": "nodemon -r dotenv/config server/index.js dotenv_config_path=.env",
-    "start-prod": "nodemon -r dotenv/config server/index.js dotenv_config_path=.env.prod",
+    "start": "nodemon -r dotenv/config server/index.js dotenv_config_path=.env.development",
+    "start-prod": "nodemon -r dotenv/config server/index.js dotenv_config_path=.env.production",
     "serve": "node server/index.js",
     "heroku-postbuild": "npm run build"
   },

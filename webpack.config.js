@@ -1,13 +1,11 @@
 const path = require('path')
-var dotenv = require('dotenv').config({ // it puts the content to the "process.env" var. System vars are taking precedence
-    path: '.env.'+(process.env.NODE_ENV ? 'development' : 'production'),
-});
+const Dotenv = require('dotenv-webpack');
 const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackCdnPlugin = require('webpack-cdn-plugin')
 
-const isDev = process.env.NODE_ENV !== 'production'
+const isDev = (process && process.env && process.env.npm_lifecycle_script && process.env.npm_lifecycle_script.includes("development")) || false;
 
 module.exports = {
   entry: {
@@ -24,8 +22,8 @@ module.exports = {
   plugins: [
     isDev && new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': dotenv.parsed
+    new Dotenv({
+      path: path.resolve(__dirname, '.env.' + (isDev?'development':'production'))
     }),
     !isDev && new UglifyJSPlugin({
       uglifyOptions: {
@@ -38,20 +36,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Remotely Voice Rooms',
       template: './client/index.template.html'
-    }),
-    !isDev && new WebpackCdnPlugin({
-      modules: [
-        {
-          name: 'react',
-          var: 'React'
-        },
-        {
-          name: 'react-dom',
-          var: 'ReactDOM'
-        }
-      ],
-      prod: true,
-      prodUrl: 'https://unpkg.com/:name@:version/umd/:name.production.min.js'
     })
   ].filter((file) => file),
   resolve: {
