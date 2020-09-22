@@ -24,7 +24,7 @@
   left:0;
   width: 500px;
   text-overflow: ellipsis;
-  height:100%;
+  max-height:70%;
   margin: 0;
   background-color: transparent;
 }
