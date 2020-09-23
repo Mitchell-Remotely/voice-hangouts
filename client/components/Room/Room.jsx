@@ -6,6 +6,7 @@ import VolumeMeter from '../VolumeMeter'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faMicrophoneSlash,faVolumeOff, faSignOutAlt, faMicrophone, faVolumeUp, } from "@fortawesome/free-solid-svg-icons";
 import styles from './Room.css'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 function Room ({
   chatRoomReady,
@@ -56,9 +57,7 @@ function Room ({
     connector.toggleMediaStream(user.uid)
     toggleUserAudio(user.uid)
   }
-  function onUserControlClick ({ target }) {
-    const { uid } = target.dataset
-
+  function onUserControlClick (uid) {
     connector.toggleMediaStream(uid)
     toggleUserAudio(uid)
   }
@@ -93,17 +92,6 @@ function Room ({
   function endMeeting(){
     window.location = "https://www.remotelyhq.com/post-call-survey";
   }
-
-  // Try to mute all video and audio elements on the page
-  function toggleMutePage() {
-    users.forEach( u =>{ 
-      if(u.uid === user.uid) return;
-      connector.toggleMediaStream(u.uid)
-      toggleUserAudio(u.uid)
-    });
-    window.getMuted = !window.getMuted;
-  }
-
   const users = [user, ...Array.from(clients.values())].filter(
     client => client.uid
   )
@@ -115,6 +103,7 @@ function Room ({
     backgroundPosition: 'center'
   };
 
+  let copied = false;
   return (
     <div className={styles.room} style={divStyle}>
       <iframe id="room" src={process.env.GAME_ASSETS_URL+"/index.html"} className={styles.iframe}></iframe>
@@ -122,16 +111,28 @@ function Room ({
         {users.map(({ uid, userName, stream, mute }) => (
           <div key={uid} className={styles.userListRow}>
             <button
-              className={
-                styles.bottomGridButton + ' ' + getUserControlIcon(uid, mute)
-              }
-              onClick={onUserControlClick}
+              className={ styles.topUserIcon }
+              onClick={()=>onUserControlClick(uid)}
               disabled={!stream}
               data-uid={uid}
               data-mute={mute}
             >
-            </button>
-            {
+              {
+                user.uid === uid ? (
+                user.mute?
+                <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "16px"}} />
+                :
+                <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "16px"}} />
+                ):
+                (
+                  user.mute?
+                  <FontAwesomeIcon icon={faVolumeOff} style={{fontSize: "16px"}} />
+                  :
+                  <FontAwesomeIcon icon={faVolumeUp} style={{fontSize: "16px"}} />
+                )
+              }
+              </button>
+              {
               user.uid === uid ? 
               <button
                 className={styles.userNameBox}
@@ -208,7 +209,12 @@ function Room ({
         </div>
         <div className={styles.bottomInput}>
           <input readOnly className={styles.bottomGridInputCopy} value={window.location.href}></input>
-          <button className={styles.bottomGridButtonCopy}>Copy link</button>
+          <CopyToClipboard text={window.location.href}
+            onCopy={() => copied = true}>
+            <button
+              className={styles.bottomGridButtonCopy}
+              >Copy link</button>
+          </CopyToClipboard>
         </div>
       </div>
     </div>
