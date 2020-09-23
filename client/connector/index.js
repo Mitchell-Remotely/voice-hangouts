@@ -12,7 +12,7 @@ class Connector {
     let self= this;
     let res = "";
     await axios({method:'post',
-      url:"https://fa-remotely-meetings-service.azurewebsites.net/api/FindServer",
+      url: process.env.MEETING_SERVICE_URL + "/api/FindServer",
       data:{
         meetingRoomID: self.roomname 
       },
@@ -70,6 +70,10 @@ class Connector {
         }
         case 'offer': {
           this.handleOffer(payload)
+          break
+        }
+        case 'offer failed': {
+          this.handleOfferFailed(payload)
           break
         }
         case 'answer': {
@@ -140,11 +144,24 @@ class Connector {
       }
     })
 
-    peerConn.addEventListener('track', ({ streams }) => {
+    peerConn.addEventListener('track', async ({ streams }) => {
       log(`Received remote stream from '${userName}' (${peerId})`)
+      if(streams[0] === undefined || streams === null){
+        const offer = await peerConn.createOffer()
 
-      // Update peer's stream when receiving remote stream
-      this.actions.setClient({ uid: peerId, stream: streams[0] })
+        await peerConn.setLocalDescription(offer)
+
+        this.send({
+          type: 'offer',
+          payload: {
+            peerId,
+            offer
+          }
+        })
+      }else{
+        // Update peer's stream when receiving remote stream
+        this.actions.setClient({ uid: peerId, stream: streams[0] })
+      }
     })
 
     peerConn.addEventListener('error', () => {
@@ -182,6 +199,38 @@ class Connector {
     }
 
     window.sendtoiframe("Join",[peerId +"", order,userName]);
+    log(`New peer '${userName}' (${peerId}, ${order}) joined room '${roomName}' with room time '${roomTime}'`)
+
+    const peerConn = this.getPeerConnection(peerId, userName)
+
+    peerConn.addEventListener('negotiationneeded', async () => {
+      const offer = await peerConn.createOffer()
+
+      await peerConn.setLocalDescription(offer)
+
+      this.send({
+        type: 'offer',
+        payload: {
+          peerId,
+          offer
+        }
+      })
+
+      log(`Sent offer to '${userName}' (${peerId})`)
+    })
+
+    const stream = await this.getUserMedia()
+    this.actions.setUser({ stream })
+
+    stream.getTracks().forEach((track) => peerConn.addTrack(track, stream))
+
+    log(`Sent local stream to remote user '${userName}' (${peerId})`)
+  }
+  async handleOfferFailed ({ peerId,order, userName, roomName, roomTime }) {
+    // If peer connection has established, we skip the negotiation process
+    if (this.getClient(peerId)) {
+      return
+    }
     log(`New peer '${userName}' (${peerId}, ${order}) joined room '${roomName}' with room time '${roomTime}'`)
 
     const peerConn = this.getPeerConnection(peerId, userName)

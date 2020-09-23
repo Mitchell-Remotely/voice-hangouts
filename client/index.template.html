@@ -5,6 +5,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164909144-2"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -30,7 +31,9 @@
           if(!(event.origin === "https://remotely-voice-server.australiaeast.cloudapp.azure.com" ||
           event.origin === "https://dev-remotely-server.australiaeast.cloudapp.azure.com" || 
           event.origin === "https://remotely-meeting-rooms.azurefd.net" || 
-          event.origin === "https://remotely-meeting.australiaeast.cloudapp.azure.com" )
+          event.origin === "https://remotely-meeting.australiaeast.cloudapp.azure.com" || 
+          event.origin === "https://meetings.remotelyhq.com" || 
+          event.origin === "https://prod-meeting-assets.azurefd.net" )
           ){
             return;
           }
@@ -68,6 +71,16 @@
         }
         window.sendtoiframe = sendToIframe;
       });
+      
+      function S4() {  
+          return (((1+Math.random())*0x10000)|0).toString(16).substring(1);  
+      }  
+      function createGuid() {  
+          return (S4() + S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();  
+      } 
+      function generateRoomLink(){
+        return "https://meetings.remotelyhq.com/"+ createGuid();
+      }
     </script>
   </body>
 </html>

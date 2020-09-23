@@ -10,8 +10,7 @@ p {
   color: #4d5659;
 }
 
-* {
-  font-family: Arial;
+* {font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
 
