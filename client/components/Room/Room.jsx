@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Actions from '../../actions'
 import VolumeMeter from '../VolumeMeter'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons/faEdit";
+import { faEdit, faMicrophoneSlash,faVolumeOff, faSignOutAlt, faMicrophone, faVolumeUp, } from "@fortawesome/free-solid-svg-icons";
 import styles from './Room.css'
 
 function Room ({
@@ -17,6 +17,7 @@ function Room ({
   user
 }) {
   window.connector = connector;
+  window.getMuted = false;
   useEffect(
     () => {
       function onLeaveRoom () {
@@ -51,7 +52,10 @@ function Room ({
       currentTarget.value = ''
     }
   }
-
+  function onUserControlClickSelf(){
+    connector.toggleMediaStream(user.uid)
+    toggleUserAudio(user.uid)
+  }
   function onUserControlClick ({ target }) {
     const { uid } = target.dataset
 
@@ -87,7 +91,17 @@ function Room ({
     )
   }
   function endMeeting(){
-    window.location.pathname = "/post-meeting";
+    window.location = "https://www.remotelyhq.com/post-call-survey";
+  }
+
+  // Try to mute all video and audio elements on the page
+  function toggleMutePage() {
+    users.forEach( u =>{ 
+      if(u.uid === user.uid) return;
+      connector.toggleMediaStream(u.uid)
+      toggleUserAudio(u.uid)
+    });
+    window.getMuted = !window.getMuted;
   }
 
   const users = [user, ...Array.from(clients.values())].filter(
@@ -109,21 +123,27 @@ function Room ({
           <div key={uid} className={styles.userListRow}>
             <button
               className={
-                styles.userControlIcon + ' ' + getUserControlIcon(uid, mute)
+                styles.bottomGridButton + ' ' + getUserControlIcon(uid, mute)
               }
               onClick={onUserControlClick}
               disabled={!stream}
               data-uid={uid}
               data-mute={mute}
-            />
-            <button
-              className={styles.userNameBox}
-              title='Click to edit your name'
-              onClick={onEditUserName}
-              onKeyPress={onEditUserName}
             >
-              <GetName userName={userName} uid={uid}></GetName>
             </button>
+            {
+              user.uid === uid ? 
+              <button
+                className={styles.userNameBox}
+                title='Click to edit your name'
+                onClick={onEditUserName}
+                onKeyPress={onEditUserName}
+              >
+                <GetName userName={userName} uid={uid}></GetName>
+              </button>
+              :
+              <GetName userName={userName} uid={uid}></GetName>
+            }
             {stream && (
               <VolumeMeter uid={uid} enabled={!!stream && !mute} stream={stream} />
             )}
@@ -156,14 +176,6 @@ function Room ({
           ))}
         </div>
         <div className={styles.messageBox} disabled={!chatRoomReady}>
-          <button
-            className={styles.userNameBox}
-            title='Click to edit your name'
-            onClick={onEditUserName}
-            onKeyPress={onEditUserName}
-          >
-            <span className={styles.userName}>{user.userName}</span>
-          </button>
           <input
             autoFocus
             className={styles.messageInput}
@@ -184,11 +196,21 @@ function Room ({
         .map(([id, peer]) => (
           <audio key={id} autoPlay src={peer.streamUrl} />
         ))}
-      <button className={styles.endButton}
-            value='End Meeting'
-            onClick={endMeeting}>
-              End meeting
-      </button>
+      <div className={styles.bottomGrid}>
+        <div className={styles.bottomButtons}>
+        <button className={styles.bottomGridButton} onClick={onUserControlClickSelf}>{
+          user.mute?
+          <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "22px"}} />
+          :
+          <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "22px"}} />
+          }</button>
+          <button className={styles.bottomGridButton} onClick={endMeeting}><FontAwesomeIcon icon={faSignOutAlt} style={{fontSize: "22px", color:"#f44336"}} /></button>
+        </div>
+        <div className={styles.bottomInput}>
+          <input readOnly className={styles.bottomGridInputCopy} value={window.location.href}></input>
+          <button className={styles.bottomGridButtonCopy}>Copy link</button>
+        </div>
+      </div>
     </div>
   )
 }

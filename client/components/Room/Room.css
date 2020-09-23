@@ -94,8 +94,8 @@
   height: 20%;
   border:none;
   position: absolute;
-  bottom:0;
-  right:0;
+  bottom:20px;
+  right:20px;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -191,9 +191,81 @@
   border: none;
 }
 
+.bottomGrid{
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  max-width: 350px;
+  padding:20px;
+}
+.bottomInput{
+  position: relative;
+  width: 100%;
+  display:grid;
+  grid-template-columns: 7fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "input copy";
+}
+.bottomButtons{
+  position: relative;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottomGridButton{
+  margin: 0 10px 10px 0;
+  height:40px;
+  width:40px;
+  border-radius: 4px;
+  padding:5px;
+  border:none;
+  background-color: rgb(63, 63, 63);
+  color:rgb(223, 220, 224);
+}
+.bottomGridButton:hover{
+  background-color: rgb(99, 99, 99);
+  cursor: pointer;
+}
+.bottomGridButton:active{
+  background-color: rgb(148, 148, 148);
+}
+.bottomGridButtonCopy {
+  grid-area: copy;
+  height:40px;
+  font-weight: bold;
+  margin-left:10px;
+  border-radius: 4px;
+  padding:5px;
+  border:none;
+  background-color: rgb(63, 63, 63);
+  color:rgb(223, 220, 224);
+}
+.bottomGridButtonCopy:hover{
+  background-color: rgb(99, 99, 99);
+  cursor: pointer;
+}
+.bottomGridButtonCopy:active{
+  background-color: rgb(148, 148, 148);
+}
+.bottomGridInputCopy {
+  grid-area: input;
+  padding:10px;
+  border: 1px rgb(192, 192, 192);
+  background-color: rgba(255,255,255,0.4);
+  height:40px;
+  border-radius: 4px;
+}
+
 .messageInput {
-  border: 1px #00b0e9 solid;
-  padding: 10px;
+  padding:10px;
+  border: 1px rgb(192, 192, 192);
+  height:40px;
+  border-radius: 4px;
+  margin-right:10px;
   flex: 1;
 }
 
@@ -202,9 +274,17 @@
   background-image: url(/assets/images/send.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #00b0e9;
-  border: none;
-  border-bottom-right-radius: 2px;
+  border:none;
+  background-color: rgb(63, 63, 63);
+  color:rgb(223, 220, 224);
+  border-radius: 4px;
   text-align: center;
   cursor: pointer;
+}
+.sendButton:hover{
+  background-color: rgb(99, 99, 99);
+  cursor: pointer;
+}
+.sendButton:active{
+  background-color: rgb(148, 148, 148);
 }
