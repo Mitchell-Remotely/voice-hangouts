@@ -45,7 +45,7 @@ async function GetConnector(){
     document.getElementById('root')
   );
 }
-//GetConnector();
+GetConnector();
 
 render(
   <Provider store={store}>

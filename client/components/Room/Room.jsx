@@ -112,20 +112,20 @@ function Room ({
           <div key={uid} className={styles.userListRow}>
             <button
               className={ styles.topUserIcon }
-              onClick={()=>onUserControlClick(uid)}
+              onClick={()=>{onUserControlClick(uid)}}
               disabled={!stream}
               data-uid={uid}
               data-mute={mute}
             >
               {
                 user.uid === uid ? (
-                user.mute?
+                mute?
                 <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "16px"}} />
                 :
                 <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "16px"}} />
                 ):
                 (
-                  user.mute?
+                  mute?
                   <FontAwesomeIcon icon={faVolumeOff} style={{fontSize: "16px"}} />
                   :
                   <FontAwesomeIcon icon={faVolumeUp} style={{fontSize: "16px"}} />
