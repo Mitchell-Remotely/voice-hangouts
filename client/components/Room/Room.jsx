@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Actions from '../../actions'
 import VolumeMeter from '../VolumeMeter'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faMicrophoneSlash,faVolumeOff, faSignOutAlt, faMicrophone, faVolumeUp, } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faUserEdit, faMicrophoneSlash,faVolumeOff, faSignOutAlt, faMicrophone, faVolumeUp, } from "@fortawesome/free-solid-svg-icons";
 import styles from './Room.css'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
@@ -120,13 +120,13 @@ function Room ({
               {
                 user.uid === uid ? (
                 mute?
-                <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "16px"}} />
+                <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "16px",  color:"#f44336"}} />
                 :
                 <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "16px"}} />
                 ):
                 (
                   mute?
-                  <FontAwesomeIcon icon={faVolumeOff} style={{fontSize: "16px"}} />
+                  <FontAwesomeIcon icon={faVolumeOff} style={{fontSize: "16px", color:"#f44336"}} />
                   :
                   <FontAwesomeIcon icon={faVolumeUp} style={{fontSize: "16px"}} />
                 )
@@ -198,15 +198,6 @@ function Room ({
           <audio key={id} autoPlay src={peer.streamUrl} />
         ))}
       <div className={styles.bottomGrid}>
-        <div className={styles.bottomButtons}>
-        <button className={styles.bottomGridButton} onClick={onUserControlClickSelf}>{
-          user.mute?
-          <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "22px"}} />
-          :
-          <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "22px"}} />
-          }</button>
-          <button className={styles.bottomGridButton} onClick={endMeeting}><FontAwesomeIcon icon={faSignOutAlt} style={{fontSize: "22px", color:"#f44336"}} /></button>
-        </div>
         <div className={styles.bottomInput}>
           <input readOnly className={styles.bottomGridInputCopy} value={window.location.href}></input>
           <CopyToClipboard text={window.location.href}
@@ -215,6 +206,18 @@ function Room ({
               className={styles.bottomGridButtonCopy}
               >Copy link</button>
           </CopyToClipboard>
+          <button className={styles.bottomGridButton} onClick={onUserControlClickSelf}>{
+            user.mute?
+            <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "22px", color:"#f44336"}} />
+            :
+            <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "22px"}} />
+            }
+            <br/>
+            <span className={styles.buttonText}>Mic</span>
+          </button>
+          <button className={styles.bottomGridButton} onClick={onEditUserName}><FontAwesomeIcon icon={faUserEdit} style={{fontSize: "22px"}} /><br/><span className={styles.buttonText}>Name</span></button>
+          <button className={styles.bottomGridButton} onClick={endMeeting}><FontAwesomeIcon icon={faSignOutAlt} style={{fontSize: "22px", color:"#f44336"}} /><br/><span className={styles.buttonText}>Leave</span></button>
+        
         </div>
       </div>
     </div>

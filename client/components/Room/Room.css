@@ -197,17 +197,17 @@
   left:0;
   right:0;
   margin:auto;
-  max-width: 350px;
+  max-width: 550px;
   padding:20px;
 }
 .bottomInput{
   position: relative;
   width: 100%;
   display:grid;
-  grid-template-columns: 7fr 3fr;
+  grid-template-columns: 9fr 4fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: 
-    "input copy";
+    "input copy button button button";
 }
 .bottomButtons{
   position: relative;
@@ -233,14 +233,17 @@
   background-color: rgb(148, 148, 148);
 }
 .bottomGridButton{
-  margin: 0 10px 10px 0;
-  height:40px;
-  width:40px;
+  margin: 0 10px 0 0;
   border-radius: 4px;
+  min-height: 50px;
+  min-width: 50px;
   padding:5px;
   border:none;
   background-color: rgb(25,25,25,0.5);
   color:rgb(223, 220, 224);
+}
+.buttonText{
+  padding-top:5px;
 }
 .bottomGridButton:hover{
   background-color: rgb(99, 99, 99);
@@ -251,10 +254,10 @@
 }
 .bottomGridButtonCopy {
   grid-area: copy;
-  height:40px;
   font-weight: bold;
-  margin-left:10px;
+  margin: 0 10px;
   border-radius: 4px;
+  height: 50px;
   padding:5px;
   border:none;
   background-color: rgb(25,25,25,0.5);
@@ -269,24 +272,25 @@
 }
 .bottomGridInputCopy {
   grid-area: input;
+  font-size: 20px;
   padding:10px;
   border: 1px rgb(192, 192, 192);
   background-color: rgba(255,255,255,0.4);
-  height:40px;
+  height:50px;
   border-radius: 4px;
 }
 
 .messageInput {
   padding:10px;
   border: 1px rgb(192, 192, 192);
-  height:40px;
+  height:50px;
   border-radius: 4px;
   margin-right:10px;
   flex: 1;
 }
 
 .sendButton {
-  width: 40px;
+  width: 50px;
   background-image: url(/assets/images/send.svg);
   background-repeat: no-repeat;
   background-position: center;
