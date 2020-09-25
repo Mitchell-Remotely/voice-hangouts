@@ -1,0 +1,281 @@
+.room {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.iframe{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  border:none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.userList {
+  position: absolute;
+  left:0;
+  width: 500px;
+  margin:8px 10px;
+  text-overflow: ellipsis;
+  max-height:70%;
+  background-color: transparent;
+}
+
+.userListRow {
+  text-align: start;
+  margin:4px 0;
+}
+
+.userListName {
+  color:white;
+  vertical-align: middle;
+}
+
+.userControlIcon {
+  margin: 0 10px 0 7px;;
+  border-radius: 2px;
+  border: none;
+  background-color: #e7e8e9;
+  background-size: 22px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  color: #557588;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.userControlIcon:hover {
+  background-color: #d9dedf;
+}
+
+.userControlIcon[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.userControlIcon[disabled]:hover {
+  background-color: #e7e8e9;
+}
+
+.mic {
+  background-image: url(/assets/images/mic.svg);
+}
+
+.micOff {
+  background-image: url(/assets/images/mic_off.svg);
+}
+
+.volumeUp {
+  background-image: url(/assets/images/volume_up.svg);
+}
+
+.volumeOff {
+  background-image: url(/assets/images/volume_off.svg);
+}
+
+.chatRoom {
+  border:none;
+  outline:none;
+  background: transparent;
+  height: 20%;
+  border:none;
+  position: absolute;
+  bottom:20px;
+  right:20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+.endButton {
+  position: absolute;
+  display:block;
+  top: 6px;
+  right: 6px;
+  padding: 6px 9px;
+}
+
+.messages {
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: none;
+  text-align: start;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.messageBox {
+  display: flex;
+  width: 100%;
+}
+
+.messageBox[disabled] {
+  opacity: 0.5;
+}
+
+.messageRow {
+  line-height: 22px;
+  margin: 6px;
+  display: flex;
+  overflow-wrap: break-word;
+  white-space:wrap;
+}
+
+.messageUser {
+  color: #2756b1;
+}
+
+.messageContent {
+  margin: 0 8px;
+  color:white;
+  flex: 1;
+  word-break: break-all;
+}
+
+.timestamp {
+  cursor: pointer;
+  color: grey;
+  font-size: 0.7rem;
+  text-align: end;
+  white-space: nowrap;
+}
+
+.timestamp:hover {
+  text-decoration: underline;
+}
+
+.userNameBox {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 50%;
+  text-align: left;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font: inherit;
+}
+
+.userName {
+  color: white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0 5px;
+  font-size: 30px
+}
+
+.userName:hover {
+  text-decoration: underline;
+}
+
+.editUserName {
+  width: 80%;
+  color: white;
+  background: inherit;
+  border: none;
+}
+
+.bottomGrid{
+  position: absolute;
+  bottom:30px;
+  left:0;
+  right:0;
+  margin:auto;
+  max-width: 950px;
+  padding:20px;
+}
+.bottomInput{
+  position: relative;
+  width: 100%;
+  display:grid;
+  grid-template-columns: 9fr 4fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "input copy button button button";
+}
+.bottomButtons{
+  position: relative;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.topUserIcon{
+  margin: 2px 0px 0px 0px;
+  border-radius: 4px;
+  width:60px;
+  height:60px;
+  border:none;
+  background-color: rgb(25,25,25,0.5);
+  color:rgb(223, 220, 224);
+}
+.topUserIcon:hover{
+  background-color: rgb(99, 99, 99);
+  cursor: pointer;
+}
+.topUserIcon:active{
+  background-color: rgb(148, 148, 148);
+}
+.bottomGridButton{
+  margin: 0 10px 0 0;
+  border-radius: 4px;
+  min-height: 100px;
+  min-width: 100px;
+  padding:5px;
+  border:none;
+  background-color: rgb(25,25,25,0.5);
+  color:rgb(223, 220, 224);
+}
+.buttonText{
+  padding-top:5px;
+  font-size: 20px;
+}
+.bottomGridButton:hover{
+  background-color: rgb(99, 99, 99);
+  cursor: pointer;
+}
+.bottomGridButton:active{
+  background-color: rgb(148, 148, 148);
+}
+.bottomGridButtonCopy {
+  grid-area: copy;
+  font-weight: bold;
+  margin: 0 10px;
+  border-radius: 4px;
+  font-size: 25px;
+  padding:5px;
+  border:none;
+  background-color: rgb(25,25,25,0.5);
+  color:rgb(223, 220, 224);
+}
+.bottomGridButtonCopy:hover{
+  background-color: rgb(99, 99, 99);
+  cursor: pointer;
+}
+.bottomGridButtonCopy:active{
+  background-color: rgb(148, 148, 148);
+}
+.bottomGridInputCopy {
+  grid-area: input;
+  font-size: 35px;
+  padding:10px;
+  border: 1px rgb(192, 192, 192);
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 4px;
+}

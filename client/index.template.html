@@ -3,15 +3,19 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164909144-2"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
       gtag('config', 'UA-164909144-2');
+      window.isMobile = false;//Debugging
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        window.isMobile = true;
+      }
     </script>
   </head>
   <body style="margin:0;">
@@ -55,7 +59,10 @@
         };
         function sendToIframe(method, data){
           if(!window.gameframe){
-            window.gameframe = document.getElementsByTagName("iframe")[0].contentWindow;
+            window.gameframe = document.getElementsByTagName("iframe")[0]?.contentWindow;
+          }
+          if(!window.gameframe){
+            return;
           }
           if(!iFrameLoaded){
             if(method.length == 0) return;
