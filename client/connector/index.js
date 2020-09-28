@@ -276,7 +276,7 @@ class Connector {
     const answer = await peerConn.createAnswer()
 
     await peerConn.setLocalDescription(answer);
-    console.log("order", order);
+
     window.sendtoiframe("Join",[peerId +"",order,userName]);
 
     this.send({
@@ -303,9 +303,9 @@ class Connector {
   }
 
   async handlePacket ({ peerId, data }) {
-    log(`Received Packet candidate from '${peerId}' (${data})`)
     window.sendtoiframe("Packet",[peerId +"",data]);
   }
+
   handleMessage ({ peerId,order, message, timestamp }) {
     this.actions.addMessage(peerId, message, timestamp)
   }
