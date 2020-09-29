@@ -19,6 +19,7 @@ function Room ({
 }) {
   window.connector = connector;
   window.getMuted = false;
+  const textInput = React.createRef();
   useEffect(
     () => {
       function onLeaveRoom () {
@@ -44,13 +45,19 @@ function Room ({
     setUser({ userName })
     connector.sendUpdate({ uid: user.uid, userName })
   }
-
+  function onSendMessageButton({ key, type}){
+    const message = textInput.current.value
+    if ((key === 'Enter' || type === 'click') && message) {
+      connector.sendMessage(message)
+      textInput.current.value = '';
+    }
+  }
   function onSendMessage ({ key, type, currentTarget }) {
     const message = currentTarget.value
 
     if ((key === 'Enter' || type === 'click') && message) {
       connector.sendMessage(message)
-      currentTarget.value = ''
+      currentTarget.value = '';
     }
   }
   function onUserControlClickSelf(){
@@ -178,6 +185,7 @@ function Room ({
         </div>
         <div className={styles.messageBox} disabled={!chatRoomReady}>
           <input
+            ref={textInput}
             autoFocus
             className={styles.messageInput}
             disabled={!chatRoomReady}
@@ -187,8 +195,7 @@ function Room ({
           <button
             className={styles.sendButton}
             disabled={!chatRoomReady}
-            value='Send'
-            onClick={onSendMessage}
+            onClick={onSendMessageButton}
           />
         </div>
       </div>
