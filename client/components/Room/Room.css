@@ -153,7 +153,7 @@
 
 .timestamp {
   cursor: pointer;
-  color: grey;
+  color:#d1d1d1;
   font-size: 0.7rem;
   text-align: end;
   white-space: nowrap;
@@ -177,7 +177,10 @@
 }
 
 .userName {
-  color: white;
+  color: white;    
+  max-width: 120px;
+  display: inline-block;
+  vertical-align: middle;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
