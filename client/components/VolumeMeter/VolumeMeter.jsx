@@ -6,12 +6,18 @@ import styles from './VolumeMeter.css'
 function VolumeMeter ({uid, enabled, stream }) {
   const [volume, setVolume] = useState(0)
   var lastVolume = 0;
+  var self = this;
   var volumeHook= function(v){
-    setVolume(v);
-    var rounded =Math.round(v);
+    var rounded = Math.round(v);
+    if(!enabled){
+      window.sendtoiframe("Volume",[uid +"",0]);
+      lastVolume = 0;
+      setVolume(0);
+    }
     if(lastVolume != rounded && ((rounded > lastVolume + 5 || rounded < lastVolume - 5) || rounded === 0)){
       window.sendtoiframe("Volume",[uid +"",v]);
       lastVolume = rounded;
+      setVolume(v);
     }
     return;
   }
