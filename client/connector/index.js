@@ -259,7 +259,7 @@ class Connector {
     log(`Sent local stream to remote user '${userName}' (${peerId})`)
   }
 
-  async handleOffer ({ peerId,order, userName, offer }) {
+  async handleOffer ({ peerId, order, userName, offer }) {
     log(`Received offer from '${userName}' (${peerId})`)
 
     const peerConn = this.getPeerConnection(peerId, userName)

@@ -28,7 +28,7 @@ class SignalingService {
         })
       }
 
-      console.info(`[Send] '${ws.uid}' sent '${type}' to user '${peerId}'`)
+      console.info(`[Send] '${ws.uid}'  USERNAME: '${username}' sent '${type}' to user '${peerId}'`)
     })
   }
 
@@ -48,7 +48,7 @@ class SignalingService {
             ...payload
           }
         });
-        console.info(`[Broadcast] '${ws.uid}' '${ws.order}' broadcasted '${type}' to all peers in room '${ws.roomName}'. With room time '${ws.roomTime}'`)
+        console.info(`[Broadcast] '${ws.uid}' '${ws.order}'  USERNAME: '${username}' broadcasted '${type}' to all peers in room '${ws.roomName}'. With room time '${ws.roomTime}'`)
       }
     })
   }
@@ -67,7 +67,7 @@ class SignalingService {
     ws.userName = userName;
     ws.roomName = roomName;
     ws.roomTime = moment().tz("UTC").format();
-    console.log(`[Client Join] UID: '${ws.uid}' ORDER: '${ws.order}'  ROOMNAME: '${ws.roomName}' ROOMTIME: '${ws.roomTime}'`)
+    console.log(`[Client Join] UID: '${ws.uid}' ORDER: '${ws.order}' USERNAME: '${username}'  ROOMNAME: '${ws.roomName}' ROOMTIME: '${ws.roomTime}'`)
 
     //Get room time from first person, or anyone else (who would have had to get it from the first person)
     this.wsClients.forEach((wsClient) => {
