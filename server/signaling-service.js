@@ -33,10 +33,10 @@ class SignalingService {
   }
 
   broadcastToRoomPeers (type, ws, payload, includeSelf) {
-    console.log(`>>>>>>>>>>>> Setting name because update ${type} ${payload} ${payload.user} ${payload.user.userName}`)
+    console.info(`>>>>>>>>>>>> Setting name because update ${type} ${payload} ${payload.user} ${payload.user.userName}`)
     if(type === 'update'){
       if(payload && payload.user && payload.user.uid && payload.user.userName){
-        console.log(`Actually updateing name ${payload}`)
+        console.info(`Actually updateing name ${payload}`)
         ws.userName = payload.userName;
       }
     }
