@@ -1,7 +1,5 @@
-const ROOM_NAME = window.location.pathname.replace('/', '') || ''
-
 const initialState = {
-  user: JSON.parse(window.localStorage.getItem(ROOM_NAME)) || {
+  user: JSON.parse(window.localStorage.getItem(window.location.host)) || {
     uid: '',
     userName: 'Guest',
     roomName: '',
