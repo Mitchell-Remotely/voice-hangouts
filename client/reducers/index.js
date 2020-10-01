@@ -1,5 +1,5 @@
 const initialState = {
-  user: JSON.parse(window.localStorage.getItem(window.location.host)) || {
+  user: JSON.parse(window.localStorage.getItem(window.location.hostname)) || {
     uid: '',
     userName: 'Guest',
     roomName: '',

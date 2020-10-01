@@ -347,7 +347,7 @@ class Connector {
 
     if (roomName) {
       // Store user data in localStorage for next time visit
-      window.localStorage.setItem(roomName, JSON.stringify({
+      window.localStorage.setItem(window.location.hostname, JSON.stringify({
         uid,
         userName,
         roomName
