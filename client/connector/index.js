@@ -352,8 +352,6 @@ class Connector {
       roomName
     }))
 
-    this.actions.setUser({})
-
     this.store.getState().clients.forEach((client) => {
       if (client.peerConn) {
         client.peerConn.close()
