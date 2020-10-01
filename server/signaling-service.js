@@ -33,15 +33,14 @@ class SignalingService {
   }
 
   broadcastToRoomPeers (type, ws, payload, includeSelf) {
+    console.log(`>>>>>>>>>>>> Setting name because update ${type} ${payload} ${payload.user} ${payload.user.userName}`)
     if(type === 'update'){
-      console.log(">>>>>>>>>>>> Setting name because update")
       if(payload && payload.user && payload.user.uid && payload.user.userName){
         console.log(`Actually updateing name ${payload}`)
         ws.userName = payload.userName;
       }
     }
     this.wsClients.forEach((wsClient) => {
-      console.log("Room ", wsClient.roomName, wsClient.order , includeSelf, wsClient.uid, ws.uid, payload, type);
       if (wsClient.roomName === ws.roomName && (includeSelf || wsClient.uid !== ws.uid)) {
         this.send(wsClient, {
           type,
