@@ -186,7 +186,20 @@
   overflow: hidden;
   margin: 0 5px;
 }
-
+.shake {
+  animation: shake-animation 3s ease infinite;
+  transform-origin: 70% 70%;
+}
+@keyframes shake-animation {
+   0% { transform:translate(0,0) }
+  1.78571% { transform:translate(5px,0) }
+  3.57143% { transform:translate(0,0) }
+  5.35714% { transform:translate(5px,0) }
+  7.14286% { transform:translate(0,0) }
+  8.92857% { transform:translate(5px,0) }
+  10.71429% { transform:translate(0,0) }
+  100% { transform:translate(0,0) }
+}
 .userName:hover {
   text-decoration: underline;
 }
@@ -206,6 +219,9 @@
   margin:auto;
   max-width: 550px;
   padding:20px;
+}
+.copyText{
+  margin:auto;
 }
 .bottomInput{
   position: relative;
@@ -231,6 +247,16 @@
   border:none;
   background-color: rgb(25,25,25,0.5);
   color:rgb(223, 220, 224);
+}
+.infoBox {
+  background-color: rgb(25,25,25,0.5);
+  color:rgb(223, 220, 224);
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display:flex;
+  font-size: 20px;
 }
 .topUserIcon:hover{
   background-color: rgb(99, 99, 99);

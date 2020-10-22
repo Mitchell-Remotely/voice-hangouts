@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import { connect } from 'react-redux'
 import Actions from '../../actions'
 import VolumeMeter from '../VolumeMeter'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faUserEdit, faMicrophoneSlash,faVolumeOff, faSignOutAlt, faMicrophone, faVolumeUp, } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faUserEdit,faInfoCircle, faMicrophoneSlash,faVolumeOff, faSignOutAlt, faMicrophone, faVolumeUp, } from "@fortawesome/free-solid-svg-icons";
 import styles from './Room.css'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
+let copied = false;
 function Room ({
   chatRoomReady,
   clients,
@@ -17,6 +18,7 @@ function Room ({
   toggleUserAudio,
   user
 }) {
+  const [,setState] = useState();
   window.connector = connector;
   window.getMuted = false;
   const textInput = React.createRef();
@@ -33,8 +35,10 @@ function Room ({
         window.addEventListener('beforeunload', onLeaveRoom)
       })()
 
+      window.addEventListener('blur', onBlur);
       return () => {
         window.removeEventListener(onLeaveRoom)
+        window.removeEventListener('blur', onBlur);
       }
     },
     [connector, setUser]
@@ -91,6 +95,16 @@ function Room ({
     return client ? client.userName : 'Guest'
   }
 
+  
+  // User has switched away from the tab (AKA tab is hidden)
+  const onBlur = () => {
+    copied = false;
+  };
+  function setCopied(){
+    copied = true;
+    setState({});
+  }
+
   function isUrl (url) {
     return /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/gi.test(
       url
@@ -109,8 +123,6 @@ function Room ({
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   };
-
-  let copied = false;
   return (
     <div className={styles.room} style={divStyle}>
       <iframe id="room" src={process.env.GAME_ASSETS_URL+"/index.html"} className={styles.iframe}></iframe>
@@ -205,14 +217,45 @@ function Room ({
           <audio key={id} autoPlay src={peer.streamUrl} />
         ))}
       <div className={styles.bottomGrid}>
+        {users.length <= 1 && 
+            (copied ?
+            <div className={styles.infoBox}>
+              <FontAwesomeIcon icon={faInfoCircle} style={{fontSize: "65px", color: "#26a388", marginRight:"10px"}} /> 
+              <div className={styles.copyText} >Link copied! Share the link with your crew.</div>
+            </div>:
+            <div className={styles.infoBox}>
+              <FontAwesomeIcon icon={faInfoCircle} style={{fontSize: "65px", color: "#cc3300", marginRight:"10px"}} /> 
+              <div className={styles.copyText} >Copy and share the link below to invite your crew.</div>
+            </div>
+            )
+        }
         <div className={styles.bottomInput}>
           <input readOnly className={styles.bottomGridInputCopy} value={window.location.href}></input>
-          <CopyToClipboard text={window.location.href}
-            onCopy={() => copied = true}>
-            <button
-              className={styles.bottomGridButtonCopy}
-              >Copy link</button>
-          </CopyToClipboard>
+          {users.length <= 1 ?
+            (copied ?
+            <CopyToClipboard text={window.location.href}
+              onCopy={setCopied}>
+              <button
+                className={styles.bottomGridButtonCopy }
+                style={{color:"#26a388"}}
+                >Copied!</button>
+            </CopyToClipboard> :
+            <CopyToClipboard text={window.location.href}
+              onCopy={setCopied}>
+              <button
+                className={styles.bottomGridButtonCopy + ' ' + styles.shake}
+                style={{color:"#cc3300"}}
+                >Copy link</button>
+            </CopyToClipboard>
+            ):
+            <CopyToClipboard text={window.location.href}
+              onCopy={()=>copied = true}>
+              <button
+                className={styles.bottomGridButtonCopy}
+                >Copy link</button>
+            </CopyToClipboard>
+            
+          }
           <button className={styles.bottomGridButton} onClick={onUserControlClickSelf}>{
             user.mute?
             <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "22px", color:"#f44336"}} />
@@ -246,7 +289,7 @@ export default connect(
     clients: state.clients,
     chatRoomReady: state.chatRoomReady,
     messages: state.messages,
-    user: state.user
+    user: state.user,
   }),
   dispatch => ({
     addMessage: (userName, message) =>
