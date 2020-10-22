@@ -210,7 +210,11 @@
   background: inherit;
   border: none;
 }
-
+.becomeABetaUser{
+  position: absolute;
+  top:10px;
+  right:0;
+}
 .bottomGrid{
   position: absolute;
   bottom:0;

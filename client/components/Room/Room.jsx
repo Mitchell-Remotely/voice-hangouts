@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Actions from '../../actions'
 import VolumeMeter from '../VolumeMeter'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faUserEdit,faInfoCircle, faMicrophoneSlash,faVolumeOff, faSignOutAlt, faMicrophone, faVolumeUp, } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faFlask, faUserEdit,faInfoCircle, faMicrophoneSlash,faVolumeOff, faSignOutAlt, faMicrophone, faVolumeUp, } from "@fortawesome/free-solid-svg-icons";
 import styles from './Room.css'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
@@ -112,6 +112,11 @@ function Room ({
   }
   function endMeeting(){
     window.location = "https://www.remotelyhq.com/post-call-survey";
+  }
+  function openSurvey(){
+    let survey = window.open("https://www.remotelyhq.com/post-call-survey", "_blank");
+    survey.blur();
+    window.focus();
   }
   const users = [user, ...Array.from(clients.values())].filter(
     client => client.uid
@@ -270,6 +275,9 @@ function Room ({
         
         </div>
       </div>
+        <div className={styles.becomeABetaUser}>
+          <button className={styles.bottomGridButton} style={{fontWeight:"bold", padding:"10px", color:"#26a388"}}  onClick={openSurvey}><FontAwesomeIcon icon={faFlask} style={{marginRight: "5px"}} />Become a Beta tester</button>
+        </div>
     </div>
   )
 }
