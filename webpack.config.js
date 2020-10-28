@@ -5,8 +5,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackCdnPlugin = require('webpack-cdn-plugin')
 
-const isDev = (process && process.env && process.env.npm_lifecycle_script && process.env.npm_lifecycle_script.includes("development")) || false;
-
+const isDev = (process && process.env && process.env.npm_lifecycle_script && (process.env.npm_lifecycle_script.includes("development")||process.env.npm_lifecycle_script.includes("addressables") )) || false;
+const isAddressable =  (process && process.env && process.env.npm_lifecycle_script && process.env.npm_lifecycle_script.includes("addressables") ) || false;
 module.exports = {
   entry: {
     client: [
@@ -23,7 +23,7 @@ module.exports = {
     isDev && new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new Dotenv({
-      path: path.resolve(__dirname, '.env.' + (isDev?'development':'production'))
+      path: path.resolve(__dirname, '.env.' + (isAddressable ? 'addressables' : isDev?'development':'production'))
     }),
     !isDev && new UglifyJSPlugin({
       uglifyOptions: {
