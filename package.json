@@ -13,6 +13,7 @@
     "build-prod": "npx webpack --progress --colors --config ./webpack.config.js --env.NODE_ENV=production --env.production",
     "clean": "find ./public -not -path '*/\\.*' -type f -maxdepth 1 -delete",
     "lint": "$(npm bin)/eslint --fix '+(client|server)/**/*.+(js|jsx)' './*.js'",
+    "start-addressable": "nodemon -r dotenv/config server/index.js dotenv_config_path=.env.addressables",
     "start": "nodemon -r dotenv/config server/index.js dotenv_config_path=.env.development",
     "start-prod": "nodemon -r dotenv/config server/index.js dotenv_config_path=.env.production",
     "serve": "node server/index.js",
