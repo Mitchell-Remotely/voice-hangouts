@@ -276,7 +276,7 @@ function Room ({
         </div>
       </div>
         <div className={styles.becomeABetaUser}>
-          <button className={styles.bottomGridButton} style={{fontWeight:"bold", padding:"10px", color:"#26a388"}}  onClick={openSurvey}><FontAwesomeIcon icon={faFlask} style={{marginRight: "5px"}} />Share feedback & win</button>
+          <button className={styles.bottomGridButton} style={{fontWeight:"bold", padding:"10px", color:"#26a388"}}  onClick={openSurvey}>Share feedback & win</button>
         </div>
     </div>
   )
