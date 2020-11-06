@@ -254,7 +254,7 @@ function Room ({
             </CopyToClipboard>
             ):
             <CopyToClipboard text={window.location.href}
-              onCopy={()=>copied = true}>
+              onCopy={setCopied}>
               <button
                 className={styles.bottomGridButtonCopy}
                 >Copy link</button>

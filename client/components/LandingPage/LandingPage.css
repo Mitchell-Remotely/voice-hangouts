@@ -4,6 +4,101 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  text-align: left;
+  background: url(/assets/images/bg.png);
+  background-position: center;
+  background-size: cover;
+}
+.centerConsole{
+  position: absolute;
+  left: 95px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 4px;
+  color: white;
+}
+.headerBar{    
+  padding: 10px 95px;
+  height:62px;
+  display:flex;
+  background:#252525;
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  width:100vw;
+}
+.footerBar{ 
+  padding: 0 95px;
+  height:62px;
+  align-content: center;
+  vertical-align: middle;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  background: #252525;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+}
+.footerBarLeftContent{
+  display: flex;
+  margin:auto 0;
+}
+a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footerBarRightContent{
+  display: flex;
+  margin:auto 0;
+  align-self: center;
+  justify-content: flex-end;
+}
+.footerButton{
+  color:white;
+  width:28px;
+  height:28px;
+  display:flex;
+  justify-content: center;
+  margin: auto;
+  margin-left:0;
+  margin-right:10px;
+  border: none;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+.footerButton:hover{
+  cursor: pointer;
+}
+.footerCenter{
+  color:white;
+  align-self: center;
+}
+.discordBlue{
+  background-color: #7289DA;
+}
+.youtubeRed{
+  background-color: red;
+}
+.footerButtonContent{
+  align-self: center;
+}
+.logo{
+  max-width: 180px;
+  image-rendering: -webkit-optimize-contrast;
+}
+.h1WithoutTop{
+  text-transform: capitalize;
+}
+.borderBottom{
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  font-size: 20px;
+  max-width: 225px;
+  text-transform: uppercase;
 }
 
 .domain {
@@ -12,29 +107,59 @@
 
 .startChatForm {
   display: flex;
-  margin: 20px;
+  margin-bottom: 10px;
 }
 
 .createRoomInput {
-  border: 1px #00b0e9 solid;
+  border: none;
+  background-color: white;
   padding: 10px;
   width:500px;
   border-radius: 3px;
+  margin-right: 10px;
 }
 
 .roomNameInput {
-  width:500px;
+  width:350px;
   border: none;
-  color: #00b0e9;
+  color: black;
 }
-
+.greyBGColor{
+background-color: #b2b2b2;
+}
+.greyBGColor:hover{
+  background-color: #3b3b3b;
+}
+.rightWing{
+  position: absolute;
+  margin:auto;
+  color:white;
+  right: 100px;
+}
+.redBGColor{
+  background-color: #47b457;
+  -webkit-box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 0.4);
+  -moz-box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 0.4);
+  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 0.4);
+}
+.redBGColor:hover{
+  background-color: #47b457;
+}
 .startChatButton {
   color: white;
-  background-color: #00b0e9;
   border: none;
   border-radius: 3px;
   text-align: center;
-  margin: 0 5px;
   padding: 11px;
   cursor: pointer;
+}
+.bigger{
+  font-size:25px;
+}
+.biggerBigger{
+  font-size:40px;
+}
+a{
+  color:white;
+  text-decoration: none;
 }
