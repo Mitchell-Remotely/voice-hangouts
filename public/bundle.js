@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "44478ea16a3a0cd79e84"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e270dd7ee2f3615609c0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -45567,7 +45567,7 @@ c-6.7,14.92-16.29,25.57-31.51,25.57c-4.41,0-7.92-3.2-7.92-7.61s3.5-7.61,7.92-7.6
         { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.footerBarRightContent + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.footerCenter },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'a',
-          { href: 'https://remotelyhq.com' },
+          { href: 'https://www.remotelyhq.com/terms-and-conditions' },
           'terms & conditions'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -45577,7 +45577,7 @@ c-6.7,14.92-16.29,25.57-31.51,25.57c-4.41,0-7.92-3.2-7.92-7.61s3.5-7.61,7.92-7.6
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'a',
-          { href: 'https://remotelyhq.com' },
+          { href: 'https://www.remotelyhq.com/privacy-policy' },
           'privacy policy'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

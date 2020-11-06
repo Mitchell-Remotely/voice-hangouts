@@ -222,8 +222,8 @@ c-6.7,14.92-16.29,25.57-31.51,25.57c-4.41,0-7.92-3.2-7.92-7.61s3.5-7.61,7.92-7.6
       </div>
       <div></div>
       <div className={styles.footerBarRightContent +' ' + styles.footerCenter}>
-        <a href="https://remotelyhq.com">terms & conditions</a><span>&nbsp;&nbsp;&nbsp;</span>
-        <a href="https://remotelyhq.com">privacy policy</a><span>&nbsp;&nbsp;</span>
+        <a href="https://www.remotelyhq.com/terms-and-conditions">terms & conditions</a><span>&nbsp;&nbsp;&nbsp;</span>
+        <a href="https://www.remotelyhq.com/privacy-policy">privacy policy</a><span>&nbsp;&nbsp;</span>
         <a href="https://remotelyhq.com">about us</a><span>&nbsp;&nbsp;&nbsp;</span>
         <span>© RemotelyHQ {currentYear()}</span>
       </div>
