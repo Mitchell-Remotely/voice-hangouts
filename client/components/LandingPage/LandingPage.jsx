@@ -54,7 +54,8 @@ function LandingPage () {
   let copied = false;
   return (
     <div>
-      <div className={styles.headerBar} dangerouslySetInnerHTML={{__html:  `<div class="header__logo">
+      <div className={styles.headerBar}>
+        <div dangerouslySetInnerHTML={{__html:  `<div class="header__logo">
         <a href="/" class="svg__logo svg__logo--white" style="
     /* width: 300px; */
 ">
@@ -165,7 +166,16 @@ c-6.7,14.92-16.29,25.57-31.51,25.57c-4.41,0-7.92-3.2-7.92-7.61s3.5-7.61,7.92-7.6
 
         </a>
     </div>`
-        }}>
+        }}></div>
+            
+        <div className={styles.headerBarRightContent}>
+          <button className={styles.footerButton + ' ' + styles.discordBlue} onClick={toDiscord}>
+            <FontAwesomeIcon className={styles.footerButtonContent} icon={faDiscord} />
+          </button>
+          <button className={styles.footerButton+ ' ' +  styles.youtubeRed} onClick={toYoutube}>
+            <FontAwesomeIcon className={styles.footerButtonContent} icon={faYoutube} />
+          </button>
+        </div>
       </div>
       <div className={styles.firstPage + ' ' + styles.partition}>
         <div className={styles.centerConsole}>

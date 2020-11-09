@@ -78,6 +78,10 @@
   left: 0;
   right: 0;
 }
+.headerBarRightContent{
+  display: flex;
+  margin:0 0 0 auto;
+}
 .footerBarLeftContent{
   display: flex;
   margin:auto 0;
