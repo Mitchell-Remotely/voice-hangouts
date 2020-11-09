@@ -53,7 +53,7 @@ function LandingPage () {
   let inputVal = createGuid();
   let copied = false;
   return (
-    <div className={styles.landingPage}>
+    <div>
       <div className={styles.headerBar} dangerouslySetInnerHTML={{__html:  `<div class="header__logo">
         <a href="/" class="svg__logo svg__logo--white" style="
     /* width: 300px; */
@@ -167,48 +167,76 @@ c-6.7,14.92-16.29,25.57-31.51,25.57c-4.41,0-7.92-3.2-7.92-7.61s3.5-7.61,7.92-7.6
     </div>`
         }}>
       </div>
-      <div className={styles.centerConsole}>
-        <h1 className={styles.h1WithoutTop}>Gather the team.</h1>
-        <div key='form' className={styles.startChatForm}>
-          <div>
-            <span className={styles.createRoomInput}>
-              <input
-                className={styles.roomNameInput}
-                defaultValue = {DOMAIN_URL + inputVal}
-                onKeyPress={onRoomNameKeyPress}
-                disabled={disabled}
-              />      
-            </span> 
-            <CopyToClipboard text={DOMAIN_URL + inputVal}
-              onCopy={setCopied}>
-              <button
-                className={styles.startChatButton +' '+styles.greyBGColor}
-                onClick={setCopied}
-                >
-                <FontAwesomeIcon className={styles.footerButtonContent} icon={faCopy} />
-              </button> 
-            </CopyToClipboard>
-          </div>
+      <div className={styles.firstPage + ' ' + styles.partition}>
+        <div className={styles.centerConsole}>
+          <h1 className={styles.h1WithoutTop}>Gather the team.</h1>
+          <div key='form' className={styles.startChatForm}>
+            <div>
+              <span className={styles.createRoomInput}>
+                <input
+                  className={styles.roomNameInput}
+                  defaultValue = {DOMAIN_URL + inputVal}
+                  onKeyPress={onRoomNameKeyPress}
+                  disabled={disabled}
+                />      
+              </span> 
+              <CopyToClipboard text={DOMAIN_URL + inputVal}
+                onCopy={setCopied}>
+                <button
+                  className={styles.startChatButton +' '+styles.greyBGColor}
+                  onClick={setCopied}
+                  >
+                  <FontAwesomeIcon className={styles.footerButtonContent} icon={faCopy} />
+                </button> 
+              </CopyToClipboard>
+            </div>
+        </div>
+        <div>
+          {copied?
+          "copied"
+          :""}
+          <button
+            className={styles.startChatButton +' ' + styles.redBGColor +' ' + styles.bigger}
+            onClick={joinRoom}
+          >
+          Go to room
+          </button>
+          <br/>
+          {copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+        </div>
       </div>
-      <div>
-        {copied?
-        "copied"
-        :""}
-        <button
-          className={styles.startChatButton +' ' + styles.redBGColor +' ' + styles.bigger}
-          onClick={joinRoom}
-        >
-         Go to room
-        </button>
-        <br/>
-        {copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+      <div className={styles.rightWing}>
+        <h1 className={styles.biggerBigger}>Remotely</h1>
+        <h2>Enter immersive room</h2>
+        <h2>Simply share link to invite</h2>
+        <h2>be {word}</h2>
       </div>
     </div>
-    <div className={styles.rightWing}>
-      <h1 className={styles.biggerBigger}>Remotely</h1>
-      <h2>Enter immersive room</h2>
-      <h2>Simply share link to invite</h2>
-      <h2>be {word}</h2>
+    <div className={styles.secondPage + ' ' + styles.partition + ' ' + styles.colorWhite}>
+      <div  className={styles.leftWing + ' ' + styles.maxWidth40p}>
+        <h3 className={styles.maxWidth120 + ' ' + styles.borderWhite}>CONNECT</h3>
+        <h1>Re-engage your team.</h1>
+        <p className={styles.colorWhite + ' ' + styles.margin0}>
+          When you can’t be together, like during lockdowns, it’s vital to keep the team energized. If you’re noticing team engagement dwindling after the third video meeting of the day, it’s time to mix it up. With a few clicks you can be together in another world, and feel connected and re-engaged.
+        </p>
+      </div>
+      <div className={styles.rightWing}>
+      </div>
+    </div>
+    <div className={styles.thirdPage + ' ' + styles.partition}>
+      <div  className={styles.leftWing}>
+        <h3 className={styles.maxWidth120}>FEATURES</h3>
+        <h1>Meetings, stand ups, hangouts. Instantly</h1>
+        <ul>
+          <li>Share room links with one click.</li>
+          <li>Meet in your web browser. No app downloads.</li>
+          <li>Choose from multiple rooms, keep it interesting.</li>
+          <li>Enjoy a more social way to come together.</li>
+        </ul>
+      </div>
+      <div className={styles.rightWing}>
+        <img className={styles.secondPageImage} src="/assets/images/character.png"></img>
+      </div>
     </div>
     <div className={styles.footerBar}>
       <div className={styles.footerBarLeftContent}>

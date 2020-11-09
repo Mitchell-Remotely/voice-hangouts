@@ -34,8 +34,9 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      title: 'Remotely Voice Rooms',
-      template: './client/index.template.html'
+      title: 'Remotely Meetings',
+      template: './client/index.template.html',
+      favicon: "./public/favicon.ico"
     })
   ].filter((file) => file),
   resolve: {

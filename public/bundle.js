@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e270dd7ee2f3615609c0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3fd1d9cf641524b58301"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -2344,10 +2344,17 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(6);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_landingPage__2Q7ke {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  text-align: left;\r\n  background: url(/assets/images/bg.png);\r\n  background-position: center;\r\n  background-size: cover;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_centerConsole__A5L15{\r\n  position: absolute;\r\n  left: 95px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  text-align: left;\r\n  border-radius: 4px;\r\n  color: white;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_headerBar__3zHIP{    \r\n  padding: 10px 95px;\r\n  height:62px;\r\n  display:flex;\r\n  background:#252525;\r\n  position: absolute;\r\n  top:0;\r\n  left:0;\r\n  right: 0;\r\n  width:100vw;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerBar__ddKXV{ \r\n  padding: 0 95px;\r\n  height:62px;\r\n  align-content: center;\r\n  vertical-align: middle;\r\n  display: grid;\r\n  grid-template-columns: 1fr auto 1fr;\r\n  background: #252525;\r\n  position: absolute;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  width: 100vw;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerBarLeftContent__38RMm{\r\n  display: flex;\r\n  margin:auto 0;\r\n}\r\na:hover{\r\n  text-decoration: underline;\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerBarRightContent__3xPIo{\r\n  display: flex;\r\n  margin:auto 0;\r\n  align-self: center;\r\n  justify-content: flex-end;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerButton__1Rf_2{\r\n  color:white;\r\n  width:28px;\r\n  height:28px;\r\n  display:flex;\r\n  justify-content: center;\r\n  margin: auto;\r\n  margin-left:0;\r\n  margin-right:10px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  vertical-align: middle;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerButton__1Rf_2:hover{\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerCenter__2RK9E{\r\n  color:white;\r\n  align-self: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_discordBlue__1dLgd{\r\n  background-color: #7289DA;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_youtubeRed__Ln2nh{\r\n  background-color: red;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerButtonContent__XI19B{\r\n  align-self: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_logo__366zk{\r\n  max-width: 180px;\r\n  image-rendering: -webkit-optimize-contrast;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_h1WithoutTop__1Gzyx{\r\n  text-transform: capitalize;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_borderBottom__qWtUU{\r\n  border-bottom: 1px solid white;\r\n  padding-bottom: 10px;\r\n  font-size: 20px;\r\n  max-width: 225px;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_domain__2MU8j {\r\n  color: #b7c0c3;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_startChatForm__28J3n {\r\n  display: flex;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_createRoomInput__63XmP {\r\n  border: none;\r\n  background-color: white;\r\n  padding: 10px;\r\n  width:500px;\r\n  border-radius: 3px;\r\n  margin-right: 10px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_roomNameInput__1Bs2r {\r\n  width:350px;\r\n  border: none;\r\n  color: black;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_greyBGColor__3PUqX{\r\nbackground-color: #b2b2b2;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_greyBGColor__3PUqX:hover{\r\n  background-color: #3b3b3b;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_rightWing__1ugBV{\r\n  position: absolute;\r\n  margin:auto;\r\n  color:white;\r\n  right: 100px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_redBGColor__1mJQ1{\r\n  background-color: #47b457;\r\n  -webkit-box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 0.4);\r\n  -moz-box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 0.4);\r\n  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 0.4);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_redBGColor__1mJQ1:hover{\r\n  background-color: #47b457;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_startChatButton__3kQNK {\r\n  color: white;\r\n  border: none;\r\n  border-radius: 3px;\r\n  text-align: center;\r\n  padding: 11px;\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_bigger__5v7Qa{\r\n  font-size:25px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_biggerBigger__sT2_J{\r\n  font-size:40px;\r\n}\r\na{\r\n  color:white;\r\n  text-decoration: none;\r\n}\r\n", ""]);
+exports.push([module.i, ".F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_firstPage__1N-sL {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  text-align: left;\r\n  background: url(/assets/images/bg.png);\r\n  background-position: center;\r\n  background-size: cover;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_secondPage__1O37y {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  text-align: left;\r\n  background: url(/assets/images/bg_2.png);\r\n  background-position: center;\r\n  background-size: cover;\r\n  color: black;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_thirdPage__3T7mn {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  text-align: left;\r\n  background: white;\r\n  background-position: center;\r\n  background-size: cover;\r\n  color: black;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_margin0__36yAS{\r\n  margin:0;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_colorBlack__2ag6A{color:black;}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_colorWhite__jtsIW{color:white;}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_maxWidth40p__3Mb4c{\r\n  max-width: 40%;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_secondPageImage__2FS1T{\r\n  max-height:500px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_centerConsole__A5L15{\r\n  position: absolute;\r\n  left: 95px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  text-align: left;\r\n  border-radius: 4px;\r\n  color: white;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_headerBar__3zHIP{    \r\n  padding: 10px 95px;\r\n  height:62px;\r\n  display:flex;\r\n  background:#252525;  \r\n  position: -webkit-sticky; /* Safari */\r\n  position: sticky;\r\n  top:0;\r\n  left:0;\r\n  right: 0;\r\n  z-index: 10000;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerBar__ddKXV{ \r\n  padding: 0 95px;\r\n  height:62px;\r\n  align-content: center;\r\n  vertical-align: middle;\r\n  display: grid;\r\n  grid-template-columns: 1fr auto 1fr;\r\n  background: #252525;\r\n  position: relative;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerBarLeftContent__38RMm{\r\n  display: flex;\r\n  margin:auto 0;\r\n}\r\na:hover{\r\n  text-decoration: underline;\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerBarRightContent__3xPIo{\r\n  display: flex;\r\n  margin:auto 0;\r\n  align-self: center;\r\n  justify-content: flex-end;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerButton__1Rf_2{\r\n  color:white;\r\n  width:28px;\r\n  height:28px;\r\n  display:flex;\r\n  justify-content: center;\r\n  margin: auto;\r\n  margin-left:0;\r\n  margin-right:10px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  vertical-align: middle;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerButton__1Rf_2:hover{\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerCenter__2RK9E{\r\n  color:white;\r\n  align-self: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_discordBlue__1dLgd{\r\n  background-color: #7289DA;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_youtubeRed__Ln2nh{\r\n  background-color: red;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerButtonContent__XI19B{\r\n  align-self: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_logo__366zk{\r\n  max-width: 180px;\r\n  image-rendering: -webkit-optimize-contrast;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_h1WithoutTop__1Gzyx{\r\n  text-transform: capitalize;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_borderBottom__qWtUU{\r\n  border-bottom: 1px solid white;\r\n  padding-bottom: 10px;\r\n  font-size: 20px;\r\n  max-width: 225px;\r\n  text-transform: uppercase;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_partition__3Hr-p{\r\n  height:100vh !important;\r\n  position: relative !important;\r\n}\r\nul {\r\n  list-style: none;\r\n}\r\n\r\nul li:before {\r\n  content: '✔';\r\n  margin-right:5px;\r\n  color:green;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_domain__2MU8j {\r\n  color: #b7c0c3;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_startChatForm__28J3n {\r\n  display: flex;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_createRoomInput__63XmP {\r\n  border: none;\r\n  background-color: white;\r\n  padding: 10px;\r\n  width:500px;\r\n  border-radius: 3px;\r\n  margin-right: 10px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_roomNameInput__1Bs2r {\r\n  width:350px;\r\n  border: none;\r\n  color: black;\r\n}\r\nh1{\r\n  padding: 1em 0;\r\n  font-size: 2em;\r\n  font-weight:normal;\r\n  margin:0;\r\n}\r\nh3{\r\n  padding: 1em 0;\r\n  margin:0;\r\n  font-size: 1.3em;\r\n  font-weight:normal;\r\n  border-bottom: 1px solid black;\r\n}\r\np{\r\n  font-size: 1.1em;  \r\n  font-weight:normal;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_borderWhite__2JHdC{\r\n  border-color: white;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_maxWidth120__9GeSb{\r\n  max-width: 120px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_greyBGColor__3PUqX{\r\nbackground-color: #b2b2b2;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_greyBGColor__3PUqX:hover{\r\n  background-color: #3b3b3b;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_leftWing__VbG_D{\r\n  position: absolute;\r\n  margin:auto;\r\n  left: 100px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_rightWing__1ugBV{\r\n  position: absolute;\r\n  margin:auto;\r\n  color:white;\r\n  right: 100px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_redBGColor__1mJQ1{\r\n  background-color: #47b457;\r\n  -webkit-box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 0.4);\r\n  -moz-box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 0.4);\r\n  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 0.4);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_redBGColor__1mJQ1:hover{\r\n  background-color: #47b457;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_startChatButton__3kQNK {\r\n  color: white;\r\n  border: none;\r\n  border-radius: 3px;\r\n  text-align: center;\r\n  padding: 11px;\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_bigger__5v7Qa{\r\n  font-size:25px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_biggerBigger__sT2_J{\r\n  font-size:40px;\r\n}\r\na{\r\n  color:white;\r\n  text-decoration: none;\r\n}\r\n", ""]);
 // Exports
 exports.locals = {
-	"landingPage": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_landingPage__2Q7ke",
+	"firstPage": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_firstPage__1N-sL",
+	"secondPage": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_secondPage__1O37y",
+	"thirdPage": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_thirdPage__3T7mn",
+	"margin0": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_margin0__36yAS",
+	"colorBlack": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_colorBlack__2ag6A",
+	"colorWhite": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_colorWhite__jtsIW",
+	"maxWidth40p": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_maxWidth40p__3Mb4c",
+	"secondPageImage": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_secondPageImage__2FS1T",
 	"centerConsole": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_centerConsole__A5L15",
 	"headerBar": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_headerBar__3zHIP",
 	"footerBar": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_footerBar__ddKXV",
@@ -2361,11 +2368,15 @@ exports.locals = {
 	"logo": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_logo__366zk",
 	"h1WithoutTop": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_h1WithoutTop__1Gzyx",
 	"borderBottom": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_borderBottom__qWtUU",
+	"partition": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_partition__3Hr-p",
 	"domain": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_domain__2MU8j",
 	"startChatForm": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_startChatForm__28J3n",
 	"createRoomInput": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_createRoomInput__63XmP",
 	"roomNameInput": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_roomNameInput__1Bs2r",
+	"borderWhite": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_borderWhite__2JHdC",
+	"maxWidth120": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_maxWidth120__9GeSb",
 	"greyBGColor": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_greyBGColor__3PUqX",
+	"leftWing": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_leftWing__VbG_D",
 	"rightWing": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_rightWing__1ugBV",
 	"redBGColor": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_redBGColor__1mJQ1",
 	"startChatButton": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-LandingPage-LandingPage_startChatButton__3kQNK",
@@ -45342,7 +45353,7 @@ function LandingPage() {
   let copied = false;
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
-    { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.landingPage },
+    null,
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.headerBar, dangerouslySetInnerHTML: { __html: `<div class="header__logo">
         <a href="/" class="svg__logo svg__logo--white" style="
     /* width: 300px; */
@@ -45457,86 +45468,161 @@ c-6.7,14.92-16.29,25.57-31.51,25.57c-4.41,0-7.92-3.2-7.92-7.61s3.5-7.61,7.92-7.6
       } }),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.centerConsole },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h1',
-        { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.h1WithoutTop },
-        'Gather the team.'
-      ),
+      { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.firstPage + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.partition },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { key: 'form', className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.startChatForm },
+        { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.centerConsole },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h1',
+          { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.h1WithoutTop },
+          'Gather the team.'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { key: 'form', className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.startChatForm },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'span',
+              { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.createRoomInput },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.roomNameInput,
+                defaultValue: DOMAIN_URL + inputVal,
+                onKeyPress: onRoomNameKeyPress,
+                disabled: disabled
+              })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_2_react_copy_to_clipboard__["CopyToClipboard"],
+              { text: DOMAIN_URL + inputVal,
+                onCopy: setCopied },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                {
+                  className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.startChatButton + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.greyBGColor,
+                  onClick: setCopied
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.footerButtonContent, icon: __WEBPACK_IMPORTED_MODULE_4__fortawesome_fontawesome_free_regular__["a" /* faCopy */] })
+              )
+            )
+          )
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           null,
+          copied ? "copied" : "",
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'button',
+            {
+              className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.startChatButton + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.redBGColor + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.bigger,
+              onClick: joinRoom
+            },
+            'Go to room'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+          copied ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'span',
-            { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.createRoomInput },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-              className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.roomNameInput,
-              defaultValue: DOMAIN_URL + inputVal,
-              onKeyPress: onRoomNameKeyPress,
-              disabled: disabled
-            })
+            { style: { color: 'red' } },
+            'Copied.'
+          ) : null
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.rightWing },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h1',
+          { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.biggerBigger },
+          'Remotely'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h2',
+          null,
+          'Enter immersive room'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h2',
+          null,
+          'Simply share link to invite'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h2',
+          null,
+          'be ',
+          word
+        )
+      )
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.secondPage + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.partition + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.colorWhite },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.leftWing + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.maxWidth40p },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h3',
+          { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.maxWidth120 + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.borderWhite },
+          'CONNECT'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h1',
+          null,
+          'Re-engage your team.'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.colorWhite + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.margin0 },
+          'When you can\u2019t be together, like during lockdowns, it\u2019s vital to keep the team energized. If you\u2019re noticing team engagement dwindling after the third video meeting of the day, it\u2019s time to mix it up. With a few clicks you can be together in another world, and feel connected and re-engaged.'
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.rightWing })
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.thirdPage + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.partition },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.leftWing },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h3',
+          { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.maxWidth120 },
+          'FEATURES'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h1',
+          null,
+          'Meetings, stand ups, hangouts. Instantly'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'ul',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'li',
+            null,
+            'Share room links with one click.'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_2_react_copy_to_clipboard__["CopyToClipboard"],
-            { text: DOMAIN_URL + inputVal,
-              onCopy: setCopied },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'button',
-              {
-                className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.startChatButton + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.greyBGColor,
-                onClick: setCopied
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.footerButtonContent, icon: __WEBPACK_IMPORTED_MODULE_4__fortawesome_fontawesome_free_regular__["a" /* faCopy */] })
-            )
+            'li',
+            null,
+            'Meet in your web browser. No app downloads.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'li',
+            null,
+            'Choose from multiple rooms, keep it interesting.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'li',
+            null,
+            'Enjoy a more social way to come together.'
           )
         )
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        null,
-        copied ? "copied" : "",
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          {
-            className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.startChatButton + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.redBGColor + ' ' + __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.bigger,
-            onClick: joinRoom
-          },
-          'Go to room'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-        copied ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'span',
-          { style: { color: 'red' } },
-          'Copied.'
-        ) : null
-      )
-    ),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.rightWing },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h1',
-        { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.biggerBigger },
-        'Remotely'
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h2',
-        null,
-        'Enter immersive room'
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h2',
-        null,
-        'Simply share link to invite'
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h2',
-        null,
-        'be ',
-        word
+        { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.rightWing },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: __WEBPACK_IMPORTED_MODULE_1__LandingPage_css___default.a.secondPageImage, src: '/assets/images/character.png' })
       )
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
