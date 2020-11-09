@@ -244,9 +244,6 @@ c-6.7,14.92-16.29,25.57-31.51,25.57c-4.41,0-7.92-3.2-7.92-7.61s3.5-7.61,7.92-7.6
           <li>Enjoy a more social way to come together.</li>
         </ul>
       </div>
-      <div className={styles.rightWing}>
-        <img className={styles.secondPageImage} src="/assets/images/character.png"></img>
-      </div>
     </div>
     <div className={styles.footerBar}>
       <div className={styles.footerBarLeftContent}>
