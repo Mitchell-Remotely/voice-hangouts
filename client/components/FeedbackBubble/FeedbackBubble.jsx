@@ -59,7 +59,7 @@ function FeedbackBubble ({user}) {
           setWaiting(false); 
         }
       }, 
-      0//300000
+      300000
     );
     
     fetch('https://fa-analytics-service.azurewebsites.net/api/Feedback', {
