@@ -219,7 +219,7 @@ c-6.7,14.92-16.29,25.57-31.51,25.57c-4.41,0-7.92-3.2-7.92-7.61s3.5-7.61,7.92-7.6
         <h1 className={styles.biggerBigger}>Remotely</h1>
         <h2>Enter immersive room</h2>
         <h2>Simply share link to invite</h2>
-        <h2>be {word}</h2>
+        <h2>Be {word}</h2>
       </div>
     </div>
     <div className={styles.secondPage + ' ' + styles.partition + ' ' + styles.colorWhite}>

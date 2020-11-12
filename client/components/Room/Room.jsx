@@ -3,6 +3,7 @@ import React, { useState,useEffect } from 'react'
 import { connect } from 'react-redux'
 import Actions from '../../actions'
 import VolumeMeter from '../VolumeMeter'
+import FeedbackBubble from '../FeedbackBubble'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faFlask, faUserEdit,faInfoCircle, faMicrophoneSlash,faVolumeOff, faSignOutAlt, faMicrophone, faVolumeUp, } from "@fortawesome/free-solid-svg-icons";
 import styles from './Room.css'
@@ -131,6 +132,7 @@ function Room ({
   return (
     <div className={styles.room} style={divStyle}>
       <iframe id="room" {...{ "data-hj-allow-iframe": "" }} src={process.env.GAME_ASSETS_URL+"/index.html"} className={styles.iframe}></iframe>
+      <FeedbackBubble user={user} />
       <div className={styles.userList}>
         {users.map(({ uid, userName, stream, mute }) => (
           <div key={uid} className={styles.userListRow}>
@@ -275,9 +277,6 @@ function Room ({
         
         </div>
       </div>
-        <div className={styles.becomeABetaUser}>
-          <button className={styles.bottomGridButton} style={{fontWeight:"bold", padding:"10px", color:"#26a388"}}  onClick={openSurvey}>Share feedback & win</button>
-        </div>
     </div>
   )
 }
