@@ -5,14 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/fontawesome-free-regular'
 import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons'
 import { faGrinBeam, faStar } from '@fortawesome/free-regular-svg-icons'
-
+let answers = [];
 function FeedbackBubble ({user}) {
   const [expanded, setExpanded] = useState(false);
   const [selected, setSelected] = useState(0);
   const [internalSelected, setInternalSelected] = useState(3);
   const [preselected, setPreSelected] = useState(-1);
   const [waiting, setWaiting] = useState(false);
-  const [answers, setAnswers] = useState({});
   const [textAreaContent, setTextAreaContent] = useState("");
   const [questions, setQuestions] = useState([
     {
@@ -35,17 +34,16 @@ function FeedbackBubble ({user}) {
       "onsubmit":onCommentsSubmit
     }
   ]);
+  function setCurrent(current, num){
+    answers[current] = num;
+    setInternalSelected(num);
+  }
   function currentExperience(){
-    let interim = answers;
-    interim[0] =internalSelected;
-    setAnswers(interim);
   }
   function reccomend(){
-    let interim = answers;
-    interim[1] =internalSelected;
-    setAnswers(interim);
   }
-  function onCommentsSubmit(){}
+  function onCommentsSubmit(){
+  }
 
   function onSubmit(){
     questions[selected].onsubmit();
@@ -59,36 +57,35 @@ function FeedbackBubble ({user}) {
           setWaiting(false); 
         }
       }, 
-      300000
+      200000
     );
-    
     fetch('https://fa-analytics-service.azurewebsites.net/api/Feedback', {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formatRequest()),
-      })
+      });
   }
   function formatRequest(){
-    return {
+    let localAnswers = questions.map((obj,i)=>{
+      if(answers[i] !== undefined)
+        return "Question " +i +": "  + questions[i].question + " Answer " + i +": " + answers[i]
+    });
+    let toRet = {
       "body":"Room ID: "+ window.location.pathname.split('/')[1] + ", User ID: " + user.uid + ", UserName: " + user.userName,
       "subject":"Feedback from meetings.remotelyhq.com",
-      "answers":[...questions.map((obj,i)=>{
-        if(answers[i])
-          return "Question " +i +": "  + obj.question + " Answer " + i +": " + answers[i]
-      })]
-    }
+      "answers":localAnswers
+    };
+    return toRet;
   }
   let onTextAreaChange= (e) => {
     var text = e.target.value;
     setTextAreaContent(text);
-    let interim = answers;
-    interim[2] =textAreaContent;
-    setAnswers(interim);
+    answers[2] =textAreaContent;
   }
   
-  const listItems = questions[selected].options.map((number) =>
+  const listItems = questions[selected].options.map((number, i) =>
             <li className={styles.specialLi} key={number.toString()}>
               { (preselected === internalSelected ? number <= internalSelected : number <= preselected) ?
                 <button className={styles.starButton + ' ' + styles.starButtonSelected}
@@ -99,7 +96,7 @@ function FeedbackBubble ({user}) {
                   setPreSelected(internalSelected);
                 }}
                 onClick={() => {
-                  setInternalSelected(number);
+                  setCurrent(answers.length, number);
                 }}
                 >
                   <FontAwesomeIcon icon={faStarSolid} />
@@ -113,7 +110,7 @@ function FeedbackBubble ({user}) {
                     setPreSelected(internalSelected);
                   }}
                   onClick={() => {
-                    setInternalSelected(number);
+                    setCurrent(answers.length, number);
                   }}>
                   <FontAwesomeIcon icon={faStar} />
                 </button>
