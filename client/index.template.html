@@ -49,6 +49,47 @@
         window.isMobile = true;
       }
     </script>
+    <script type="text/javascript">
+      window.sendAnalticsEvent = (
+        eventCategory, eventAction, eventLabel, eventValue
+      ) => {
+        if(gtag !== undefined && gtag !== null){
+          gtag('event',eventAction,
+            {
+              'event_category':eventCategory,
+              'event_label':eventLabel,
+              'value':eventValue,
+            });
+        } else {
+          console.log("Ga doesn't exist");
+        }
+      }
+      window.loadingStartTime = 0;
+      window.timeGameStartLoading = 0;
+      window.finishedNetworkLoading = () => {
+        window.timeGameStartLoading = Date.now();
+        let difference = (Date.now()) - window.loadingStartTime ;
+        window.sendAnalticsEvent("Page Load Time - Room Network", "URL", "Time", difference/1000);
+      }
+      window.finishedLoading = () => {
+        // Game
+        let gameDifference = (Date.now()) - window.timeGameStartLoading;
+        window.sendAnalticsEvent("Page Load Time - Room Game", "URL", "Time", gameDifference/1000);
+        //Total
+        let totalDifference = (Date.now()) - window.loadingStartTime;
+        window.sendAnalticsEvent("Page Load Time - Room Total", "URL", "Time", totalDifference/1000);
+      }
+      window.millisToMinutesAndSeconds = (millis) => {
+        var minutes = Math.floor(millis / 60000);
+        var seconds = ((millis % 60000) / 1000);
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+      }
+      window.startLoadTime = ()=>{
+        if(window.loadingStartTime === 0)
+          window.loadingStartTime = Date.now();
+        console.log("Starting time " , window.loadingStartTime);
+      }
+    </script>
   </head>
   <body style="margin:0;">
     <div id="root"></div>  
@@ -85,9 +126,11 @@
                 messageQueueUp.push(event.data[1])
               }
             }else if(event.data[0] == "loaded"){
-              console.log("Received loaded");
+              window.finishedNetworkLoading();
               iFrameLoaded=true;
               sendToIframe("","");
+            }else if(event.data[0] == "postSceneLoad"){
+              window.finishedLoading();
             }
           }
         };

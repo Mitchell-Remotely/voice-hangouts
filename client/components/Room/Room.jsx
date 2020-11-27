@@ -20,6 +20,7 @@ function Room ({
   user
 }) {
   const [,setState] = useState();
+  window.startLoadTime();
   window.connector = connector;
   window.getMuted = false;
   const textInput = React.createRef();
