@@ -20,6 +20,7 @@ function Room ({
   user
 }) {
   const [,setState] = useState();
+  const [uiEnabled,setUIEnabled] = useState(true);
   window.startLoadTime();
   window.connector = connector;
   window.getMuted = false;
@@ -96,6 +97,31 @@ function Room ({
     const client = clients.get(uid)
     return client ? client.userName : 'Guest'
   }
+  /*document.onkeydown = function(e) { 
+    var code;
+
+    if (e.key !== undefined) {
+      code = e.key;
+    } else if (e.keyIdentifier !== undefined) {
+      code = e.keyIdentifier;
+    } else if (e.keyCode !== undefined) {
+      code = e.keyCode;
+    }
+    switch (code) { 
+        case 37: 
+            str = 'Left Key pressed!'; 
+            break; 
+        case 38: 
+            str = 'Up Key pressed!'; 
+            break; 
+        case 39: 
+            str = 'Right Key pressed!'; 
+            break; 
+        case 40: 
+            str = 'Down Key pressed!'; 
+            break; 
+    } 
+  };*/ 
 
   
   // User has switched away from the tab (AKA tab is hidden)
@@ -123,6 +149,8 @@ function Room ({
   const users = [user, ...Array.from(clients.values())].filter(
     client => client.uid
   )
+  if(users && users.length > 0)
+    window.playerJoined(users.length);
   const divStyle = {
     width: '100vw',
     height: '100vh',
@@ -130,154 +158,164 @@ function Room ({
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   };
+  function showUI(){
+    if(uiEnabled){
+      return (
+        <div>
+          <FeedbackBubble user={user} />
+            <div className={styles.userList}>
+              {users.map(({ uid, userName, stream, mute }) => (
+                <div key={uid} className={styles.userListRow}>
+                  <button
+                    className={ styles.topUserIcon }
+                    onClick={()=>{onUserControlClick(uid)}}
+                    disabled={!stream}
+                    data-uid={uid}
+                    data-mute={mute}
+                  >
+                    {
+                      user.uid === uid ? (
+                      mute?
+                      <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "16px",  color:"#f44336"}} />
+                      :
+                      <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "16px"}} />
+                      ):
+                      (
+                        mute?
+                        <FontAwesomeIcon icon={faVolumeOff} style={{fontSize: "16px", color:"#f44336"}} />
+                        :
+                        <FontAwesomeIcon icon={faVolumeUp} style={{fontSize: "16px"}} />
+                      )
+                    }
+                    </button>
+                    {
+                    user.uid === uid ? 
+                    <button
+                      className={styles.userNameBox}
+                      title='Click to edit your name'
+                      onClick={onEditUserName}
+                      onKeyPress={onEditUserName}
+                    >
+                      <GetName userName={userName} uid={uid}></GetName>
+                    </button>
+                    :
+                    <GetName userName={userName} uid={uid}></GetName>
+                  }
+                  {stream && (
+                    <VolumeMeter uid={uid} enabled={!!stream && !mute} stream={stream} />
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className={styles.chatRoom}>
+              <div className={styles.messages}>
+                {messages.map(msg => (
+                  <div key={msg.mid} className={styles.messageRow}>
+                    <div className={styles.messageUser}>
+                      {`${getUserName(msg.uid)}:`}
+                    </div>
+                    <div className={styles.messageContent}>
+                      {!isUrl(msg.message) ? (
+                        msg.message
+                      ) : (
+                        <a target='_blank' href={msg.message}>
+                          {msg.message}
+                        </a>
+                      )}
+                    </div>
+                    <div
+                      className={styles.timestamp}
+                      title={msg.timestamp.toLocaleDateString()}
+                    >
+                      {`${msg.timestamp.toLocaleTimeString()}`}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className={styles.messageBox} disabled={!chatRoomReady}>
+                <input
+                  ref={textInput}
+                  autoFocus
+                  className={styles.messageInput}
+                  disabled={!chatRoomReady}
+                  placeholder='type message here...'
+                  onKeyPress={onSendMessage}
+                />
+                <button
+                  className={styles.sendButton}
+                  disabled={!chatRoomReady}
+                  onClick={onSendMessageButton}
+                />
+              </div>
+            </div>
+            {Array.from(clients)
+              .filter(([, peer]) => peer.streamUrl)
+              .map(([id, peer]) => (
+                <audio key={id} autoPlay src={peer.streamUrl} />
+              ))}
+            <div className={styles.bottomGrid}>
+              {users.length <= 1 && 
+                  (copied ?
+                  <div className={styles.infoBox}>
+                    <FontAwesomeIcon icon={faInfoCircle} style={{fontSize: "65px", color: "#26a388", marginRight:"10px"}} /> 
+                    <div className={styles.copyText} >Link copied! Share the link with your crew.</div>
+                  </div>:
+                  <div className={styles.infoBox}>
+                    <FontAwesomeIcon icon={faInfoCircle} style={{fontSize: "65px", color: "#cc3300", marginRight:"10px"}} /> 
+                    <div className={styles.copyText} >Copy and share the link below to invite your crew.</div>
+                  </div>
+                  )
+              }
+              <div className={styles.bottomInput}>
+                <input readOnly className={styles.bottomGridInputCopy} value={window.location.href}></input>
+                {users.length <= 1 ?
+                  (copied ?
+                  <CopyToClipboard text={window.location.href}
+                    onCopy={setCopied}>
+                    <button
+                      className={styles.bottomGridButtonCopy }
+                      style={{color:"#26a388"}}
+                      >Copied!</button>
+                  </CopyToClipboard> :
+                  <CopyToClipboard text={window.location.href}
+                    onCopy={setCopied}>
+                    <button
+                      className={styles.bottomGridButtonCopy + ' ' + styles.shake}
+                      style={{color:"#cc3300"}}
+                      >Copy link</button>
+                  </CopyToClipboard>
+                  ):
+                  <CopyToClipboard text={window.location.href}
+                    onCopy={setCopied}>
+                    <button
+                      className={styles.bottomGridButtonCopy}
+                      >Copy link</button>
+                  </CopyToClipboard>
+                  
+                }
+                <button className={styles.bottomGridButton} onClick={onUserControlClickSelf}>{
+                  user.mute?
+                  <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "22px", color:"#f44336"}} />
+                  :
+                  <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "22px"}} />
+                  }
+                  <br/>
+                  <span className={styles.buttonText}>Mic</span>
+                </button>
+                <button className={styles.bottomGridButton} onClick={onEditUserName}><FontAwesomeIcon icon={faUserEdit} style={{fontSize: "22px"}} /><br/><span className={styles.buttonText}>Name</span></button>
+                <button className={styles.bottomGridButton} onClick={endMeeting}><FontAwesomeIcon icon={faSignOutAlt} style={{fontSize: "22px", color:"#f44336"}} /><br/><span className={styles.buttonText}>Leave</span></button>
+              
+              </div>
+            </div>
+        </div>
+        );
+    }
+    return (<div></div>);
+  }
   return (
     <div className={styles.room} style={divStyle}>
       <iframe id="room" {...{ "data-hj-allow-iframe": "" }} src={process.env.GAME_ASSETS_URL+"/index.html"} className={styles.iframe}></iframe>
-      <FeedbackBubble user={user} />
-      <div className={styles.userList}>
-        {users.map(({ uid, userName, stream, mute }) => (
-          <div key={uid} className={styles.userListRow}>
-            <button
-              className={ styles.topUserIcon }
-              onClick={()=>{onUserControlClick(uid)}}
-              disabled={!stream}
-              data-uid={uid}
-              data-mute={mute}
-            >
-              {
-                user.uid === uid ? (
-                mute?
-                <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "16px",  color:"#f44336"}} />
-                :
-                <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "16px"}} />
-                ):
-                (
-                  mute?
-                  <FontAwesomeIcon icon={faVolumeOff} style={{fontSize: "16px", color:"#f44336"}} />
-                  :
-                  <FontAwesomeIcon icon={faVolumeUp} style={{fontSize: "16px"}} />
-                )
-              }
-              </button>
-              {
-              user.uid === uid ? 
-              <button
-                className={styles.userNameBox}
-                title='Click to edit your name'
-                onClick={onEditUserName}
-                onKeyPress={onEditUserName}
-              >
-                <GetName userName={userName} uid={uid}></GetName>
-              </button>
-              :
-              <GetName userName={userName} uid={uid}></GetName>
-            }
-            {stream && (
-              <VolumeMeter uid={uid} enabled={!!stream && !mute} stream={stream} />
-            )}
-          </div>
-        ))}
-      </div>
-      <div className={styles.chatRoom}>
-        <div className={styles.messages}>
-          {messages.map(msg => (
-            <div key={msg.mid} className={styles.messageRow}>
-              <div className={styles.messageUser}>
-                {`${getUserName(msg.uid)}:`}
-              </div>
-              <div className={styles.messageContent}>
-                {!isUrl(msg.message) ? (
-                  msg.message
-                ) : (
-                  <a target='_blank' href={msg.message}>
-                    {msg.message}
-                  </a>
-                )}
-              </div>
-              <div
-                className={styles.timestamp}
-                title={msg.timestamp.toLocaleDateString()}
-              >
-                {`${msg.timestamp.toLocaleTimeString()}`}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className={styles.messageBox} disabled={!chatRoomReady}>
-          <input
-            ref={textInput}
-            autoFocus
-            className={styles.messageInput}
-            disabled={!chatRoomReady}
-            placeholder='type message here...'
-            onKeyPress={onSendMessage}
-          />
-          <button
-            className={styles.sendButton}
-            disabled={!chatRoomReady}
-            onClick={onSendMessageButton}
-          />
-        </div>
-      </div>
-      {Array.from(clients)
-        .filter(([, peer]) => peer.streamUrl)
-        .map(([id, peer]) => (
-          <audio key={id} autoPlay src={peer.streamUrl} />
-        ))}
-      <div className={styles.bottomGrid}>
-        {users.length <= 1 && 
-            (copied ?
-            <div className={styles.infoBox}>
-              <FontAwesomeIcon icon={faInfoCircle} style={{fontSize: "65px", color: "#26a388", marginRight:"10px"}} /> 
-              <div className={styles.copyText} >Link copied! Share the link with your crew.</div>
-            </div>:
-            <div className={styles.infoBox}>
-              <FontAwesomeIcon icon={faInfoCircle} style={{fontSize: "65px", color: "#cc3300", marginRight:"10px"}} /> 
-              <div className={styles.copyText} >Copy and share the link below to invite your crew.</div>
-            </div>
-            )
-        }
-        <div className={styles.bottomInput}>
-          <input readOnly className={styles.bottomGridInputCopy} value={window.location.href}></input>
-          {users.length <= 1 ?
-            (copied ?
-            <CopyToClipboard text={window.location.href}
-              onCopy={setCopied}>
-              <button
-                className={styles.bottomGridButtonCopy }
-                style={{color:"#26a388"}}
-                >Copied!</button>
-            </CopyToClipboard> :
-            <CopyToClipboard text={window.location.href}
-              onCopy={setCopied}>
-              <button
-                className={styles.bottomGridButtonCopy + ' ' + styles.shake}
-                style={{color:"#cc3300"}}
-                >Copy link</button>
-            </CopyToClipboard>
-            ):
-            <CopyToClipboard text={window.location.href}
-              onCopy={setCopied}>
-              <button
-                className={styles.bottomGridButtonCopy}
-                >Copy link</button>
-            </CopyToClipboard>
-            
-          }
-          <button className={styles.bottomGridButton} onClick={onUserControlClickSelf}>{
-            user.mute?
-            <FontAwesomeIcon icon={faMicrophoneSlash} style={{fontSize: "22px", color:"#f44336"}} />
-            :
-            <FontAwesomeIcon icon={faMicrophone} style={{fontSize: "22px"}} />
-            }
-            <br/>
-            <span className={styles.buttonText}>Mic</span>
-          </button>
-          <button className={styles.bottomGridButton} onClick={onEditUserName}><FontAwesomeIcon icon={faUserEdit} style={{fontSize: "22px"}} /><br/><span className={styles.buttonText}>Name</span></button>
-          <button className={styles.bottomGridButton} onClick={endMeeting}><FontAwesomeIcon icon={faSignOutAlt} style={{fontSize: "22px", color:"#f44336"}} /><br/><span className={styles.buttonText}>Leave</span></button>
-        
-        </div>
-      </div>
+      {showUI()}
     </div>
   )
 }

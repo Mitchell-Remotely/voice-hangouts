@@ -10,7 +10,8 @@ const initialState = {
   clients: new Map(),
   messages: []
 }
-
+if(initialState && initialState.user && initialState.user.uid)
+  window.setUIDConfig(initialState.user.uid);
 let mid = 0
 
 function mergeUser (state, newState) {
@@ -38,6 +39,8 @@ function mergeClient (
 export default function (state = initialState, { type, payload }) {
   switch (type) {
     case 'SET_USER': {
+      if(!(initialState && initialState.user && initialState.user.uid) && state && state.user && (state.user.uid))
+        window.setUIDConfig(state.user.uid);
       return { ...state, ...{ user: mergeUser(state.user, payload.user) } }
     }
     case 'ADD_MESSAGE': {

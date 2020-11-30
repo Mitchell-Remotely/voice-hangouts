@@ -50,6 +50,12 @@
       }
     </script>
     <script type="text/javascript">
+      window.setUIDConfig=(uid)=>{
+        console.log("Setting user_id", uid);
+        gtag('config', 'GA_MEASUREMENT_ID', {
+          'user_id': uid
+        });
+      }
       window.sendAnalticsEvent = (
         eventCategory, eventAction, eventLabel, eventValue
       ) => {
@@ -70,6 +76,29 @@
         window.timeGameStartLoading = Date.now();
         let difference = (Date.now()) - window.loadingStartTime ;
         window.sendAnalticsEvent("Page Load Time - Room Network", "URL", "Time", difference/1000);
+      }
+      let lastSentPlayers = -1;
+      window.playerJoined = (numerOfUsers) => {
+        if(lastSentPlayers ==numerOfUsers) return;
+        if(numerOfUsers >= 1){
+          setTimeout(function(){ window.activePlayer(numerOfUsers); }, 60000);
+        }
+        window.sendAnalticsEvent("Room Join", "URL", "Participants", numerOfUsers);
+        let totalDifference = (Date.now()) - window.loadingStartTime;
+        window.sendAnalticsEvent("Room Join", "URL", "Time", totalDifference);
+        haveSentPlayers=numerOfUsers;
+      }
+      //Active user, 1 min after connecting to room
+      let hasBecomeMeeting = false;
+      window.activePlayer = (numerOfUsers) => {
+        window.sendAnalticsEvent("Active User", "URL", "Participants", numerOfUsers);
+        if(!hasBecomeMeeting){
+          window.sendAnalticsEvent("Meetings", "URL", window.location.pathname, 1);
+          hasBecomeMeeting = true;
+        }
+      }
+      window.roomReport = (RoomType)=>{
+        window.sendAnalticsEvent("Room Type", RoomType,  window.location.pathname, 1);
       }
       window.finishedLoading = () => {
         // Game
