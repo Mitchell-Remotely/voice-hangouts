@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e33472bd83be7d1ecf02"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "400d4bd29827e7d311a0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -10023,7 +10023,7 @@ var _iconsCache = {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(6);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_room__1IqIi {\r\n  width: 100%;\r\n  height: 100%;\r\n  margin: 0;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_iframe__1jvww{\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  border:none;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userList__334Ma {\r\n  position: absolute;\r\n  left:0;\r\n  width: 500px;\r\n  margin:8px 10px;\r\n  text-overflow: ellipsis;\r\n  max-height:70%;\r\n  background-color: transparent;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListRow__1D63Q {\r\n  text-align: start;\r\n  margin:4px 0;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListName__16gdr {\r\n  color:white;\r\n  vertical-align: middle;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0 {\r\n  margin: 0 10px 0 7px;;\r\n  border-radius: 2px;\r\n  border: none;\r\n  background-color: #e7e8e9;\r\n  background-size: 22px;\r\n  cursor: pointer;\r\n  width: 30px;\r\n  height: 30px;\r\n  line-height: 30px;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n  font-size: 1.2rem;\r\n  color: #557588;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0:hover {\r\n  background-color: #d9dedf;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0[disabled] {\r\n  opacity: 0.5;\r\n  cursor: default;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0[disabled]:hover {\r\n  background-color: #e7e8e9;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_mic__1-QOV {\r\n  background-image: url(/assets/images/mic.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_micOff__3eKea {\r\n  background-image: url(/assets/images/mic_off.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_volumeUp__VR7uu {\r\n  background-image: url(/assets/images/volume_up.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_volumeOff__2zozk {\r\n  background-image: url(/assets/images/volume_off.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_chatRoom__2st3T {\r\n  border:none;\r\n  max-width:400px;\r\n  outline:none;\r\n  background: transparent;\r\n  height: 20%;\r\n  border:none;\r\n  position: absolute;\r\n  bottom:20px;\r\n  right:20px;\r\n  display: flex;\r\n  flex: 1;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_endButton__w4Q3E {\r\n  position: absolute;\r\n  display:block;\r\n  top: 6px;\r\n  right: 6px;\r\n  padding: 6px 9px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messages__2u6XI {\r\n  width: 100%;\r\n  flex: 1;\r\n  overflow-y: auto;\r\n  overflow-x: none;\r\n  text-align: start;\r\n  display: flex;\r\n  flex-direction: column-reverse;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageBox__2nn2_ {\r\n  display: flex;\r\n  width: 100%;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageBox__2nn2_[disabled] {\r\n  opacity: 0.5;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageRow__1rMgE {\r\n  line-height: 22px;\r\n  margin: 6px;\r\n  display: flex;\r\n  overflow-wrap: break-word;\r\n  white-space:wrap;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageUser__nID_l {\r\n  color: #2756b1;\r\n  max-width:80px;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageContent__15LYq {\r\n  margin: 0 8px;\r\n  color:white;\r\n  flex: 1;\r\n  word-break: break-all;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_timestamp__3-SgK {\r\n  cursor: pointer;\r\n  color:#d1d1d1;\r\n  font-size: 0.7rem;\r\n  text-align: end;\r\n  white-space: nowrap;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_timestamp__3-SgK:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userNameBox__2GNtY {\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n  max-width: 120px;\r\n  text-align: left;\r\n  cursor: pointer;\r\n  color: white;\r\n  background-color: transparent;\r\n  border: none;\r\n  font: inherit;\r\n  padding: 0;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userName__2V4O6 {  \r\n  text-shadow: 0px 0px 2px rgba(0,0,0,0.22);\r\n  max-width: 120px;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n  margin: 0 5px;\r\n  color: white;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_shake__2CnOb {\r\n  animation: F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_shake-animation__3dsfr 3s ease infinite;\r\n  transform-origin: 70% 70%;\r\n}\r\n@keyframes F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_shake-animation__3dsfr {\r\n   0% { transform:translate(0,0) }\r\n  1.78571% { transform:translate(5px,0) }\r\n  3.57143% { transform:translate(0,0) }\r\n  5.35714% { transform:translate(5px,0) }\r\n  7.14286% { transform:translate(0,0) }\r\n  8.92857% { transform:translate(5px,0) }\r\n  10.71429% { transform:translate(0,0) }\r\n  100% { transform:translate(0,0) }\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userName__2V4O6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_editUserName___JUK- {\r\n  width: 80%;\r\n  color: white;\r\n  background: inherit;\r\n  border: none;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_becomeABetaUser__30TbW{\r\n  position: absolute;\r\n  top:10px;\r\n  right:0;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGrid__UExQ6{\r\n  position: absolute;\r\n  bottom:0;\r\n  left:0;\r\n  right:0;\r\n  margin:auto;\r\n  max-width: 550px;\r\n  padding:20px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_copyText__Tju39{\r\n  margin:auto;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomInput__3PGLB{\r\n  position: relative;\r\n  width: 100%;\r\n  display:grid;\r\n  grid-template-columns: 9fr 4fr 1fr 1fr 1fr;\r\n  grid-template-rows: auto;\r\n  grid-template-areas: \r\n    \"input copy button button button\";\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomButtons__22gwe{\r\n  position: relative;\r\n  width: 100%;\r\n  display:flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_topUserIcon__18wwR{\r\n  margin: 2px 0px 0px 0px;\r\n  border-radius: 4px;\r\n  width:30px;\r\n  height:30px;\r\n  border:none;\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_infoBox__1dCNN {\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n  padding: 10px;\r\n  border-radius: 4px;\r\n  margin-bottom: 10px;\r\n  margin-right: 10px;\r\n  display:flex;\r\n  font-size: 20px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_topUserIcon__18wwR:hover{\r\n  background-color: rgb(99, 99, 99);\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_topUserIcon__18wwR:active{\r\n  background-color: rgb(148, 148, 148);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButton__29Ye2{\r\n  margin: 0 10px 0 0;\r\n  border-radius: 4px;\r\n  min-height: 50px;\r\n  min-width: 50px;\r\n  padding:5px;\r\n  border:none;\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_buttonText__LHaVz{\r\n  padding-top:5px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButton__29Ye2:hover{\r\n  background-color: rgb(99, 99, 99);\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButton__29Ye2:active{\r\n  background-color: rgb(148, 148, 148);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButtonCopy__2nFWO {\r\n  grid-area: copy;\r\n  font-weight: bold;\r\n  margin: 0 10px;\r\n  border-radius: 4px;\r\n  height: 50px;\r\n  padding:5px;\r\n  border:none;\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButtonCopy__2nFWO:hover{\r\n  background-color: rgb(99, 99, 99);\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButtonCopy__2nFWO:active{\r\n  background-color: rgb(148, 148, 148);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridInputCopy__1GPiY {\r\n  grid-area: input;\r\n  font-size: 20px;\r\n  padding:10px;\r\n  border: 1px rgb(192, 192, 192);\r\n  background-color: rgba(255,255,255,0.4);\r\n  height:50px;\r\n  border-radius: 4px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageInput__KZPKD {\r\n  padding:10px;\r\n  border: 1px rgb(192, 192, 192);\r\n  height:50px;\r\n  border-radius: 4px;\r\n  margin-right:10px;\r\n  flex: 1;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_sendButton__2XfBt {\r\n  width: 50px;\r\n  background-image: url(/assets/images/send.svg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  border:none;\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n  border-radius: 4px;\r\n  text-align: center;\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_sendButton__2XfBt:hover{\r\n  background-color: rgb(99, 99, 99);\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_sendButton__2XfBt:active{\r\n  background-color: rgb(148, 148, 148);\r\n}", ""]);
+exports.push([module.i, ".F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_room__1IqIi {\r\n  width: 100%;\r\n  height: 100%;\r\n  margin: 0;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_iframe__1jvww{\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  border:none;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userList__334Ma {\r\n  position: absolute;\r\n  left:0;\r\n  width: 500px;\r\n  margin:8px 10px;\r\n  text-overflow: ellipsis;\r\n  max-height:70%;\r\n  background-color: transparent;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListRow__1D63Q {\r\n  text-align: start;\r\n  margin:4px 0;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userListName__16gdr {\r\n  color:white;\r\n  vertical-align: middle;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0 {\r\n  margin: 0 10px 0 7px;;\r\n  border-radius: 2px;\r\n  border: none;\r\n  background-color: #e7e8e9;\r\n  background-size: 22px;\r\n  cursor: pointer;\r\n  width: 30px;\r\n  height: 30px;\r\n  line-height: 30px;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n  font-size: 1.2rem;\r\n  color: #557588;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0:hover {\r\n  background-color: #d9dedf;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0[disabled] {\r\n  opacity: 0.5;\r\n  cursor: default;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userControlIcon__tYpP0[disabled]:hover {\r\n  background-color: #e7e8e9;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_mic__1-QOV {\r\n  background-image: url(/assets/images/mic.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_micOff__3eKea {\r\n  background-image: url(/assets/images/mic_off.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_volumeUp__VR7uu {\r\n  background-image: url(/assets/images/volume_up.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_volumeOff__2zozk {\r\n  background-image: url(/assets/images/volume_off.svg);\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_chatRoom__2st3T {\r\n  border:none;\r\n  max-width:400px;\r\n  outline:none;\r\n  background: transparent;\r\n  max-height: 20%;\r\n  border:none;\r\n  position: absolute;\r\n  bottom:20px;\r\n  right:20px;\r\n  display: flex;\r\n  flex: 1;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_endButton__w4Q3E {\r\n  position: absolute;\r\n  display:block;\r\n  top: 6px;\r\n  right: 6px;\r\n  padding: 6px 9px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messages__2u6XI {\r\n  width: 100%;\r\n  flex: 1;\r\n  overflow-y: auto;\r\n  overflow-x: none;\r\n  text-align: start;\r\n  display: flex;\r\n  flex-direction: column-reverse;\r\n  border-radius: 8px;\r\n  background: #2b2a2a61;\r\n  margin-bottom: 5px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageBox__2nn2_ {\r\n  display: flex;\r\n  width: 100%;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageBox__2nn2_[disabled] {\r\n  opacity: 0.5;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageRow__1rMgE {\r\n  line-height: 22px;\r\n  margin: 6px;\r\n  display: flex;\r\n  overflow-wrap: break-word;\r\n  white-space:wrap;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageUser__nID_l {\r\n  color: #2756b1;\r\n  max-width:80px;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageContent__15LYq {\r\n  margin: 0 8px;\r\n  color:white;\r\n  flex: 1;\r\n  word-break: break-all;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_timestamp__3-SgK {\r\n  cursor: pointer;\r\n  color:#d1d1d1;\r\n  font-size: 0.7rem;\r\n  text-align: end;\r\n  white-space: nowrap;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_timestamp__3-SgK:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userNameBox__2GNtY {\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n  max-width: 120px;\r\n  text-align: left;\r\n  cursor: pointer;\r\n  color: white;\r\n  background-color: transparent;\r\n  border: none;\r\n  font: inherit;\r\n  padding: 0;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userName__2V4O6 {  \r\n  text-shadow: 0px 0px 2px rgba(0,0,0,0.22);\r\n  max-width: 120px;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  overflow: hidden;\r\n  margin: 0 5px;\r\n  color: white;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_shake__2CnOb {\r\n  animation: F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_shake-animation__3dsfr 3s ease infinite;\r\n  transform-origin: 70% 70%;\r\n}\r\n@keyframes F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_shake-animation__3dsfr {\r\n   0% { transform:translate(0,0) }\r\n  1.78571% { transform:translate(5px,0) }\r\n  3.57143% { transform:translate(0,0) }\r\n  5.35714% { transform:translate(5px,0) }\r\n  7.14286% { transform:translate(0,0) }\r\n  8.92857% { transform:translate(5px,0) }\r\n  10.71429% { transform:translate(0,0) }\r\n  100% { transform:translate(0,0) }\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_userName__2V4O6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_editUserName___JUK- {\r\n  width: 80%;\r\n  color: white;\r\n  background: inherit;\r\n  border: none;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_becomeABetaUser__30TbW{\r\n  position: absolute;\r\n  top:10px;\r\n  right:0;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGrid__UExQ6{\r\n  position: absolute;\r\n  bottom:0;\r\n  left:0;\r\n  right:0;\r\n  margin:auto;\r\n  max-width: 550px;\r\n  padding:20px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_copyText__Tju39{\r\n  margin:auto;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomInput__3PGLB{\r\n  position: relative;\r\n  width: 100%;\r\n  display:grid;\r\n  grid-template-columns: 9fr 4fr 1fr 1fr 1fr;\r\n  grid-template-rows: auto;\r\n  grid-template-areas: \r\n    \"input copy button button button\";\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomButtons__22gwe{\r\n  position: relative;\r\n  width: 100%;\r\n  display:flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_topUserIcon__18wwR{\r\n  margin: 2px 0px 0px 0px;\r\n  border-radius: 4px;\r\n  width:30px;\r\n  height:30px;\r\n  border:none;\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_infoBox__1dCNN {\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n  padding: 10px;\r\n  border-radius: 4px;\r\n  margin-bottom: 10px;\r\n  margin-right: 10px;\r\n  display:flex;\r\n  font-size: 20px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_topUserIcon__18wwR:hover{\r\n  background-color: rgb(99, 99, 99);\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_topUserIcon__18wwR:active{\r\n  background-color: rgb(148, 148, 148);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButton__29Ye2{\r\n  margin: 0 10px 0 0;\r\n  border-radius: 4px;\r\n  min-height: 50px;\r\n  min-width: 50px;\r\n  padding:5px;\r\n  border:none;\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_buttonText__LHaVz{\r\n  padding-top:5px;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButton__29Ye2:hover{\r\n  background-color: rgb(99, 99, 99);\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButton__29Ye2:active{\r\n  background-color: rgb(148, 148, 148);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButtonCopy__2nFWO {\r\n  grid-area: copy;\r\n  font-weight: bold;\r\n  margin: 0 10px;\r\n  border-radius: 4px;\r\n  height: 50px;\r\n  padding:5px;\r\n  border:none;\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButtonCopy__2nFWO:hover{\r\n  background-color: rgb(99, 99, 99);\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridButtonCopy__2nFWO:active{\r\n  background-color: rgb(148, 148, 148);\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_bottomGridInputCopy__1GPiY {\r\n  grid-area: input;\r\n  font-size: 20px;\r\n  padding:10px;\r\n  border: 1px rgb(192, 192, 192);\r\n  background-color: rgba(255,255,255,0.4);\r\n  height:50px;\r\n  border-radius: 4px;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_messageInput__KZPKD {\r\n  padding:10px;\r\n  border: 1px rgb(192, 192, 192);\r\n  height:50px;\r\n  border-radius: 4px;\r\n  margin-right:10px;\r\n  flex: 1;\r\n}\r\n\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_sendButton__2XfBt {\r\n  width: 50px;\r\n  background-image: url(/assets/images/send.svg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  border:none;\r\n  background-color: rgb(25,25,25,0.5);\r\n  color:rgb(223, 220, 224);\r\n  border-radius: 4px;\r\n  text-align: center;\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_sendButton__2XfBt:hover{\r\n  background-color: rgb(99, 99, 99);\r\n  cursor: pointer;\r\n}\r\n.F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_sendButton__2XfBt:active{\r\n  background-color: rgb(148, 148, 148);\r\n}", ""]);
 // Exports
 exports.locals = {
 	"room": "F--Remotely-Repos-Voice-test-Remotely-voice-hangouts-client-components-Room-Room_room__1IqIi",
@@ -44452,7 +44452,7 @@ const initialState = {
   clients: new Map(),
   messages: []
 };
-
+if (initialState && initialState.user && initialState.user.uid) window.setUIDConfig(initialState.user.uid);
 let mid = 0;
 
 function mergeUser(state, newState) {
@@ -44478,6 +44478,7 @@ function mergeClient(state = {
   switch (type) {
     case 'SET_USER':
       {
+        if (!(initialState && initialState.user && initialState.user.uid) && state && state.user && state.user.uid) window.setUIDConfig(state.user.uid);
         return _extends({}, state, { user: mergeUser(state.user, payload.user) });
       }
     case 'ADD_MESSAGE':
@@ -53705,6 +53706,8 @@ function Room({
   user
 }) {
   const [, setState] = Object(__WEBPACK_IMPORTED_MODULE_1_react__["useState"])();
+  const [uiEnabled, setUIEnabled] = Object(__WEBPACK_IMPORTED_MODULE_1_react__["useState"])(true);
+  window.startLoadTime();
   window.connector = connector;
   window.getMuted = false;
   const textInput = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createRef();
@@ -53715,7 +53718,16 @@ function Room({
 
     ;_asyncToGenerator(function* () {
       connector.connect();
-      setUser({ stream: yield connector.getUserMedia(), roomName: window.location.pathname.split('/')[1] });
+      var voiceProblemsTimer = setTimeout(function () {
+        window.voiceNotJoined();
+      }, 60000);
+      try {
+        setUser({ stream: yield connector.getUserMedia(), roomName: window.location.pathname.split('/')[1] });
+      } catch (e) {
+        console.log(e);
+        window.voiceNotJoined();
+      }
+      clearTimeout(voiceProblemsTimer);
       connector.joinRoom();
       window.addEventListener('beforeunload', onLeaveRoom);
     })();
@@ -53786,6 +53798,30 @@ function Room({
     const client = clients.get(uid);
     return client ? client.userName : 'Guest';
   }
+  /*document.onkeydown = function(e) { 
+    var code;
+      if (e.key !== undefined) {
+      code = e.key;
+    } else if (e.keyIdentifier !== undefined) {
+      code = e.keyIdentifier;
+    } else if (e.keyCode !== undefined) {
+      code = e.keyCode;
+    }
+    switch (code) { 
+        case 37: 
+            str = 'Left Key pressed!'; 
+            break; 
+        case 38: 
+            str = 'Up Key pressed!'; 
+            break; 
+        case 39: 
+            str = 'Right Key pressed!'; 
+            break; 
+        case 40: 
+            str = 'Down Key pressed!'; 
+            break; 
+    } 
+  };*/
 
   // User has switched away from the tab (AKA tab is hidden)
   const onBlur = () => {
@@ -53801,6 +53837,7 @@ function Room({
     );
   }
   function endMeeting() {
+    window.endMeeting();
     window.location = "https://www.remotelyhq.com/post-call-survey";
   }
   function openSurvey() {
@@ -53809,6 +53846,7 @@ function Room({
     window.focus();
   }
   const users = [user, ...Array.from(clients.values())].filter(client => client.uid);
+  if (users && users.length > 0) window.playerJoined(users.length);
   const divStyle = {
     width: '100vw',
     height: '100vh',
@@ -53816,192 +53854,202 @@ function Room({
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   };
+  function showUI() {
+    if (uiEnabled) {
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+        'div',
+        null,
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__FeedbackBubble__["a" /* default */], { user: user }),
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'div',
+          { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.userList },
+          users.map(({ uid, userName, stream, mute }) => __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'div',
+            { key: uid, className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.userListRow },
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              'button',
+              {
+                className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.topUserIcon,
+                onClick: () => {
+                  onUserControlClick(uid);
+                },
+                disabled: !stream,
+                'data-uid': uid,
+                'data-mute': mute
+              },
+              user.uid === uid ? mute ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["d" /* faMicrophoneSlash */], style: { fontSize: "16px", color: "#f44336" } }) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["c" /* faMicrophone */], style: { fontSize: "16px" } }) : mute ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["h" /* faVolumeOff */], style: { fontSize: "16px", color: "#f44336" } }) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["i" /* faVolumeUp */], style: { fontSize: "16px" } })
+            ),
+            user.uid === uid ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              'button',
+              {
+                className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.userNameBox,
+                title: 'Click to edit your name',
+                onClick: onEditUserName,
+                onKeyPress: onEditUserName
+              },
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(GetName, { userName: userName, uid: uid })
+            ) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(GetName, { userName: userName, uid: uid }),
+            stream && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__VolumeMeter__["a" /* default */], { uid: uid, enabled: !!stream && !mute, stream: stream })
+          ))
+        ),
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'div',
+          { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.chatRoom },
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'div',
+            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messages },
+            messages.map(msg => __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              'div',
+              { key: msg.mid, className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageRow },
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'div',
+                { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageUser },
+                `${getUserName(msg.uid)}:`
+              ),
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'div',
+                { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageContent },
+                !isUrl(msg.message) ? msg.message : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                  'a',
+                  { target: '_blank', href: msg.message },
+                  msg.message
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'div',
+                {
+                  className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.timestamp,
+                  title: msg.timestamp.toLocaleDateString()
+                },
+                `${msg.timestamp.toLocaleTimeString()}`
+              )
+            ))
+          ),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'div',
+            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageBox, disabled: !chatRoomReady },
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', {
+              ref: textInput,
+              autoFocus: true,
+              className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageInput,
+              disabled: !chatRoomReady,
+              placeholder: 'type message here...',
+              onKeyPress: onSendMessage
+            }),
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('button', {
+              className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.sendButton,
+              disabled: !chatRoomReady,
+              onClick: onSendMessageButton
+            })
+          )
+        ),
+        Array.from(clients).filter(([, peer]) => peer.streamUrl).map(([id, peer]) => __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('audio', { key: id, autoPlay: true, src: peer.streamUrl })),
+        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+          'div',
+          { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGrid },
+          users.length <= 1 && (copied ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'div',
+            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.infoBox },
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["b" /* faInfoCircle */], style: { fontSize: "65px", color: "#26a388", marginRight: "10px" } }),
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              'div',
+              { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.copyText },
+              'Link copied! Share the link with your crew.'
+            )
+          ) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'div',
+            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.infoBox },
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["b" /* faInfoCircle */], style: { fontSize: "65px", color: "#cc3300", marginRight: "10px" } }),
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              'div',
+              { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.copyText },
+              'Copy and share the link below to invite your crew.'
+            )
+          )),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'div',
+            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomInput },
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { readOnly: true, className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridInputCopy, value: window.location.href }),
+            users.length <= 1 ? copied ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_9_react_copy_to_clipboard__["CopyToClipboard"],
+              { text: window.location.href,
+                onCopy: setCopied },
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'button',
+                {
+                  className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButtonCopy,
+                  style: { color: "#26a388" }
+                },
+                'Copied!'
+              )
+            ) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_9_react_copy_to_clipboard__["CopyToClipboard"],
+              { text: window.location.href,
+                onCopy: setCopied },
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'button',
+                {
+                  className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButtonCopy + ' ' + __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.shake,
+                  style: { color: "#cc3300" }
+                },
+                'Copy link'
+              )
+            ) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_9_react_copy_to_clipboard__["CopyToClipboard"],
+              { text: window.location.href,
+                onCopy: setCopied },
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'button',
+                {
+                  className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButtonCopy
+                },
+                'Copy link'
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              'button',
+              { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButton, onClick: onUserControlClickSelf },
+              user.mute ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["d" /* faMicrophoneSlash */], style: { fontSize: "22px", color: "#f44336" } }) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["c" /* faMicrophone */], style: { fontSize: "22px" } }),
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'span',
+                { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.buttonText },
+                'Mic'
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              'button',
+              { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButton, onClick: onEditUserName },
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["g" /* faUserEdit */], style: { fontSize: "22px" } }),
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'span',
+                { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.buttonText },
+                'Name'
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              'button',
+              { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButton, onClick: endMeeting },
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["e" /* faSignOutAlt */], style: { fontSize: "22px", color: "#f44336" } }),
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'span',
+                { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.buttonText },
+                'Leave'
+              )
+            )
+          )
+        )
+      );
+    }
+    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', null);
+  }
   return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     'div',
     { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.room, style: divStyle },
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('iframe', _extends({ id: 'room' }, { "data-hj-allow-iframe": "" }, { src: "https://remotely-meeting-rooms.azurefd.net" + "/index.html", className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.iframe })),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__FeedbackBubble__["a" /* default */], { user: user }),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-      'div',
-      { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.userList },
-      users.map(({ uid, userName, stream, mute }) => __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { key: uid, className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.userListRow },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'button',
-          {
-            className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.topUserIcon,
-            onClick: () => {
-              onUserControlClick(uid);
-            },
-            disabled: !stream,
-            'data-uid': uid,
-            'data-mute': mute
-          },
-          user.uid === uid ? mute ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["d" /* faMicrophoneSlash */], style: { fontSize: "16px", color: "#f44336" } }) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["c" /* faMicrophone */], style: { fontSize: "16px" } }) : mute ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["h" /* faVolumeOff */], style: { fontSize: "16px", color: "#f44336" } }) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["i" /* faVolumeUp */], style: { fontSize: "16px" } })
-        ),
-        user.uid === uid ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'button',
-          {
-            className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.userNameBox,
-            title: 'Click to edit your name',
-            onClick: onEditUserName,
-            onKeyPress: onEditUserName
-          },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(GetName, { userName: userName, uid: uid })
-        ) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(GetName, { userName: userName, uid: uid }),
-        stream && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__VolumeMeter__["a" /* default */], { uid: uid, enabled: !!stream && !mute, stream: stream })
-      ))
-    ),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-      'div',
-      { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.chatRoom },
-      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messages },
-        messages.map(msg => __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { key: msg.mid, className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageRow },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageUser },
-            `${getUserName(msg.uid)}:`
-          ),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageContent },
-            !isUrl(msg.message) ? msg.message : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'a',
-              { target: '_blank', href: msg.message },
-              msg.message
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            {
-              className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.timestamp,
-              title: msg.timestamp.toLocaleDateString()
-            },
-            `${msg.timestamp.toLocaleTimeString()}`
-          )
-        ))
-      ),
-      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageBox, disabled: !chatRoomReady },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', {
-          ref: textInput,
-          autoFocus: true,
-          className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.messageInput,
-          disabled: !chatRoomReady,
-          placeholder: 'type message here...',
-          onKeyPress: onSendMessage
-        }),
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('button', {
-          className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.sendButton,
-          disabled: !chatRoomReady,
-          onClick: onSendMessageButton
-        })
-      )
-    ),
-    Array.from(clients).filter(([, peer]) => peer.streamUrl).map(([id, peer]) => __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('audio', { key: id, autoPlay: true, src: peer.streamUrl })),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-      'div',
-      { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGrid },
-      users.length <= 1 && (copied ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.infoBox },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["b" /* faInfoCircle */], style: { fontSize: "65px", color: "#26a388", marginRight: "10px" } }),
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.copyText },
-          'Link copied! Share the link with your crew.'
-        )
-      ) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.infoBox },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["b" /* faInfoCircle */], style: { fontSize: "65px", color: "#cc3300", marginRight: "10px" } }),
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.copyText },
-          'Copy and share the link below to invite your crew.'
-        )
-      )),
-      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomInput },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { readOnly: true, className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridInputCopy, value: window.location.href }),
-        users.length <= 1 ? copied ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_9_react_copy_to_clipboard__["CopyToClipboard"],
-          { text: window.location.href,
-            onCopy: setCopied },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'button',
-            {
-              className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButtonCopy,
-              style: { color: "#26a388" }
-            },
-            'Copied!'
-          )
-        ) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_9_react_copy_to_clipboard__["CopyToClipboard"],
-          { text: window.location.href,
-            onCopy: setCopied },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'button',
-            {
-              className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButtonCopy + ' ' + __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.shake,
-              style: { color: "#cc3300" }
-            },
-            'Copy link'
-          )
-        ) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_9_react_copy_to_clipboard__["CopyToClipboard"],
-          { text: window.location.href,
-            onCopy: setCopied },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'button',
-            {
-              className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButtonCopy
-            },
-            'Copy link'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'button',
-          { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButton, onClick: onUserControlClickSelf },
-          user.mute ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["d" /* faMicrophoneSlash */], style: { fontSize: "22px", color: "#f44336" } }) : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["c" /* faMicrophone */], style: { fontSize: "22px" } }),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'span',
-            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.buttonText },
-            'Mic'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'button',
-          { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButton, onClick: onEditUserName },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["g" /* faUserEdit */], style: { fontSize: "22px" } }),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'span',
-            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.buttonText },
-            'Name'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'button',
-          { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.bottomGridButton, onClick: endMeeting },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__fortawesome_react_fontawesome__["a" /* FontAwesomeIcon */], { icon: __WEBPACK_IMPORTED_MODULE_7__fortawesome_free_solid_svg_icons__["e" /* faSignOutAlt */], style: { fontSize: "22px", color: "#f44336" } }),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'span',
-            { className: __WEBPACK_IMPORTED_MODULE_8__Room_css___default.a.buttonText },
-            'Leave'
-          )
-        )
-      )
-    )
+    showUI()
   );
 }
 
@@ -55052,7 +55100,6 @@ function FeedbackBubble({ user }) {
     "onsubmit": onCommentsSubmit
   }]);
   function setCurrent(current, num) {
-    console.log("current ", current, "num", num);
     answers[current] = num;
     setInternalSelected(num);
   }

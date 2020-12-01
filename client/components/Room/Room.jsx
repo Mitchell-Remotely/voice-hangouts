@@ -33,7 +33,14 @@ function Room ({
 
       ;(async () => {
         connector.connect()
-        setUser({ stream: await connector.getUserMedia(), roomName: window.location.pathname.split('/')[1] })
+        var voiceProblemsTimer = setTimeout(function() { window.voiceNotJoined(); }, 60000);
+        try{
+          setUser({ stream: await connector.getUserMedia(), roomName: window.location.pathname.split('/')[1] })
+        }catch(e){
+          console.log(e);
+          window.voiceNotJoined();
+        }
+        clearTimeout(voiceProblemsTimer);
         connector.joinRoom()
         window.addEventListener('beforeunload', onLeaveRoom)
       })()
@@ -139,6 +146,7 @@ function Room ({
     )
   }
   function endMeeting(){
+    window.endMeeting();
     window.location = "https://www.remotelyhq.com/post-call-survey";
   }
   function openSurvey(){

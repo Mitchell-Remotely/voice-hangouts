@@ -78,24 +78,39 @@
         window.sendAnalticsEvent("Page Load Time - Room Network", "URL", "Time", difference/1000);
       }
       let lastSentPlayers = -1;
+      let sentJoined = false;
       window.playerJoined = (numerOfUsers) => {
         if(lastSentPlayers ==numerOfUsers) return;
+        if(sentJoined) return;
         if(numerOfUsers >= 1){
           setTimeout(function(){ window.activePlayer(numerOfUsers); }, 60000);
         }
-        window.sendAnalticsEvent("Room Join", "URL", "Participants", numerOfUsers);
+        window.sendAnalticsEvent("Room Join", "URL", window.location.pathname, numerOfUsers);
         let totalDifference = (Date.now()) - window.loadingStartTime;
         window.sendAnalticsEvent("Room Join", "URL", "Time", totalDifference);
         haveSentPlayers=numerOfUsers;
+        sentJoined = true;
+      }
+      let reportedFailedMic = false;
+      window.voiceNotJoined = () => {
+        if(reportedFailedMic) return;
+        window.sendAnalticsEvent("Mic troubles", "URL", window.location.pathname, 0);
+        reportedFailedMic = true;
+      }
+      window.endMeeting = () => {
+        window.sendAnalticsEvent("End meeting clicked", "URL", window.location.pathname, 0);
       }
       //Active user, 1 min after connecting to room
       let hasBecomeMeeting = false;
+      let hasSentActivePlayer = false;
       window.activePlayer = (numerOfUsers) => {
-        window.sendAnalticsEvent("Active User", "URL", "Participants", numerOfUsers);
+        if(hasSentActivePlayer) return;
+        window.sendAnalticsEvent("Active User", "URL", window.location.pathname, numerOfUsers);
         if(!hasBecomeMeeting){
           window.sendAnalticsEvent("Meetings", "URL", window.location.pathname, 1);
           hasBecomeMeeting = true;
         }
+        hasSentActivePlayer = true;
       }
       window.roomReport = (RoomType)=>{
         window.sendAnalticsEvent("Room Type", RoomType,  window.location.pathname, 1);

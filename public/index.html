@@ -49,6 +49,91 @@
         window.isMobile = true;
       }
     </script>
+    <script type="text/javascript">
+      window.setUIDConfig=(uid)=>{
+        console.log("Setting user_id", uid);
+        gtag('config', 'GA_MEASUREMENT_ID', {
+          'user_id': uid
+        });
+      }
+      window.sendAnalticsEvent = (
+        eventCategory, eventAction, eventLabel, eventValue
+      ) => {
+        if(gtag !== undefined && gtag !== null){
+          gtag('event',eventAction,
+            {
+              'event_category':eventCategory,
+              'event_label':eventLabel,
+              'value':eventValue,
+            });
+        } else {
+          console.log("Ga doesn't exist");
+        }
+      }
+      window.loadingStartTime = 0;
+      window.timeGameStartLoading = 0;
+      window.finishedNetworkLoading = () => {
+        window.timeGameStartLoading = Date.now();
+        let difference = (Date.now()) - window.loadingStartTime ;
+        window.sendAnalticsEvent("Page Load Time - Room Network", "URL", "Time", difference/1000);
+      }
+      let lastSentPlayers = -1;
+      let sentJoined = false;
+      window.playerJoined = (numerOfUsers) => {
+        if(lastSentPlayers ==numerOfUsers) return;
+        if(sentJoined) return;
+        if(numerOfUsers >= 1){
+          setTimeout(function(){ window.activePlayer(numerOfUsers); }, 60000);
+        }
+        window.sendAnalticsEvent("Room Join", "URL", window.location.pathname, numerOfUsers);
+        let totalDifference = (Date.now()) - window.loadingStartTime;
+        window.sendAnalticsEvent("Room Join", "URL", "Time", totalDifference);
+        haveSentPlayers=numerOfUsers;
+        sentJoined = true;
+      }
+      let reportedFailedMic = false;
+      window.voiceNotJoined = () => {
+        if(reportedFailedMic) return;
+        window.sendAnalticsEvent("Mic troubles", "URL", window.location.pathname, 0);
+        reportedFailedMic = true;
+      }
+      window.endMeeting = () => {
+        window.sendAnalticsEvent("End meeting clicked", "URL", window.location.pathname, 0);
+      }
+      //Active user, 1 min after connecting to room
+      let hasBecomeMeeting = false;
+      let hasSentActivePlayer = false;
+      window.activePlayer = (numerOfUsers) => {
+        if(hasSentActivePlayer) return;
+        window.sendAnalticsEvent("Active User", "URL", window.location.pathname, numerOfUsers);
+        if(!hasBecomeMeeting){
+          window.sendAnalticsEvent("Meetings", "URL", window.location.pathname, 1);
+          hasBecomeMeeting = true;
+        }
+        hasSentActivePlayer = true;
+      }
+      window.roomReport = (RoomType)=>{
+        window.sendAnalticsEvent("Room Type", RoomType,  window.location.pathname, 1);
+      }
+      window.finishedLoading = () => {
+        // Game
+        let gameDifference = (Date.now()) - window.timeGameStartLoading;
+        window.sendAnalticsEvent("Page Load Time - Room Game", "URL", "Time", gameDifference/1000);
+        //Total
+        let totalDifference = (Date.now()) - window.loadingStartTime;
+        window.sendAnalticsEvent("Page Load Time - Room Total", "URL", "Time", totalDifference/1000);
+      }
+      window.millisToMinutesAndSeconds = (millis) => {
+        var minutes = Math.floor(millis / 60000);
+        var seconds = ((millis % 60000) / 1000);
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+      }
+      window.startLoadTime = ()=>{
+        if(window.loadingStartTime === 0)
+          window.loadingStartTime = Date.now();
+        console.log("Starting time " , window.loadingStartTime);
+      }
+    </script>
   <link rel="shortcut icon" href="/favicon.ico"></head>
   <body style="margin:0;">
     <div id="root"></div>  
@@ -85,9 +170,11 @@
                 messageQueueUp.push(event.data[1])
               }
             }else if(event.data[0] == "loaded"){
-              console.log("Received loaded");
+              window.finishedNetworkLoading();
               iFrameLoaded=true;
               sendToIframe("","");
+            }else if(event.data[0] == "postSceneLoad"){
+              window.finishedLoading();
             }
           }
         };
