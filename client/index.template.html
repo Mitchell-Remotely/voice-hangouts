@@ -175,6 +175,9 @@
               sendToIframe("","");
             }else if(event.data[0] == "postSceneLoad"){
               window.finishedLoading();
+            }else if(event.data[0] == "analytics"){
+              var analyticsData = JSON.parse( event.data[1]);
+              window.sendAnalticsEvent(analyticsData.eventCategory, analyticsData.eventAction, analyticsData.eventLabel, analyticsData.eventValue)
             }
           }
         };
