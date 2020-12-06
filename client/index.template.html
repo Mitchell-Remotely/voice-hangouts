@@ -152,7 +152,6 @@
             window.attachEvent('onmessage', handleMessage);
         }
         function handleMessage (event) {
-          console.log("Event ", event);
           if(!(event.origin === "https://remotely-voice-server.australiaeast.cloudapp.azure.com" ||
           event.origin === "https://dev-remotely-server.australiaeast.cloudapp.azure.com" || 
           event.origin === "https://remotely-meeting-rooms.azurefd.net" || 
@@ -164,7 +163,6 @@
             return;
           }
           if(event.data && event.data.length > 0){
-            console.log("Debug ", event.data);
             if(event.data[0] === "packet"){
               if(window.connector){
                 while (messageQueueUp.length > 0) {
@@ -179,7 +177,6 @@
               iFrameLoaded=true;
               sendToIframe("","");
             }else if(event.data[0] === "postSceneLoad"){
-              console.log("Post scene load top");
               window.finishedLoading();
             }else if(event.data[0] == "analytics"){
               var analyticsData = JSON.parse( event.data[1]);
