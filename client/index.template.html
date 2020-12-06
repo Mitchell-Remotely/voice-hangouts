@@ -115,13 +115,16 @@
       window.roomReport = (RoomType)=>{
         window.sendAnalticsEvent("Room Type", RoomType,  window.location.pathname, 1);
       }
+      let hasSentFullyLoaded = false;
       window.finishedLoading = () => {
+        if(hasSentFullyLoaded) return;
         // Game
         let gameDifference = (Date.now()) - window.timeGameStartLoading;
         window.sendAnalticsEvent("Page Load Time - Room Game", "URL", "Time", gameDifference/1000);
         //Total
         let totalDifference = (Date.now()) - window.loadingStartTime;
         window.sendAnalticsEvent("Page Load Time - Room Total", "URL", "Time", totalDifference/1000);
+        hasSentFullyLoaded = true;
       }
       window.millisToMinutesAndSeconds = (millis) => {
         var minutes = Math.floor(millis / 60000);
@@ -174,6 +177,7 @@
               iFrameLoaded=true;
               sendToIframe("","");
             }else if(event.data[0] == "postSceneLoad"){
+              console.log("Post scene load top");
               window.finishedLoading();
             }else if(event.data[0] == "analytics"){
               var analyticsData = JSON.parse( event.data[1]);
