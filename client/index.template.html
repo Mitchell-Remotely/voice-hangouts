@@ -163,7 +163,8 @@
             return;
           }
           if(event.data && event.data.length > 0){
-            if(event.data[0] == "packet"){
+            console.log("Debug ", event.data);
+            if(event.data[0] === "packet"){
               if(window.connector){
                 while (messageQueueUp.length > 0) {
                   window.connector.sendPacket(messageQueueUp.shift());
@@ -172,11 +173,11 @@
               }else{
                 messageQueueUp.push(event.data[1])
               }
-            }else if(event.data[0] == "loaded"){
+            }else if(event.data[0] === "loaded"){
               window.finishedNetworkLoading();
               iFrameLoaded=true;
               sendToIframe("","");
-            }else if(event.data[0] == "postSceneLoad"){
+            }else if(event.data[0] === "postSceneLoad"){
               console.log("Post scene load top");
               window.finishedLoading();
             }else if(event.data[0] == "analytics"){
