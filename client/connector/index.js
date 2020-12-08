@@ -2,10 +2,11 @@ import { log } from '../utils'
 const axios = require('axios');
 const openQueue = [];
 class Connector {
-  constructor (roomname, actions, store) {
+  constructor (roomname, actions, store, parameters) {
     this.roomname = roomname;
     this.actions = actions
     this.store = store
+    this.parameters = parameters;
   }
 
   async connect () {
@@ -187,7 +188,7 @@ class Connector {
 
   handleJoined ({ uid,order, userName, roomName, roomTime }) {
     log(`User '${userName}' (${uid},${order}) has joined room '${roomName}' ${roomTime}`)
-    window.sendtoiframe("RoomID",[roomName, roomTime, uid +"", order,userName]);
+    window.sendtoiframe("RoomID",[roomName + this.parameters, roomTime, uid +"", order,userName]);
     window.sendtoiframe("NameChange",[uid +"",userName]);
     this.actions.setUser({ uid, userName, roomName })
   }

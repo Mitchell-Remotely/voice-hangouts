@@ -22,7 +22,7 @@ let connector = new Connector(window.location.href.replace('http', 'ws'));
 
 async function GetConnector(){
   if(!ROOM_NAME) return;
-  connector = new Connector(ROOM_NAME,actions, store);
+  connector = new Connector(ROOM_NAME,actions, store,(window.location.search || ''));
   render(
     <Provider store={store}>
       {
