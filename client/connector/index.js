@@ -299,8 +299,12 @@ class Connector {
 
   async handleCandidate ({ peerId,order, userName, candidate }) {
     log(`Received ICE candidate from '${userName}' (${peerId})`)
-
-    await this.getClient(peerId).peerConn.addIceCandidate(new RTCIceCandidate(candidate))
+    let client = this.getClient(peerId);
+    if(client){
+      await client.peerConn.addIceCandidate(new RTCIceCandidate(candidate))
+    }else{
+      console.log("Unable to find client - Not adding ice candidate")
+    }
   }
 
   async handlePacket ({ peerId, data }) {
@@ -390,7 +394,11 @@ class Connector {
   toggleMediaStream (uid) {
     const user = this.getUser()
     const { stream } = uid === user.uid ? user : this.getClient(uid)
-    stream.getAudioTracks()[0].enabled = !stream.getAudioTracks()[0].enabled
+    if(stream){
+      stream.getAudioTracks()[0].enabled = !stream.getAudioTracks()[0].enabled
+    }else {
+      console.log("Unable to get audio tracks of Stream for clientID " + uid);
+    }
   }
 }
 
