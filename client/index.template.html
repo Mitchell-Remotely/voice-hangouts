@@ -67,6 +67,7 @@
       window.sendAnalticsEvent = (
         eventCategory, eventAction, eventLabel, eventValue
       ) => {
+        if(window.location.hostname.includes("remotelyhq.com") == false) return;//Don't collect analytics for anything other than meetings
         if(gtag !== undefined && gtag !== null){
           gtag('event',eventAction,
             {

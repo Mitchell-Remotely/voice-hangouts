@@ -394,10 +394,13 @@ class Connector {
   toggleMediaStream (uid) {
     const user = this.getUser()
     const { stream } = uid === user.uid ? user : this.getClient(uid)
-    if(stream){
+    if(stream && stream.getAudioTracks().length > 0){
       stream.getAudioTracks()[0].enabled = !stream.getAudioTracks()[0].enabled
     }else {
       console.log("Unable to get audio tracks of Stream for clientID " + uid);
+      setTimeout(function () {
+        toggleMediaStream(uid);
+      }, 1000);
     }
   }
 }
