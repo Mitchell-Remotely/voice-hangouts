@@ -8,8 +8,6 @@ const WebpackCdnPlugin = require('webpack-cdn-plugin')
 const isDev = (process && process.env && process.env.npm_lifecycle_script && (process.env.npm_lifecycle_script.includes("development")||process.env.npm_lifecycle_script.includes("addressables") )) || false;
 const isAddressable =  (process && process.env && process.env.npm_lifecycle_script && process.env.npm_lifecycle_script.includes("addressables") ) || false;
 module.exports = {
-  mode: 'production',
-  devtool: 'source-map',
   entry: {
     client: [
       './client/index.jsx',
@@ -67,4 +65,5 @@ module.exports = {
       }
     ]
   },
+  devtool: isDev && 'source-map'
 }
